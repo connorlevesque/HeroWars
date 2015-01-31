@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		197703791A7D075B00E89CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703781A7D075B00E89CDE /* main.m */; };
+		1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037B1A7D075B00E89CDE /* AppDelegate.m */; };
+		1977037F1A7D075B00E89CDE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037E1A7D075B00E89CDE /* GameScene.m */; };
+		197703811A7D075B00E89CDE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 197703801A7D075B00E89CDE /* GameScene.sks */; };
+		197703841A7D075B00E89CDE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703831A7D075B00E89CDE /* GameViewController.m */; };
+		197703871A7D075B00E89CDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197703851A7D075B00E89CDE /* Main.storyboard */; };
+		197703891A7D075B00E89CDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197703881A7D075B00E89CDE /* Images.xcassets */; };
+		1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1977038A1A7D075B00E89CDE /* LaunchScreen.xib */; };
+		197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703971A7D075C00E89CDE /* HeroWarsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		197703921A7D075C00E89CDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1977036B1A7D075B00E89CDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 197703721A7D075B00E89CDE;
+			remoteInfo = HeroWars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		197703731A7D075B00E89CDE /* HeroWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		197703771A7D075B00E89CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		197703781A7D075B00E89CDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1977037A1A7D075B00E89CDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1977037B1A7D075B00E89CDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1977037D1A7D075B00E89CDE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		1977037E1A7D075B00E89CDE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		197703801A7D075B00E89CDE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		197703821A7D075B00E89CDE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		197703831A7D075B00E89CDE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		197703861A7D075B00E89CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		197703881A7D075B00E89CDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1977038B1A7D075B00E89CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		197703911A7D075C00E89CDE /* HeroWarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroWarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		197703961A7D075C00E89CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		197703971A7D075C00E89CDE /* HeroWarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeroWarsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		197703701A7D075B00E89CDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1977038E1A7D075C00E89CDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1977036A1A7D075B00E89CDE = {
+			isa = PBXGroup;
+			children = (
+				197703751A7D075B00E89CDE /* HeroWars */,
+				197703941A7D075C00E89CDE /* HeroWarsTests */,
+				197703741A7D075B00E89CDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		197703741A7D075B00E89CDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				197703731A7D075B00E89CDE /* HeroWars.app */,
+				197703911A7D075C00E89CDE /* HeroWarsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		197703751A7D075B00E89CDE /* HeroWars */ = {
+			isa = PBXGroup;
+			children = (
+				1977037A1A7D075B00E89CDE /* AppDelegate.h */,
+				1977037B1A7D075B00E89CDE /* AppDelegate.m */,
+				1977037D1A7D075B00E89CDE /* GameScene.h */,
+				1977037E1A7D075B00E89CDE /* GameScene.m */,
+				197703801A7D075B00E89CDE /* GameScene.sks */,
+				197703821A7D075B00E89CDE /* GameViewController.h */,
+				197703831A7D075B00E89CDE /* GameViewController.m */,
+				197703851A7D075B00E89CDE /* Main.storyboard */,
+				197703881A7D075B00E89CDE /* Images.xcassets */,
+				1977038A1A7D075B00E89CDE /* LaunchScreen.xib */,
+				197703761A7D075B00E89CDE /* Supporting Files */,
+			);
+			path = HeroWars;
+			sourceTree = "<group>";
+		};
+		197703761A7D075B00E89CDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197703771A7D075B00E89CDE /* Info.plist */,
+				197703781A7D075B00E89CDE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		197703941A7D075C00E89CDE /* HeroWarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				197703971A7D075C00E89CDE /* HeroWarsTests.m */,
+				197703951A7D075C00E89CDE /* Supporting Files */,
+			);
+			path = HeroWarsTests;
+			sourceTree = "<group>";
+		};
+		197703951A7D075C00E89CDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197703961A7D075C00E89CDE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		197703721A7D075B00E89CDE /* HeroWars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1977039B1A7D075C00E89CDE /* Build configuration list for PBXNativeTarget "HeroWars" */;
+			buildPhases = (
+				1977036F1A7D075B00E89CDE /* Sources */,
+				197703701A7D075B00E89CDE /* Frameworks */,
+				197703711A7D075B00E89CDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeroWars;
+			productName = HeroWars;
+			productReference = 197703731A7D075B00E89CDE /* HeroWars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		197703901A7D075C00E89CDE /* HeroWarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1977039E1A7D075C00E89CDE /* Build configuration list for PBXNativeTarget "HeroWarsTests" */;
+			buildPhases = (
+				1977038D1A7D075C00E89CDE /* Sources */,
+				1977038E1A7D075C00E89CDE /* Frameworks */,
+				1977038F1A7D075C00E89CDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				197703931A7D075C00E89CDE /* PBXTargetDependency */,
+			);
+			name = HeroWarsTests;
+			productName = HeroWarsTests;
+			productReference = 197703911A7D075C00E89CDE /* HeroWarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1977036B1A7D075B00E89CDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Max Shashoua";
+				TargetAttributes = {
+					197703721A7D075B00E89CDE = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					197703901A7D075C00E89CDE = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 197703721A7D075B00E89CDE;
+					};
+				};
+			};
+			buildConfigurationList = 1977036E1A7D075B00E89CDE /* Build configuration list for PBXProject "HeroWars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1977036A1A7D075B00E89CDE;
+			productRefGroup = 197703741A7D075B00E89CDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				197703721A7D075B00E89CDE /* HeroWars */,
+				197703901A7D075C00E89CDE /* HeroWarsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		197703711A7D075B00E89CDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
+				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
+				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
+				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1977038F1A7D075C00E89CDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1977036F1A7D075B00E89CDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
+				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
+				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
+				197703791A7D075B00E89CDE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1977038D1A7D075C00E89CDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		197703931A7D075C00E89CDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 197703721A7D075B00E89CDE /* HeroWars */;
+			targetProxy = 197703921A7D075C00E89CDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		197703851A7D075B00E89CDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197703861A7D075B00E89CDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1977038A1A7D075B00E89CDE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1977038B1A7D075B00E89CDE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		197703991A7D075C00E89CDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1977039A1A7D075C00E89CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1977039C1A7D075C00E89CDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeroWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1977039D1A7D075C00E89CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeroWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1977039F1A7D075C00E89CDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeroWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeroWars.app/HeroWars";
+			};
+			name = Debug;
+		};
+		197703A01A7D075C00E89CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeroWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeroWars.app/HeroWars";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1977036E1A7D075B00E89CDE /* Build configuration list for PBXProject "HeroWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197703991A7D075C00E89CDE /* Debug */,
+				1977039A1A7D075C00E89CDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1977039B1A7D075C00E89CDE /* Build configuration list for PBXNativeTarget "HeroWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1977039C1A7D075C00E89CDE /* Debug */,
+				1977039D1A7D075C00E89CDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1977039E1A7D075C00E89CDE /* Build configuration list for PBXNativeTarget "HeroWarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1977039F1A7D075C00E89CDE /* Debug */,
+				197703A01A7D075C00E89CDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1977036B1A7D075B00E89CDE /* Project object */;
+}
