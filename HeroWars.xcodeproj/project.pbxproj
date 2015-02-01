@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192D619E1A7D301A0057213D /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619D1A7D301A0057213D /* Map.m */; };
+		192D61A01A7D32A50057213D /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619F1A7D32A50057213D /* Tile.m */; };
+		192D61A21A7D382F0057213D /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = 192D61A11A7D382F0057213D /* Notes */; };
 		197703791A7D075B00E89CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703781A7D075B00E89CDE /* main.m */; };
 		1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037B1A7D075B00E89CDE /* AppDelegate.m */; };
 		1977037F1A7D075B00E89CDE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037E1A7D075B00E89CDE /* GameScene.m */; };
@@ -16,6 +19,7 @@
 		197703891A7D075B00E89CDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197703881A7D075B00E89CDE /* Images.xcassets */; };
 		1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1977038A1A7D075B00E89CDE /* LaunchScreen.xib */; };
 		197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703971A7D075C00E89CDE /* HeroWarsTests.m */; };
+		197703A41A7D09A700E89CDE /* Gameboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703A31A7D09A700E89CDE /* Gameboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		192D619C1A7D301A0057213D /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		192D619D1A7D301A0057213D /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		192D619F1A7D32A50057213D /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
+		192D61A11A7D382F0057213D /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		197703731A7D075B00E89CDE /* HeroWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197703771A7D075B00E89CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197703781A7D075B00E89CDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +53,9 @@
 		197703911A7D075C00E89CDE /* HeroWarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroWarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		197703961A7D075C00E89CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197703971A7D075C00E89CDE /* HeroWarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeroWarsTests.m; sourceTree = "<group>"; };
+		197703A11A7D087000E89CDE /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		197703A21A7D08E900E89CDE /* Gameboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gameboard.h; sourceTree = "<group>"; };
+		197703A31A7D09A700E89CDE /* Gameboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameboard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +79,7 @@
 		1977036A1A7D075B00E89CDE = {
 			isa = PBXGroup;
 			children = (
+				192D61A11A7D382F0057213D /* Notes */,
 				197703751A7D075B00E89CDE /* HeroWars */,
 				197703941A7D075C00E89CDE /* HeroWarsTests */,
 				197703741A7D075B00E89CDE /* Products */,
@@ -90,6 +102,12 @@
 				1977037B1A7D075B00E89CDE /* AppDelegate.m */,
 				1977037D1A7D075B00E89CDE /* GameScene.h */,
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
+				197703A11A7D087000E89CDE /* Tile.h */,
+				192D619F1A7D32A50057213D /* Tile.m */,
+				197703A21A7D08E900E89CDE /* Gameboard.h */,
+				197703A31A7D09A700E89CDE /* Gameboard.m */,
+				192D619C1A7D301A0057213D /* Map.h */,
+				192D619D1A7D301A0057213D /* Map.m */,
 				197703801A7D075B00E89CDE /* GameScene.sks */,
 				197703821A7D075B00E89CDE /* GameViewController.h */,
 				197703831A7D075B00E89CDE /* GameViewController.m */,
@@ -208,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
+				192D61A21A7D382F0057213D /* Notes in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
 				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
@@ -228,9 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192D619E1A7D301A0057213D /* Map.m in Sources */,
 				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
+				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
+				192D61A01A7D32A50057213D /* Tile.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +444,7 @@
 				1977039D1A7D075C00E89CDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1977039E1A7D075C00E89CDE /* Build configuration list for PBXNativeTarget "HeroWarsTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +453,7 @@
 				197703A01A7D075C00E89CDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

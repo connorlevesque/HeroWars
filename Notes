@@ -1,0 +1,24 @@
+Hello, welcome to our game.
+
+Classes:
+    Tile
+    Gameboard
+    Map
+    Unit
+
+Tile:
+
+
+in the init function of tile. you use init with type: type is gonnabe a string.
+
+
+
+
+
+so Creating the board.
+
+1) Start with an array of types of tiles (strings) from somewhere.
+
+2) The map class contains an array of tiles and a size from which the board will be built
+
+3) This array is passed into the Gameboard method initWithMap, where the list of tiles and the size is turned into a grid which is the basis for the game.
