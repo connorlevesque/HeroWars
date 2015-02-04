@@ -12,7 +12,6 @@
 #import "Tile.h"
 #import "Map.h"
 
-CELLSIZE = 25;
 
 @interface Gameboard ()
 
@@ -21,52 +20,26 @@ CELLSIZE = 25;
 @implementation Gameboard
 
 
--(id)initWithMap:(Map *)map{
+-(id)initWithMap:(Map *)map {
     self = [super init];
-    if (self){
+    if (self) {
         self.grid = [[NSMutableArray alloc]init];
-        self.map = map;
-        for (int i = 0;i<map.height;i++) {
-            //NSLog(@"1");
+        for (int r = 0; r < map.height; r++) {
             NSMutableArray *row = [[NSMutableArray alloc]init];
-            for (int j = 0;i<map.width;i++){
-                //NSLog(@"2");
-                if ([map.tileArray objectAtIndex:(i*map.width + j)] == nil){
-                    NSLog(@"nilExceptionCaught motherfucker");
-                    break;
-                }
-                [row addObject:[map.tileArray objectAtIndex:(i*map.width + j)]];
+            for (int c = 0; c < map.width; c++) {
+                Tile *tile = map.tileArray[r * map.width + c];
+                [row addObject:tile];
             }
             [self.grid addObject:row];
         }
-    
+        for (NSMutableArray *row in self.grid) {
+            for (Tile *tile in row) {
+                NSLog(@"%@",tile.type);
+            }
+            NSLog(@" ");
+        }
     }
-//    for (NSMutableArray *y in self.grid){
-//        NSLog(@"");
-//        for (Tile *tile in y){
-//            NSLog(@"%@", tile.type);
-//        }
-//    }
     return self;
 }
-
--(void)drawInScene:(SKScene *) scene{
-    for (NSMutableArray *row in self.grid){
-        int x = 200;
-        for (Tile *tile in row){
-            
-
-        }
-        x = x + CELLSIZE;
-    }
-}
-
-
-
-//-(Tile *)getTileAtGridCoordinate:(NSInteger *)x and:(NSInteger *)y{
-//    
-//    return tile;
-//}
-
 
 @end

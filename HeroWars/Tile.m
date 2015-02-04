@@ -17,6 +17,15 @@
     
     if (self) {
         _type = type;
+        if ([_type isEqualToString:@"p"]) {
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_lightGreen"];
+        } else if ([_type isEqualToString:@"f"]) {
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_darkGreen"];
+        } else {
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_white"];
+        }
+        self.size = self.texture.size;
+        self.color = [UIColor whiteColor];
     }
     return self;
 }

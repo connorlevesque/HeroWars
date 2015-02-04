@@ -10,49 +10,21 @@
 
 @implementation Map
 
-//-(id)init{
-//    self = [super init];
-//    if (self){
-//        Tile *tile = [[Tile alloc]init];
-//        tile.type = @"plains";
-//        self.tileArray = [[NSMutableArray alloc]init];
-//        for (int i = 0; i<25; i++){
-//            [_tileArray addObject:tile];
-//        }
-//    }
-//    for (Tile *tile in self.tileArray){
-//        NSLog(@"%@", tile.type);
-//    }
-//    return self;
-//}
-
--(id)initWithArray: (NSMutableArray *) array Height:(int)height andWidth:(int)width {
+-(id)initWithArray:(NSArray *)typeArray {
     self = [super init];
     if (self){
-        self.height = height;
-        self.width = width;
-        for (NSString *type in array){
+        //set height and width
+        self.height = 5;
+        self.width = 5;
+        //make map array
+        self.tileArray = [[NSMutableArray alloc]init];
+        for (int i = 0; i < [typeArray count]; i++){
+            NSString *type = typeArray[i];
             Tile *tile = [[Tile alloc]initWithType:type];
-            //NSLog(@"%@", tile.type);
-            [self.tileArray addObject:type];
-            //so addobject wasnt working so were gonna tryo soehting else
-            //NSLog(@"%lu", [self.tileArray count]);
-//            for (Tile *tile in self.tileArray){
-//                NSLog(@"%@", tile.type);
-//            }
+            [_tileArray addObject:tile];
         }
     }
     return self;
 }
-
-+(NSMutableArray *)makePlainsArray{
-    //returns an array for testing. it works.
-    NSMutableArray *array = [[NSMutableArray alloc]init];
-    for (int i = 0; i<2; i++){
-        [array addObject:@"plains"];
-    }
-    return array;
-}
-
 
 @end

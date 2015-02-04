@@ -11,14 +11,30 @@
 
 @implementation GameScene
 
+NSInteger CELL_SIZE = 100;
+
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    Map *map = [[Map alloc]initWithArray:[Map makePlainsArray] Height:5 andWidth:5];
-    Gameboard *board = [[Gameboard alloc]initWithMap:map];
-    NSLog(@"grid count is %lu", board.grid.count);
+    NSArray *typeArray = @[@"p",@"f",@"p",@"p",@"p",
+                          @"p",@"p",@"f",@"p",@"p",
+                          @"p",@"p",@"f",@"p",@"p",
+                          @"p",@"f",@"p",@"p",@"p",
+                          @"p",@"p",@"p",@"p",@"p",];
+    Map *map = [[Map alloc]initWithArray:typeArray];
+    _board = [[Gameboard alloc]initWithMap:map];
+    [self drawGrid];
     
-    
+}
 
+-(void)drawGrid {
+    for (int r = 0; r < [_board.grid count]; r++) {
+        NSArray *row = _board.grid[r];
+        for (int c = 0; c < [row count]; c++) {
+            Tile *tile = _board.grid[r][c];
+            tile.position = CGPointMake(c * CELL_SIZE, r * CELL_SIZE);
+            [self addChild:tile];
+        }
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -15,7 +15,6 @@
 @property (nonatomic) NSInteger height;
 @property (nonatomic) NSInteger width;
 
--(id)initWithArray: (NSMutableArray *) array Height:(int)height andWidth:(int)width;
-+(NSMutableArray *)makePlainsArray;
+-(id)initWithArray:(NSArray *)typeArray;
 
 @end

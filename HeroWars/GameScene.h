@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Gameboard.h"
 
 @interface GameScene : SKScene
+
+@property (strong, nonatomic) Gameboard *board;
 
 @end

@@ -15,16 +15,11 @@
 
 @interface Gameboard : NSObject
 
-@property (strong, nonatomic) NSArray *tiles;
 @property (strong, nonatomic) Map *map;
 @property (strong, nonatomic) NSMutableArray *grid;
 
 
 -(id)initWithMap:(Map *)map;
--(NSMutableArray)makeArrayForDrawing;
-//-(Tile *)getTileAtGridCoordinate:(NSInteger *)x and:(NSInteger *)y;
-
-
 
 /*
  Tile Types:
