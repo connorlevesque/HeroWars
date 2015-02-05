@@ -41,9 +41,16 @@ NSInteger CELL_SIZE = 100;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    for (UITouch *touch in touches) {
-        NSLog(@"(%f, %f)", [touch locationInNode:self].x, [touch locationInNode:self].y);
-    }
+    UITouch *touch = [touches anyObject];
+    CGPoint positionInScene = [touch locationInNode:self];
+    Tile *touchedTile = [self getNodeAtTouch:positionInScene];
+    NSLog(@"(%ld, %ld): %@", touchedTile.x, touchedTile.y, touchedTile.type);
+
+}
+
+-(SKSpriteNode *)getNodeAtTouch:(CGPoint)touchLocation{
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
+    return touchedNode;
 }
 
 -(void)update:(CFTimeInterval)currentTime {
