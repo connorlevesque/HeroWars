@@ -28,6 +28,7 @@ NSInteger CELL_SIZE = 100;
 }
 
 -(void)drawGrid {
+    // draws the grid of tiles in the board
     for (int r = 0; r < [_board.grid count]; r++) {
         NSArray *row = _board.grid[r];
         for (int c = 0; c < [row count]; c++) {
