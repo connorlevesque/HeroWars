@@ -16,6 +16,7 @@
     self = [super init];
     
     if (self) {
+        // set anchor point, color, type, texture according to type, and size according to texture
         [self setAnchorPoint:CGPointZero];
         _type = type;
         if ([_type isEqualToString:@"p"]) {
