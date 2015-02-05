@@ -15,6 +15,7 @@ NSInteger CELL_SIZE = 100;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
+    [self setAnchorPoint:CGPointMake(0, 0)];
     NSArray *typeArray = @[@"p",@"f",@"p",@"p",@"p",
                           @"p",@"p",@"f",@"p",@"p",
                           @"p",@"p",@"f",@"p",@"p",
@@ -40,7 +41,7 @@ NSInteger CELL_SIZE = 100;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     for (UITouch *touch in touches) {
-        
+        NSLog(@"(%f, %f)", [touch locationInNode:self].x, [touch locationInNode:self].y);
     }
 }
 
