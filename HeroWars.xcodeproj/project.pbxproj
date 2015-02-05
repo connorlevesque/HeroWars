@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192849E61A8328A0002F81A9 /* heroWars_tile_100_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 192849E31A8328A0002F81A9 /* heroWars_tile_100_darkGreen.png */; };
+		192849E71A8328A0002F81A9 /* heroWars_tile_100_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 192849E41A8328A0002F81A9 /* heroWars_tile_100_lightGreen.png */; };
+		192849E81A8328A0002F81A9 /* heroWars_tile_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 192849E51A8328A0002F81A9 /* heroWars_tile_100_white.png */; };
 		192D619E1A7D301A0057213D /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619D1A7D301A0057213D /* Map.m */; };
 		192D61A01A7D32A50057213D /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619F1A7D32A50057213D /* Tile.m */; };
 		192D61A21A7D382F0057213D /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = 192D61A11A7D382F0057213D /* Notes */; };
@@ -20,9 +23,6 @@
 		1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1977038A1A7D075B00E89CDE /* LaunchScreen.xib */; };
 		197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703971A7D075C00E89CDE /* HeroWarsTests.m */; };
 		197703A41A7D09A700E89CDE /* Gameboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703A31A7D09A700E89CDE /* Gameboard.m */; };
-		CD46A3771A82E2E50026A699 /* heroWars_tile_100_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD46A3741A82E2E50026A699 /* heroWars_tile_100_darkGreen.png */; };
-		CD46A3781A82E2E50026A699 /* heroWars_tile_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CD46A3751A82E2E50026A699 /* heroWars_tile_100_white.png */; };
-		CD46A3791A82E2E50026A699 /* heroWars_tile_100_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD46A3761A82E2E50026A699 /* heroWars_tile_100_lightGreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		192849E31A8328A0002F81A9 /* heroWars_tile_100_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_darkGreen.png; path = ../../../heroWars_tile_100_darkGreen.png; sourceTree = "<group>"; };
+		192849E41A8328A0002F81A9 /* heroWars_tile_100_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_lightGreen.png; path = ../../../heroWars_tile_100_lightGreen.png; sourceTree = "<group>"; };
+		192849E51A8328A0002F81A9 /* heroWars_tile_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_white.png; path = ../../../heroWars_tile_100_white.png; sourceTree = "<group>"; };
 		192D619C1A7D301A0057213D /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		192D619D1A7D301A0057213D /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		192D619F1A7D32A50057213D /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
@@ -59,9 +62,6 @@
 		197703A11A7D087000E89CDE /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
 		197703A21A7D08E900E89CDE /* Gameboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gameboard.h; sourceTree = "<group>"; };
 		197703A31A7D09A700E89CDE /* Gameboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameboard.m; sourceTree = "<group>"; };
-		CD46A3741A82E2E50026A699 /* heroWars_tile_100_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_darkGreen.png; path = ../../../Desktop/heroWars_tile_100_darkGreen.png; sourceTree = "<group>"; };
-		CD46A3751A82E2E50026A699 /* heroWars_tile_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_white.png; path = ../../../Desktop/heroWars_tile_100_white.png; sourceTree = "<group>"; };
-		CD46A3761A82E2E50026A699 /* heroWars_tile_100_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_lightGreen.png; path = ../../../Desktop/heroWars_tile_100_lightGreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +128,9 @@
 		197703761A7D075B00E89CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD46A3741A82E2E50026A699 /* heroWars_tile_100_darkGreen.png */,
-				CD46A3751A82E2E50026A699 /* heroWars_tile_100_white.png */,
-				CD46A3761A82E2E50026A699 /* heroWars_tile_100_lightGreen.png */,
+				192849E31A8328A0002F81A9 /* heroWars_tile_100_darkGreen.png */,
+				192849E41A8328A0002F81A9 /* heroWars_tile_100_lightGreen.png */,
+				192849E51A8328A0002F81A9 /* heroWars_tile_100_white.png */,
 				197703771A7D075B00E89CDE /* Info.plist */,
 				197703781A7D075B00E89CDE /* main.m */,
 			);
@@ -234,13 +234,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD46A3771A82E2E50026A699 /* heroWars_tile_100_darkGreen.png in Resources */,
+				192849E61A8328A0002F81A9 /* heroWars_tile_100_darkGreen.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
-				CD46A3781A82E2E50026A699 /* heroWars_tile_100_white.png in Resources */,
+				192849E71A8328A0002F81A9 /* heroWars_tile_100_lightGreen.png in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
-				CD46A3791A82E2E50026A699 /* heroWars_tile_100_lightGreen.png in Resources */,
+				192849E81A8328A0002F81A9 /* heroWars_tile_100_white.png in Resources */,
 				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

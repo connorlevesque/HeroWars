@@ -16,6 +16,7 @@
     self = [super init];
     
     if (self) {
+        [self setAnchorPoint:CGPointZero];
         _type = type;
         if ([_type isEqualToString:@"p"]) {
             self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_lightGreen"];
