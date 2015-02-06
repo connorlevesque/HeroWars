@@ -22,3 +22,8 @@ so Creating the board.
 2) The map class contains an array of tiles and a size from which the board will be built
 
 3) This array is passed into the Gameboard method initWithMap, where the list of tiles and the size is turned into a grid which is the basis for the game.
+
+
+How inputManager works so far:
+    in scene, you have a touch on a node. The touch is either a tap, hold or drag (all NSStrings).
+    The touch type along with the touched node (prop of scene) is passed into the inputManager who calls methods accordingly.
