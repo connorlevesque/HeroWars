@@ -37,7 +37,7 @@
         }
         for (NSMutableArray *row in self.grid) {
             for (Tile *tile in row) {
-                NSLog(@"%@, %ld, %ld",tile.type,tile.x,tile.y);
+                NSLog(@"%@, %ld, %ld",tile.type,(long)tile.x,(long)tile.y);
             }
             NSLog(@" ");
         }

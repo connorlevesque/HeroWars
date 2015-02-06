@@ -25,7 +25,7 @@ NSInteger CELL_SIZE = 51;
                            @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
                            @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
                            @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",];
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p"];
     Map *map = [[Map alloc]initWithArray:typeArray];
     _board = [[Gameboard alloc]initWithMap:map];
     [self drawGrid];
@@ -56,11 +56,13 @@ NSInteger CELL_SIZE = 51;
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     if (!self.hasTouchSent){
-        UITouch *touch = [touches anyObject];
-        if (![self.touchedNode containsPoint: [touch locationInNode:self]]){
-            [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
-            self.hasTouchSent = YES;
-        }
+        [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
+        self.hasTouchSent = YES;
+//        UITouch *touch = [touches anyObject];
+//        if (![self.touchedNode containsPoint: [touch locationInNode:self]]){
+//            [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
+//            self.hasTouchSent = YES;
+//        }
     }
     
 }
