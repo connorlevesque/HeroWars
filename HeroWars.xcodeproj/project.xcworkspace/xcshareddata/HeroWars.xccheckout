@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A5A106BD-7D91-4C27-867B-08A5646F8F17</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HeroWars</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>57A9F7D61B13B972314619ECD7B88E66EC489D5A</key>
+		<string>https://github.com/shashman95/HeroWars.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HeroWars.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>57A9F7D61B13B972314619ECD7B88E66EC489D5A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shashman95/HeroWars.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>57A9F7D61B13B972314619ECD7B88E66EC489D5A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>57A9F7D61B13B972314619ECD7B88E66EC489D5A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HeroWars</string>
+		</dict>
+	</array>
+</dict>
+</plist>

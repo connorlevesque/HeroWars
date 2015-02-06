@@ -16,11 +16,11 @@ NSInteger CELL_SIZE = 100;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
-    NSArray *typeArray = @[@"p",@"f",@"p",@"p",@"p",
+    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",
                           @"p",@"p",@"f",@"p",@"p",
+                          @"f",@"f",@"f",@"f",@"f",
                           @"p",@"p",@"f",@"p",@"p",
-                          @"p",@"f",@"p",@"p",@"p",
-                          @"p",@"p",@"p",@"p",@"p",];
+                          @"p",@"p",@"f",@"p",@"p",];
     Map *map = [[Map alloc]initWithArray:typeArray];
     _board = [[Gameboard alloc]initWithMap:map];
     [self drawGrid];
@@ -41,8 +41,25 @@ NSInteger CELL_SIZE = 100;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    for (UITouch *touch in touches) {
-        NSLog(@"(%f, %f)", [touch locationInNode:self].x, [touch locationInNode:self].y);
+    UITouch *touch = [touches anyObject];
+    CGPoint positionInScene = [touch locationInNode:self];
+    
+    Tile *touchedTile = [self getTileAtTouch:positionInScene];
+    
+    if (touchedTile == nil){
+        NSLog(@"not a tile");
+    }else{
+        NSLog(@"(%ld, %ld): %@", touchedTile.x, touchedTile.y, touchedTile.type);
+    }
+
+}
+
+-(Tile *)getTileAtTouch:(CGPoint)touchLocation{
+    if ([[self nodeAtPoint:touchLocation]isKindOfClass:[Tile class]]){
+        Tile *touchedTile = (Tile *)[self nodeAtPoint:touchLocation];
+        return touchedTile;
+    }else{
+        return nil;
     }
 }
 
