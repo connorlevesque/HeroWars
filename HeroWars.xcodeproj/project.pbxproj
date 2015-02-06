@@ -23,6 +23,7 @@
 		19AA5FD71A83BF8700B4B727 /* heroWars_tile_100_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 19AA5FD41A83BF8700B4B727 /* heroWars_tile_100_darkGreen.png */; };
 		19AA5FD81A83BF8700B4B727 /* heroWars_tile_100_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 19AA5FD51A83BF8700B4B727 /* heroWars_tile_100_lightGreen.png */; };
 		19AA5FD91A83BF8700B4B727 /* heroWars_tile_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 19AA5FD61A83BF8700B4B727 /* heroWars_tile_100_white.png */; };
+		19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D35E6B1A84426600A99BC8 /* InputManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		19AA5FD41A83BF8700B4B727 /* heroWars_tile_100_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_darkGreen.png; path = ../../heroWars_tile_100_darkGreen.png; sourceTree = "<group>"; };
 		19AA5FD51A83BF8700B4B727 /* heroWars_tile_100_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_lightGreen.png; path = ../../heroWars_tile_100_lightGreen.png; sourceTree = "<group>"; };
 		19AA5FD61A83BF8700B4B727 /* heroWars_tile_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_white.png; path = ../../heroWars_tile_100_white.png; sourceTree = "<group>"; };
+		19D35E6A1A84426600A99BC8 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
+		19D35E6B1A84426600A99BC8 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				1977037B1A7D075B00E89CDE /* AppDelegate.m */,
 				1977037D1A7D075B00E89CDE /* GameScene.h */,
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
+				19D35E6A1A84426600A99BC8 /* InputManager.h */,
+				19D35E6B1A84426600A99BC8 /* InputManager.m */,
 				197703A11A7D087000E89CDE /* Tile.h */,
 				192D619F1A7D32A50057213D /* Tile.m */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
@@ -263,6 +268,7 @@
 				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
+				19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */,
 				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
 				192D61A01A7D32A50057213D /* Tile.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
