@@ -21,6 +21,8 @@
     }
 }
 
-
+-(BOOL)canDrag {
+    return YES;
+}
 
 @end
