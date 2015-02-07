@@ -12,5 +12,6 @@
 @interface InputManager : NSObject
 
 -(void)receiveInputWithNode:(SKNode *) node andString: (NSString *) touchType;
+-(BOOL)canDrag;
 
 @end

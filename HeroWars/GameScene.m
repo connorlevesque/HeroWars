@@ -28,6 +28,9 @@ NSInteger CELL_SIZE = 51;
                            @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p"];
     Map *map = [[Map alloc]initWithArray:typeArray];
     _board = [[Gameboard alloc]initWithMap:map];
+    self.world = [[SKNode alloc]init];
+    self.world.position = CGPointMake(0,0);
+    [self addChild:self.world];
     [self drawGrid];
     
 }
@@ -39,7 +42,7 @@ NSInteger CELL_SIZE = 51;
         for (int c = 0; c < [row count]; c++) {
             Tile *tile = _board.grid[r][c];
             tile.position = CGPointMake(c * CELL_SIZE, r * CELL_SIZE);
-            [self addChild:tile];
+            [self.world addChild:tile];
         }
     }
 }
@@ -58,11 +61,7 @@ NSInteger CELL_SIZE = 51;
     if (!self.hasTouchSent){
         [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
         self.hasTouchSent = YES;
-//        UITouch *touch = [touches anyObject];
-//        if (![self.touchedNode containsPoint: [touch locationInNode:self]]){
-//            [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
-//            self.hasTouchSent = YES;
-//        }
+        
     }
     
 }
@@ -71,7 +70,7 @@ NSInteger CELL_SIZE = 51;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch ends */
-    if (!self.hasTouchSent){
+    if (!self.hasTouchSent & [self.inputManager canDrag]) {
         [self.inputManager receiveInputWithNode:self.touchedNode andString:@"tap"];
         self.hasTouchSent = YES;
     }
@@ -92,8 +91,14 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
+//-(CGVector)makeTransformationVectorWithMovedTouch:(UITouch *)movedTouch {
+//    CGFloat x = movedTouch.posit
+//    CGVector *vector = [CGVectorMake(<#CGFloat dx#>, <#CGFloat dy#>)]
+//}
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
 }
 
 @end
