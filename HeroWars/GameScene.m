@@ -10,17 +10,22 @@
 
 @implementation GameScene
 
-NSInteger CELL_SIZE = 100;
+NSInteger CELL_SIZE = 51;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
     self.inputManager = [[InputManager alloc]init];
-    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",
-                          @"p",@"p",@"f",@"p",@"p",
-                          @"f",@"f",@"f",@"f",@"f",
-                          @"p",@"p",@"f",@"p",@"p",
-                          @"p",@"p",@"f",@"p",@"p",];
+    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",];
     Map *map = [[Map alloc]initWithArray:typeArray];
     _board = [[Gameboard alloc]initWithMap:map];
     [self drawGrid];
@@ -46,17 +51,6 @@ NSInteger CELL_SIZE = 100;
     CGPoint positionInScene = [touch locationInNode:self];
     self.touchedNode = [self getNodeAtTouch:positionInScene];
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:0.75 target:self selector:@selector(onTouchTimer) userInfo:nil repeats:NO];
-    
-}
-
-
--(void)onTouchTimer{
-    // method that is called when the touchTimer fires
-    if (!self.hasTouchSent){
-        [self.inputManager receiveInputWithNode:self.touchedNode andString:@"hold"];
-        self.hasTouchSent = YES;
-    }
-    
     
 }
 
@@ -86,6 +80,14 @@ NSInteger CELL_SIZE = 100;
 -(SKNode *)getNodeAtTouch:(CGPoint)touchLocation{
         SKNode *touchedNode = (SKNode *)[self nodeAtPoint:touchLocation];
         return touchedNode;
+}
+
+-(void)onTouchTimer{
+    // method that is called when the touchTimer fires
+    if (!self.hasTouchSent){
+        [self.inputManager receiveInputWithNode:self.touchedNode andString:@"hold"];
+        self.hasTouchSent = YES;
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
