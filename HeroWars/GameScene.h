@@ -19,6 +19,7 @@
 @property (strong, nonatomic) SKNode *world;
 
 @property (strong, nonatomic) SKNode *touchedNode;
+@property (strong, nonatomic) UITouch *beginTouch;
 @property (strong, nonatomic) NSTimer *touchTimer;
 @property (nonatomic) BOOL hasTouchSent;
 

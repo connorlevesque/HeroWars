@@ -50,16 +50,18 @@ NSInteger CELL_SIZE = 51;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     self.hasTouchSent = NO;
-    UITouch *touch = [touches anyObject];
-    CGPoint positionInScene = [touch locationInNode:self];
+    self.beginTouch = [touches anyObject];
+    CGPoint positionInScene = [self.beginTouch locationInNode:self];
     self.touchedNode = [self getNodeAtTouch:positionInScene];
     self.touchTimer = [NSTimer scheduledTimerWithTimeInterval:0.75 target:self selector:@selector(onTouchTimer) userInfo:nil repeats:NO];
     
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    if (!self.hasTouchSent){
-        [self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
+    if (!self.hasTouchSent & [self.inputManager canDrag]){
+        UITouch *movedTouch = [touches anyObject];
+        [self makeDragVectorWith:movedTouch];
+        //[self.inputManager receiveInputWithNode:self.touchedNode andString:@"drag"];
         self.hasTouchSent = YES;
         
     }
@@ -70,7 +72,7 @@ NSInteger CELL_SIZE = 51;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch ends */
-    if (!self.hasTouchSent & [self.inputManager canDrag]) {
+    if (!self.hasTouchSent) {
         [self.inputManager receiveInputWithNode:self.touchedNode andString:@"tap"];
         self.hasTouchSent = YES;
     }
@@ -91,10 +93,13 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
-//-(CGVector)makeTransformationVectorWithMovedTouch:(UITouch *)movedTouch {
-//    CGFloat x = movedTouch.posit
-//    CGVector *vector = [CGVectorMake(<#CGFloat dx#>, <#CGFloat dy#>)]
-//}
+-(CGVector)makeDragVectorWith:(UITouch *)movedTouch {
+    CGPoint beginDragPoint = [self.beginTouch locationInNode:self];
+    CGPoint moveDragPoint = [movedTouch locationInNode:self];
+    CGVector dragVector = CGVectorMake(moveDragPoint.x - beginDragPoint.x, moveDragPoint.y - beginDragPoint.y);
+    NSLog(@"%f,%f", dragVector.dx, dragVector.dy);
+    return dragVector;
+}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
