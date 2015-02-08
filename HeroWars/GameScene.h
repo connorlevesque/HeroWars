@@ -18,19 +18,17 @@
 @property (strong, nonatomic) InputManager *inputManager;
 @property (strong, nonatomic) SKNode *world;
 
-@property (strong, nonatomic) SKNode *touchedNode;
+@property (strong, nonatomic) NSArray *touchedNodes;
 @property (nonatomic) CGPoint lastTouch;
 @property (strong, nonatomic) NSTimer *touchTimer;
 
-@property (nonatomic) NSInteger touchState;
+@property (nonatomic) int touchState;
+/*
+ 0 = no touch detected
+ 1 = touch dragged
+ 2 = touch held
+ */
 
 @property (strong, nonatomic) GeneralMenu *generalMenu;
-
-
-/*
-0 = no touch detected
-1 = touch dragged
-2 = touch held
-*/
 
 @end

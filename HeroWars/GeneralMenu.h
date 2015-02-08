@@ -10,6 +10,6 @@
 
 @interface GeneralMenu : Menu
 
-@property (strong, nonatomic) NSArray *buttons;
+
 
 @end

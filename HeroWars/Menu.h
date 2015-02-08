@@ -7,7 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Button.h"
 
 @interface Menu : SKSpriteNode
+
+
+@property (strong, nonatomic) NSArray *buttons;
+
+
 
 @end

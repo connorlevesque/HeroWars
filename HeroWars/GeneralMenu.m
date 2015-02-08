@@ -16,11 +16,12 @@
         //set image
         self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_white.png"];
         self.size = self.texture.size;
+        
         self.color = [UIColor whiteColor];
         //create buttons
-        SKSpriteNode *end = [[SKSpriteNode alloc]initWithColor:[UIColor redColor] size:CGSizeMake(80, 20)];
+        Button *end = [[Button alloc]initWithColor:[UIColor redColor] size:CGSizeMake(80, 20)];
         self.buttons = @[end];
-        for (SKSpriteNode *button in self.buttons) {
+        for (Button *button in self.buttons) {
             button.position = CGPointZero;
             [self addChild:button];
         }

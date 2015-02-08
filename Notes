@@ -33,3 +33,12 @@ Drag/Hold/Tap
     if the touch moves the drag occurs
     if the touch is held a hold occurs
     if the touch ends a tap occurs
+
+Touch hierarchy (top to bottom):
+    Button
+    Menu
+    Unit
+    Building
+    Tile
+    World
+    Scene
