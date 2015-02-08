@@ -25,10 +25,11 @@
     if (self) {
         //init the grid array array and give the tiles corresponding x and y grid coordinates
         self.grid = [[NSMutableArray alloc]init];
-        for (int r = 0; r < map.height; r++) {
+        self.map = map;
+        for (int r = 0; r < self.map.height; r++) {
             NSMutableArray *row = [[NSMutableArray alloc]init];
             for (int c = 0; c < map.width; c++) {
-                Tile *tile = map.tileArray[r * map.width + c];
+                Tile *tile = self.map.tileArray[r * self.map.width + c];
                 tile.x = c + 1;
                 tile.y = r + 1;
                 [row addObject:tile];
@@ -37,7 +38,7 @@
         }
         for (NSMutableArray *row in self.grid) {
             for (Tile *tile in row) {
-                NSLog(@"%@, %ld, %ld",tile.type,tile.x,tile.y);
+                NSLog(@"%@, %ld, %ld",tile.type,(long)tile.x,(long)tile.y);
             }
             NSLog(@" ");
         }

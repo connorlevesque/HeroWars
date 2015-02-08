@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "Tile.h"
+#import "GeneralMenu.h"
 
 @interface InputManager : NSObject
 
--(void)receiveInputWithNode:(SKNode *) node andString: (NSString *) touchType;
+-(void)receiveInputWithNodes:(NSArray *)touchedNodes andString: (NSString *)touchType;
+-(BOOL)canDrag;
+
+@property (strong, nonatomic) NSString *stage;
 
 @end

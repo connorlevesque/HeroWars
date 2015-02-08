@@ -10,14 +10,25 @@
 #import "Gameboard.h"
 #import "InputManager.h"
 #import "Map.h"
-#import "InputManager.h"
+#import "GeneralMenu.h"
 
 @interface GameScene : SKScene
 
 @property (strong, nonatomic) Gameboard *board;
 @property (strong, nonatomic) InputManager *inputManager;
-@property (strong, nonatomic) SKNode *touchedNode;
+@property (strong, nonatomic) SKNode *world;
+
+@property (strong, nonatomic) NSArray *touchedNodes;
+@property (nonatomic) CGPoint lastTouch;
 @property (strong, nonatomic) NSTimer *touchTimer;
-@property (nonatomic) BOOL hasTouchSent;
+
+@property (nonatomic) int touchState;
+/*
+ 0 = no touch detected
+ 1 = touch dragged
+ 2 = touch held
+ */
+
+@property (strong, nonatomic) GeneralMenu *generalMenu;
 
 @end

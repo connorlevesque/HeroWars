@@ -27,3 +27,18 @@ so Creating the board.
 How inputManager works so far:
     in scene, you have a touch on a node. The touch is either a tap, hold or drag (all NSStrings).
     The touch type along with the touched node (prop of scene) is passed into the inputManager who calls methods accordingly.
+
+
+Drag/Hold/Tap
+    if the touch moves the drag occurs
+    if the touch is held a hold occurs
+    if the touch ends a tap occurs
+
+Touch hierarchy (top to bottom):
+    Button
+    Menu
+    Unit
+    Building
+    Tile
+    World
+    Scene
