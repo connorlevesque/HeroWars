@@ -11,15 +11,33 @@
 
 @implementation InputManager
 
--(void)receiveInputWithNode:(SKNode *) node andString: (NSString *) touchType {
-    if ([touchType isEqualToString: @"drag"]) {
-        NSLog(@"Touch = drag");
-    }else if ([touchType isEqualToString: @"hold"]) {
-        NSLog(@"Touch = hold");
-    }else if ([touchType isEqualToString: @"tap"]) {
-        NSLog(@"Touch = tap");
+-(id)init {
+    self = [super init];
+    if (self){
+        [self setValue:@"battle" forKey:@"stage"];
+    }
+    return self;
+}
+
+-(void)receiveInputWithNode:(SKNode *)touchedNode andString: (NSString *)touchType {
+    // if battle stage
+    if ([self.stage isEqualToString:@"battle"]) {
+        // if hold
+        if ([touchType isEqualToString: @"hold"]) {
+            NSLog(@"Tile held");
+            
+        // if tap
+        }else if ([touchType isEqualToString: @"tap"]) {
+            // if tile
+            if ([touchedNode isKindOfClass:[Tile class]]) {
+                //NSLog(@"Tile tapped");
+                [self setValue:@"generalMenu" forKey:@"stage"];
+            }
+        }
     }
 }
+
+
 
 -(BOOL)canDrag {
     return YES;

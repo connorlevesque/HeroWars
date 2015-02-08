@@ -14,8 +14,8 @@
     self = [super init];
     if (self){
         //set height and width
-        self.height = 10;
-        self.width = 20;
+        self.height = 7;
+        self.width = 12;
         //make map array
         self.tileArray = [[NSMutableArray alloc]init];
         for (int i = 0; i < [typeArray count]; i++){

@@ -16,16 +16,13 @@ NSInteger CELL_SIZE = 51;
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
     self.inputManager = [[InputManager alloc]init];
-    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p"];
+    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
+                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p"];
     Map *map = [[Map alloc]initWithArray:typeArray];
     _board = [[Gameboard alloc]initWithMap:map];
     self.world = [[SKNode alloc]init];
@@ -34,7 +31,28 @@ NSInteger CELL_SIZE = 51;
     [self addChild:self.world];
     [self drawGrid];
     self.touchState = 0;
+    
+    // initialize menus
+    
+    self.generalMenu = [[GeneralMenu alloc]init];
+    self.generalMenu.position = CGPointMake(100, 100);
+    
+    // make scene observer of inputManager
+
+    [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 }
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"stage"]){
+        [self stageHasChanged];
+    }
+
+}
+
+-(void)stageHasChanged{
+    NSLog(@"State has changed to %@", [self.inputManager valueForKey:@"stage"]);
+}
+
 
 -(void)drawGrid {
     // draws the grid of tiles in the board

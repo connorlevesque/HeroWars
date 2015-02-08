@@ -10,6 +10,7 @@
 #import "Gameboard.h"
 #import "InputManager.h"
 #import "Map.h"
+#import "GeneralMenu.h"
 
 @interface GameScene : SKScene
 
@@ -22,6 +23,10 @@
 @property (strong, nonatomic) NSTimer *touchTimer;
 
 @property (nonatomic) NSInteger touchState;
+
+@property (strong, nonatomic) GeneralMenu *generalMenu;
+
+
 /*
 0 = no touch detected
 1 = touch dragged

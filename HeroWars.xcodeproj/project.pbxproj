@@ -24,6 +24,8 @@
 		CD55AB3E1A848238003AD677 /* heroWars_tile_100_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3B1A848238003AD677 /* heroWars_tile_100_lightGreen.png */; };
 		CD55AB3F1A848238003AD677 /* heroWars_tile_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3C1A848238003AD677 /* heroWars_tile_100_white.png */; };
 		CD55AB401A848238003AD677 /* heroWars_tile_100_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3D1A848238003AD677 /* heroWars_tile_100_darkGreen.png */; };
+		CD55AB431A86A49C003AD677 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55AB421A86A49C003AD677 /* Menu.m */; };
+		CD55AB461A86A5BD003AD677 /* GeneralMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55AB451A86A5BD003AD677 /* GeneralMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		CD55AB3B1A848238003AD677 /* heroWars_tile_100_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_lightGreen.png; path = ../../../Desktop/heroWars_tile_100_lightGreen.png; sourceTree = "<group>"; };
 		CD55AB3C1A848238003AD677 /* heroWars_tile_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_white.png; path = ../../../Desktop/heroWars_tile_100_white.png; sourceTree = "<group>"; };
 		CD55AB3D1A848238003AD677 /* heroWars_tile_100_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_darkGreen.png; path = ../../../Desktop/heroWars_tile_100_darkGreen.png; sourceTree = "<group>"; };
+		CD55AB411A86A49C003AD677 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		CD55AB421A86A49C003AD677 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		CD55AB441A86A5BD003AD677 /* GeneralMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralMenu.h; sourceTree = "<group>"; };
+		CD55AB451A86A5BD003AD677 /* GeneralMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
 				19D35E6A1A84426600A99BC8 /* InputManager.h */,
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
+				CD55AB411A86A49C003AD677 /* Menu.h */,
+				CD55AB421A86A49C003AD677 /* Menu.m */,
+				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
+				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
 				197703A11A7D087000E89CDE /* Tile.h */,
 				192D619F1A7D32A50057213D /* Tile.m */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
@@ -269,9 +279,11 @@
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
 				19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */,
+				CD55AB461A86A5BD003AD677 /* GeneralMenu.m in Sources */,
 				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
 				192D61A01A7D32A50057213D /* Tile.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
+				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
