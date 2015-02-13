@@ -16,20 +16,12 @@ NSInteger CELL_SIZE = 51;
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
     self.inputManager = [[InputManager alloc]init];
-    NSArray *typeArray = @[@"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"f",@"f",@"f",@"f",@"f",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p",
-                           @"p",@"p",@"f",@"p",@"p",@"p",@"p",@"f",@"p",@"p",@"p",@"p"];
-    Map *map = [[Map alloc]initWithArray:typeArray];
-    _board = [[Gameboard alloc]initWithMap:map];
+    _board = [[Gameboard alloc]initWithMapNamed:@"Campaign1"];
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
     //self.world.frame.size = CGSizeMake(self.board.map.width * CELL_SIZE, self.board.map.height * CELL_SIZE);
     [self addChild:self.world];
-    [self drawGrid];
+    [self drawGrids];
     self.touchState = 0;
     
     // initialize menus
@@ -66,14 +58,18 @@ NSInteger CELL_SIZE = 51;
 }
 
 
--(void)drawGrid {
-    // draws the grid of tiles in the board
-    for (int r = 0; r < [_board.grid count]; r++) {
-        NSArray *row = _board.grid[r];
-        for (int c = 0; c < [row count]; c++) {
-            Tile *tile = _board.grid[r][c];
+-(void)drawGrids {
+    // draws the grids of tiles and units
+    for (int r = 0; r < self.board.height; r++) {
+        for (int c = 0; c < self.board.width; c++) {
+            Tile *tile = self.board.tileGrid[r][c];
             tile.position = CGPointMake(c * CELL_SIZE, r * CELL_SIZE);
             [self.world addChild:tile];
+            id unitMaybe = self.board.unitGrid[r][c];
+            if (!(unitMaybe == (id)[NSNull null])) {
+                Unit *unit = self.board.unitGrid[r][c];
+                [tile addChild:unit];
+            }
         }
     }
 }
@@ -102,7 +98,7 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
--(void)onTouchTimer{
+-(void)onTouchTimer {
     // if the touch is not a drag or a tap
     if (self.touchState == 0){
         //record that a hold is occuring
@@ -112,8 +108,7 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch ends */
     //if there is no drag or hold occuring
     if (self.touchState == 0) {
@@ -138,8 +133,8 @@ NSInteger CELL_SIZE = 51;
     CGPoint old = self.lastTouch;
     CGPoint dragPoint = CGPointMake(new.x - old.x, new.y - old.y);
 
-    float minX = self.frame.size.width - self.board.map.width * CELL_SIZE;
-    float minY = self.frame.size.height - self.board.map.height * CELL_SIZE;
+    float minX = self.frame.size.width - self.board.width * CELL_SIZE;
+    float minY = self.frame.size.height - self.board.height * CELL_SIZE;
     
     //if we dont wanna drag left anymore
     if ((self.world.position.x <= minX) & (dragPoint.x < 0)) {
@@ -161,8 +156,6 @@ NSInteger CELL_SIZE = 51;
         dragPoint.y = 0;
         self.world.position = CGPointMake(self.world.position.x, minY);
     }
-    
-    NSLog(@"(%f,%f)", dragPoint.x, dragPoint.y);
     return dragPoint;
 }
 

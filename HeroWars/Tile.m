@@ -18,13 +18,15 @@
     if (self) {
         // set anchor point, color, type, texture according to type, and size according to texture
         [self setAnchorPoint:CGPointZero];
-        _type = type;
+        self.type = type;
+        self.highlighted = NO;
+        self.moveCost = 1;
         if ([_type isEqualToString:@"p"]) {
-            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_lightGreen"];
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_lightGreen"];
         } else if ([_type isEqualToString:@"f"]) {
-            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_darkGreen"];
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_darkGreen"];
         } else {
-            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_white"];
+            self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_white"];
         }
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];

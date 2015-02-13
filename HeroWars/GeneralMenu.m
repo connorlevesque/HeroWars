@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         //set image
-        self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_100_white.png"];
+        self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_white.png"];
         self.size = self.texture.size;
         
         self.color = [UIColor whiteColor];

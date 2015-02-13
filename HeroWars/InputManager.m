@@ -24,18 +24,22 @@
     SKNode *keyNode = [self findKeyNodeFromTouchedNodes:touchedNodes];
     // if battle stage
     if ([self.stage isEqualToString:@"battle"]) {
-        
-        
         // if hold
         if ([touchType isEqualToString: @"hold"]) {
             NSLog(@"Tile held");
-            
         // if tap
         }else if ([touchType isEqualToString: @"tap"]) {
-            // if tile
-            if ([keyNode isKindOfClass:[Tile class]]) {
+            // if unit
+            if ([keyNode isKindOfClass:[Unit class]]) {
+                NSLog(@"Unit tapped");
+                [self setValue:@"unitMove" forKey:@"stage"];
+            }
+            //if tile
+            else if ([keyNode isKindOfClass:[Tile class]]) {
                 //NSLog(@"Tile tapped");
                 [self setValue:@"generalMenu" forKey:@"stage"];
+            } else {
+                NSLog(@"Error: no task for keyNode");
             }
         }
     }
@@ -47,12 +51,23 @@
             [self setValue:@"battle" forKey:@"stage"];
         }
     }
+    // if unitMove stage
+    else if ([self.stage isEqualToString:@"unitMove"]){
+        if ([keyNode isKindOfClass:[Tile class]]) {
+            Tile *clickedTile = keyNode;
+            if (clickedTile.highlighted) {
+                //do stuff
+            } else {
+                [self setValue:@"battle" forKey:@"stage"];
+            }
+        }
+    }
     
 }
 
 -(SKNode *)findKeyNodeFromTouchedNodes:(NSArray *)touchedNodes {
     //select keyNode from node hierarchy
-    NSArray *nodeHierarchy = @[[Button class],[Menu class],/*[Unit class],[Building class],*/[Tile class]];
+    NSArray *nodeHierarchy = @[[Button class],[Menu class],[Unit class],/*[Building class],*/[Tile class]];
     SKNode *keyNode = [[SKNode alloc]init];
     for (Class classType in nodeHierarchy) {
         for (SKNode *node in touchedNodes) {

@@ -9,7 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Gameboard.h"
 #import "InputManager.h"
-#import "Map.h"
 #import "GeneralMenu.h"
 
 @interface GameScene : SKScene

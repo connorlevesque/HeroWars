@@ -6,18 +6,15 @@
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#ifndef HeroWars_Tile_h
-#define HeroWars_Tile_h
-
 #import "SpriteKit/SpriteKit.h"
 
-#endif
 
 @interface Tile : SKSpriteNode
 
 @property (strong, nonatomic) NSString *type;
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
+@property (nonatomic) BOOL highlighted;
 
 -(id)initWithType:(NSString*)type;
 
@@ -34,7 +31,8 @@
  Production Buildings (pending)
  */
 
-
+@property (nonatomic) NSInteger moveCost;
+@property (nonatomic) NSInteger moveRecord;
 
 
 

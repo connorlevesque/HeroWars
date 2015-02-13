@@ -1,0 +1,18 @@
+
+Campaign1
+21 x 7 with 1 unit for player 1
+
+:
+
+p, p, p, p, p, p, p, p, p, p, p, p /
+p, p-1-x, p, p, p, p, p, p, p, p, p, p /
+p, f, p, p, p, p, p, p, p, f, p, p /
+p, p, f, p, p, p, p, p, p, p, p, p /
+p, p, p, f, p, p, f, p, p, f, p, p /
+p, p, p, p, p, p, p, p, p, p, p, p /
+p, p, p, p, p, p, p, p, p, p, p, p 
+
+:
+
+standard
+

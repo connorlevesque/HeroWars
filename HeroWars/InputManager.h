@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "Tile.h"
+#import "Unit.h"
 #import "GeneralMenu.h"
 
 @interface InputManager : NSObject
