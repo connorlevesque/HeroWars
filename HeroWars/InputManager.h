@@ -11,6 +11,7 @@
 #import "Tile.h"
 #import "Unit.h"
 #import "GeneralMenu.h"
+#import "Pather.h"
 
 @interface InputManager : NSObject
 
@@ -18,5 +19,5 @@
 -(BOOL)canDrag;
 
 @property (strong, nonatomic) NSString *stage;
-
+@property (strong, nonatomic) Pather *pather;
 @end

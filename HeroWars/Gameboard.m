@@ -21,8 +21,8 @@
     self = [super init];
     if (self) {
         [self makeGridsFromLevelName:levelName];
-        NSLog(@"%@", self.tileGrid);
-        NSLog(@"%@", self.unitGrid);
+        //NSLog(@"%@", self.tileGrid);
+        //NSLog(@"%@", self.unitGrid);
     }
     return self;
 }

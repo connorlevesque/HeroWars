@@ -33,6 +33,10 @@
             if ([keyNode isKindOfClass:[Unit class]]) {
                 NSLog(@"Unit tapped");
                 [self setValue:@"unitMove" forKey:@"stage"];
+                Unit *unit = keyNode;
+                
+                [self.pather loadWithUnit:unit];
+                NSLog(@"%@", self.pather.toBeHighlighted);
             }
             //if tile
             else if ([keyNode isKindOfClass:[Tile class]]) {
@@ -42,6 +46,7 @@
                 NSLog(@"Error: no task for keyNode");
             }
         }
+
     }
     // if generalMenu stage
     else if ([self.stage isEqualToString:@"generalMenu"]){

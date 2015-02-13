@@ -2,28 +2,44 @@
 //  Pather.h
 //  HeroWars
 //
-//  Created by Connor Levesque on 2/11/15.
+//  Created by Max Shashoua on 2/9/15.
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "Gameboard.h"
 
 
 @interface Pather : NSObject
 
-@property (weak, nonatomic) Gameboard *board;
-@property (strong, nonatomic) Unit *unit;
+@property (nonatomic) NSInteger x;
+@property (nonatomic) NSInteger y;
+@property (nonatomic) NSInteger monies;
+@property (nonatomic) NSInteger lastCount;
+@property (nonatomic) NSInteger moveCount;
+@property (strong, nonatomic) Gameboard *board;
+@property (strong, nonatomic) NSMutableArray *currentPath;
+@property (strong, nonatomic) NSMutableArray *pathsArray;
+@property (strong, nonatomic) NSMutableSet *toBeHighlighted;
 
-@property (strong, nonatomic) NSMutableArray *path;
-@property (strong, nonatomic) NSMutableDictionary *paths;
+-(id)initWithBoard:(Gameboard *)board;
 
-@property (nonatomic) NSInteger direction;
-/*
-    North = 0
-    East = 1
-    South = 2
-    West = 3
- */
+
+-(void)loadWithUnit:(Unit *)unit;
+
+
+-(BOOL)canMoveInDirection:(NSString *)direction;
+
+
+-(void)move:(NSString *)direction;
+
+
+-(void)stepBack;
+
+
+-(void)path;
+
++(NSArray *)directions;
 
 @end

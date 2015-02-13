@@ -32,6 +32,11 @@ NSInteger CELL_SIZE = 51;
     // make scene observer of inputManager
 
     [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    self.inputManager.pather = [[Pather alloc]initWithBoard:self.board];
+    
+//    NSArray *a = @[@"a", @"b", @"c", @"d"];
+//    NSLog(@"%@", a[a.count-1]);
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
