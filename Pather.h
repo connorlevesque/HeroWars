@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) Gameboard *board;
 @property (strong, nonatomic) Unit *unit;
+@property (strong, nonatomic) Tile *unitTile;
 
 @property (strong, nonatomic) NSMutableArray *path;
 @property (strong, nonatomic) NSMutableDictionary *paths;
@@ -25,5 +26,7 @@
     South = 2
     West = 3
  */
+
+-(NSMutableArray *)tileCoordsForUnit:(Unit *)unit andBoard:(Gameboard *)board;
 
 @end

@@ -11,10 +11,12 @@
 
 @implementation InputManager
 
--(id)init {
+-(id)initWithBoard:(Gameboard *)board {
     self = [super init];
     if (self){
         [self setValue:@"battle" forKey:@"stage"];
+        self.board = board;
+        self.pather = [[Pather alloc]init];
     }
     return self;
 }
@@ -32,11 +34,11 @@
             // if unit
             if ([keyNode isKindOfClass:[Unit class]]) {
                 NSLog(@"Unit tapped");
+                self.selectedUnit = (Unit *)keyNode;
                 [self setValue:@"unitMove" forKey:@"stage"];
             }
             //if tile
             else if ([keyNode isKindOfClass:[Tile class]]) {
-                //NSLog(@"Tile tapped");
                 [self setValue:@"generalMenu" forKey:@"stage"];
             } else {
                 NSLog(@"Error: no task for keyNode");
@@ -44,7 +46,7 @@
         }
     }
     // if generalMenu stage
-    else if ([self.stage isEqualToString:@"generalMenu"]){
+    else if ([self.stage isEqualToString:@"generalMenu"]) {
         if ([keyNode isKindOfClass:[Button class]] || [keyNode isKindOfClass:[GeneralMenu class]]){
             NSLog(@"menu stuff");
         } else {
@@ -52,22 +54,37 @@
         }
     }
     // if unitMove stage
-    else if ([self.stage isEqualToString:@"unitMove"]){
-        if ([keyNode isKindOfClass:[Tile class]]) {
-            Tile *clickedTile = keyNode;
-            if (clickedTile.highlighted) {
-                //do stuff
-            } else {
-                [self setValue:@"battle" forKey:@"stage"];
-            }
+    else if ([self.stage isEqualToString:@"unitMove"]) {
+        // if highlight
+        if ([keyNode isKindOfClass:[Highlight class]]) {
+            Tile *highlightedTile = (Tile *)[keyNode parent];
+            [self.board moveUnit:self.selectedUnit toTile:highlightedTile];
+            [self setValue:@"unitAction" forKey:@"stage"];
+            [self setValue:@"battle" forKey:@"stage"];
+            NSLog(@"unit moved to point (%d,%d)", self.selectedUnit.x, self.selectedUnit.y);
+        } else {
+            [self setValue:@"battle" forKey:@"stage"];
         }
     }
-    
+    // if unitAction stage
+    else if ([self.stage isEqualToString:@"unitAction"]) {
+//        if ([keyNode isKindOfClass:[Highlight class]]) {
+//            [self setValue:@"unitAction" forKey:@"stage"];
+//            
+//        } else {
+        [self setValue:@"battle" forKey:@"stage"];
+//        }
+    }
+}
+
+-(NSArray *)findTileCoordsToHighlight {
+    NSArray *tileCoords = [self.pather tileCoordsForUnit:self.selectedUnit andBoard:self.board];
+    return tileCoords;
 }
 
 -(SKNode *)findKeyNodeFromTouchedNodes:(NSArray *)touchedNodes {
     //select keyNode from node hierarchy
-    NSArray *nodeHierarchy = @[[Button class],[Menu class],[Unit class],/*[Building class],*/[Tile class]];
+    NSArray *nodeHierarchy = @[[Button class],[Menu class],[Highlight class],[Unit class],/*[Building class],*/[Tile class]];
     SKNode *keyNode = [[SKNode alloc]init];
     for (Class classType in nodeHierarchy) {
         for (SKNode *node in touchedNodes) {
@@ -81,7 +98,6 @@
 }
 
 -(BOOL)canDrag {
-    
     return YES;
 }
 

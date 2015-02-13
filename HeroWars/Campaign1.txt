@@ -10,7 +10,7 @@ p, f, p, p, p, p, p, p, p, f, p, p /
 p, p, f, p, p, p, p, p, p, p, p, p /
 p, p, p, f, p, p, f, p, p, f, p, p /
 p, p, p, p, p, p, p, p, p, p, p, p /
-p, p, p, p, p, p, p, p, p, p, p, p 
+p, p, p, p, p, p, p, p, p, p, p, f
 
 :
 
