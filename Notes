@@ -23,6 +23,17 @@ so Creating the board.
 
 3) This array is passed into the Gameboard method initWithMap, where the list of tiles and the size is turned into a grid which is the basis for the game.
 
+Map File Rules
+    All Map files have 3 parts separated by ":"
+        these parts are a description, board conditions, and the terms for victory
+    Description
+        can be anything, this is purely for organizational purposes
+    Board Conditions
+        these are the tile and unit types and positions for a given board
+        "/" separate rows
+        "," separate squares in a row
+    Squares
+        a given square has a tile type character and if applicable a player # and a unit character
 
 How inputManager works so far:
     in scene, you have a touch on a node. The touch is either a tap, hold or drag (all NSStrings).
@@ -42,3 +53,10 @@ Touch hierarchy (top to bottom):
     Tile
     World
     Scene
+
+Unit Basics
+    when you tap a unit you enter the unitMove stage
+        the input manager will use a pathing algorithm to figure out what tiles can be moved to
+        the scene will then highlight those tiles
+    when you click on a highlighted tile you enter the unitAction stage
+

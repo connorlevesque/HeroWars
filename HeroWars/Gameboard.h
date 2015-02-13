@@ -6,20 +6,19 @@
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#ifndef HeroWars_Gameboard_h
-#define HeroWars_Gameboard_h
-
-#endif
-#import "Map.h"
-
+#import "Axeman.h"
+#import "Tile.h"
 
 @interface Gameboard : NSObject
 
-@property (strong, nonatomic) Map *map;
-@property (strong, nonatomic) NSMutableArray *grid;
+@property (nonatomic) NSInteger width;
+@property (nonatomic) NSInteger height;
+@property (strong, nonatomic) NSMutableArray *tileGrid;
+@property (strong, nonatomic) NSMutableArray *unitGrid;
 
 
--(id)initWithMap:(Map *)map;
+
+-(id)initWithMapNamed:(NSString *)mapName;
 
 /*
  Tile Types:

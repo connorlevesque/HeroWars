@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		192D619E1A7D301A0057213D /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619D1A7D301A0057213D /* Map.m */; };
 		192D61A01A7D32A50057213D /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619F1A7D32A50057213D /* Tile.m */; };
 		192D61A21A7D382F0057213D /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = 192D61A11A7D382F0057213D /* Notes */; };
 		197703791A7D075B00E89CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703781A7D075B00E89CDE /* main.m */; };
@@ -22,11 +21,18 @@
 		197703A41A7D09A700E89CDE /* Gameboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703A31A7D09A700E89CDE /* Gameboard.m */; };
 		19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D35E6B1A84426600A99BC8 /* InputManager.m */; };
 		CD26AC321A87DB2F00A96EEB /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC311A87DB2F00A96EEB /* Button.m */; };
-		CD55AB3E1A848238003AD677 /* heroWars_tile_100_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3B1A848238003AD677 /* heroWars_tile_100_lightGreen.png */; };
-		CD55AB3F1A848238003AD677 /* heroWars_tile_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3C1A848238003AD677 /* heroWars_tile_100_white.png */; };
-		CD55AB401A848238003AD677 /* heroWars_tile_100_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55AB3D1A848238003AD677 /* heroWars_tile_100_darkGreen.png */; };
+		CD26AC351A87EA6600A96EEB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC341A87EA6600A96EEB /* Unit.m */; };
+		CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC371A87EC1500A96EEB /* Axeman.m */; };
 		CD55AB431A86A49C003AD677 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55AB421A86A49C003AD677 /* Menu.m */; };
 		CD55AB461A86A5BD003AD677 /* GeneralMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55AB451A86A5BD003AD677 /* GeneralMenu.m */; };
+		CDB97D611A8BA84E00B5ECFA /* Pather.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB97D601A8BA84E00B5ECFA /* Pather.m */; };
+		CDB97D651A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */; };
+		CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */; };
+		CDB97D671A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */; };
+		CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D691A8D145C00B5ECFA /* Campaign1.txt */; };
+		CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */; };
+		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blueX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */; };
+		CDB97D701A8D7FBA00B5ECFA /* HeroWars_redX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		192D619C1A7D301A0057213D /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
-		192D619D1A7D301A0057213D /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		192D619F1A7D32A50057213D /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		192D61A11A7D382F0057213D /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		197703731A7D075B00E89CDE /* HeroWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,13 +71,23 @@
 		19D35E6B1A84426600A99BC8 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 		CD26AC301A87DB2F00A96EEB /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		CD26AC311A87DB2F00A96EEB /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
-		CD55AB3B1A848238003AD677 /* heroWars_tile_100_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_lightGreen.png; path = ../../../Desktop/heroWars_tile_100_lightGreen.png; sourceTree = "<group>"; };
-		CD55AB3C1A848238003AD677 /* heroWars_tile_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_white.png; path = ../../../Desktop/heroWars_tile_100_white.png; sourceTree = "<group>"; };
-		CD55AB3D1A848238003AD677 /* heroWars_tile_100_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWars_tile_100_darkGreen.png; path = ../../../Desktop/heroWars_tile_100_darkGreen.png; sourceTree = "<group>"; };
+		CD26AC331A87EA6600A96EEB /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = ../Unit.h; sourceTree = "<group>"; };
+		CD26AC341A87EA6600A96EEB /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Unit.m; path = ../Unit.m; sourceTree = "<group>"; };
+		CD26AC361A87EC1500A96EEB /* Axeman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Axeman.h; sourceTree = "<group>"; };
+		CD26AC371A87EC1500A96EEB /* Axeman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axeman.m; sourceTree = "<group>"; };
 		CD55AB411A86A49C003AD677 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		CD55AB421A86A49C003AD677 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		CD55AB441A86A5BD003AD677 /* GeneralMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralMenu.h; sourceTree = "<group>"; };
 		CD55AB451A86A5BD003AD677 /* GeneralMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralMenu.m; sourceTree = "<group>"; };
+		CDB97D5F1A8BA84E00B5ECFA /* Pather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pather.h; path = ../Pather.h; sourceTree = "<group>"; };
+		CDB97D601A8BA84E00B5ECFA /* Pather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pather.m; path = ../Pather.m; sourceTree = "<group>"; };
+		CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_darkGreen.png; sourceTree = "<group>"; };
+		CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_white.png; sourceTree = "<group>"; };
+		CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_lightGreen.png; sourceTree = "<group>"; };
+		CDB97D691A8D145C00B5ECFA /* Campaign1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campaign1.txt; sourceTree = "<group>"; };
+		CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_transparentBlue.png; sourceTree = "<group>"; };
+		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_blueX.png; sourceTree = "<group>"; };
+		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_redX.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,25 +136,26 @@
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
 				19D35E6A1A84426600A99BC8 /* InputManager.h */,
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
-				CD26AC301A87DB2F00A96EEB /* Button.h */,
-				CD26AC311A87DB2F00A96EEB /* Button.m */,
+				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
+				CDB97D601A8BA84E00B5ECFA /* Pather.m */,
+				CD26AC331A87EA6600A96EEB /* Unit.h */,
+				CD26AC341A87EA6600A96EEB /* Unit.m */,
+				CD26AC361A87EC1500A96EEB /* Axeman.h */,
+				CD26AC371A87EC1500A96EEB /* Axeman.m */,
 				CD55AB411A86A49C003AD677 /* Menu.h */,
 				CD55AB421A86A49C003AD677 /* Menu.m */,
 				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
 				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
+				CD26AC301A87DB2F00A96EEB /* Button.h */,
+				CD26AC311A87DB2F00A96EEB /* Button.m */,
 				197703A11A7D087000E89CDE /* Tile.h */,
 				192D619F1A7D32A50057213D /* Tile.m */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
 				197703A31A7D09A700E89CDE /* Gameboard.m */,
-				192D619C1A7D301A0057213D /* Map.h */,
-				192D619D1A7D301A0057213D /* Map.m */,
 				197703801A7D075B00E89CDE /* GameScene.sks */,
 				197703821A7D075B00E89CDE /* GameViewController.h */,
 				197703831A7D075B00E89CDE /* GameViewController.m */,
 				197703851A7D075B00E89CDE /* Main.storyboard */,
-				CD55AB3B1A848238003AD677 /* heroWars_tile_100_lightGreen.png */,
-				CD55AB3C1A848238003AD677 /* heroWars_tile_100_white.png */,
-				CD55AB3D1A848238003AD677 /* heroWars_tile_100_darkGreen.png */,
 				197703881A7D075B00E89CDE /* Images.xcassets */,
 				1977038A1A7D075B00E89CDE /* LaunchScreen.xib */,
 				197703761A7D075B00E89CDE /* Supporting Files */,
@@ -151,6 +166,13 @@
 		197703761A7D075B00E89CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDB97D681A8D111100B5ECFA /* Levels */,
+				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
+				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
+				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
+				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */,
+				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */,
 				197703771A7D075B00E89CDE /* Info.plist */,
 				197703781A7D075B00E89CDE /* main.m */,
 			);
@@ -172,6 +194,14 @@
 				197703961A7D075C00E89CDE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDB97D681A8D111100B5ECFA /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D691A8D145C00B5ECFA /* Campaign1.txt */,
+			);
+			name = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,14 +284,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB97D651A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
-				CD55AB3F1A848238003AD677 /* heroWars_tile_100_white.png in Resources */,
-				CD55AB3E1A848238003AD677 /* heroWars_tile_100_lightGreen.png in Resources */,
-				CD55AB401A848238003AD677 /* heroWars_tile_100_darkGreen.png in Resources */,
+				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blueX.png in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
+				CDB97D701A8D7FBA00B5ECFA /* HeroWars_redX.png in Resources */,
+				CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
+				CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */,
 				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
+				CDB97D671A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png in Resources */,
+				CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				192D619E1A7D301A0057213D /* Map.m in Sources */,
+				CDB97D611A8BA84E00B5ECFA /* Pather.m in Sources */,
 				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
@@ -288,6 +322,8 @@
 				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
 				CD26AC321A87DB2F00A96EEB /* Button.m in Sources */,
 				192D61A01A7D32A50057213D /* Tile.m in Sources */,
+				CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */,
+				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
 				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);
