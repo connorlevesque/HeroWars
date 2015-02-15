@@ -33,8 +33,8 @@
         }else if ([touchType isEqualToString: @"tap"]) {
             // if unit
             if ([keyNode isKindOfClass:[Unit class]]) {
-                NSLog(@"Unit tapped");
                 self.selectedUnit = (Unit *)keyNode;
+                NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
                 [self setValue:@"unitMove" forKey:@"stage"];
             }
             //if tile
@@ -77,8 +77,8 @@
     }
 }
 
--(NSArray *)findTileCoordsToHighlight {
-    NSArray *tileCoords = [self.pather tileCoordsForUnit:self.selectedUnit andBoard:self.board];
+-(NSDictionary *)findTileCoordsToHighlight {
+    NSDictionary *tileCoords = [self.pather findPathsForUnit:self.selectedUnit andBoard:self.board];
     return tileCoords;
 }
 

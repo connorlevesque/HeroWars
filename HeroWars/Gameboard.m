@@ -21,8 +21,6 @@
     self = [super init];
     if (self) {
         [self makeGridsFromLevelName:levelName];
-        NSLog(@"%@", self.tileGrid);
-        NSLog(@"%@", self.unitGrid);
     }
     return self;
 }
@@ -35,12 +33,22 @@
 }
 
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y {
-    Tile *tile = self.tileGrid[y - 1][x - 1];
+    Tile *tile = [[Tile alloc]init];
+    if ((x < 1) || (x > self.width) || (y < 1) || (y > self.height)) {
+        tile = nil;
+    } else {
+        tile = self.tileGrid[y - 1][x - 1];
+    }
     return tile;
 }
 
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y {
-    Unit *unit = self.unitGrid[y - 1][x - 1];
+    Unit *unit = [[Unit alloc]init];
+    if ((x < 1) || (x > self.width) || (y < 1) || (y > self.height)) {
+        unit = nil;
+    } else {
+        unit = self.unitGrid[y - 1][x - 1];
+    }
     return unit;
 }
 

@@ -14,10 +14,14 @@
 
 @property (weak, nonatomic) Gameboard *board;
 @property (strong, nonatomic) Unit *unit;
-@property (strong, nonatomic) Tile *unitTile;
+@property (strong, nonatomic) Tile *originTile;
+@property (strong, nonatomic) Tile *currentTile;
 
 @property (strong, nonatomic) NSMutableArray *path;
 @property (strong, nonatomic) NSMutableDictionary *paths;
+@property (strong, nonatomic) NSMutableArray *moveRecords;
+
+@property (nonatomic) BOOL pathsFound;
 
 @property (nonatomic) NSInteger direction;
 /*
@@ -27,6 +31,7 @@
     West = 3
  */
 
--(NSMutableArray *)tileCoordsForUnit:(Unit *)unit andBoard:(Gameboard *)board;
+//-(NSMutableArray *)tileCoordsForUnit:(Unit *)unit andBoard:(Gameboard *)board;
+-(NSMutableDictionary *)findPathsForUnit:(Unit *)unit andBoard:(Gameboard *)board;
 
 @end

@@ -85,14 +85,13 @@ NSInteger CELL_SIZE = 51;
                 Unit *unit = self.board.unitGrid[r][c];
                 [unit removeFromParent];
                 [tile addChild:unit];
-                NSLog(@"unit added to scene on moved to tile");
             }
         }
     }
 }
 
 -(void)highlightTiles {
-    NSArray *tileCoords = [self.inputManager findTileCoordsToHighlight];
+    NSDictionary *tileCoords = [self.inputManager findTileCoordsToHighlight];
     for (NSArray *coordPair in tileCoords) {
         Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
         NSNumber *xNumb = coordPair[0];

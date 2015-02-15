@@ -32,7 +32,6 @@
  */
 
 @property (nonatomic) NSInteger moveCost;
-@property (nonatomic) NSInteger moveRecord;
 
 
 
