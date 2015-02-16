@@ -14,7 +14,6 @@
 @property (strong, nonatomic) NSString *type;
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
-@property (nonatomic) BOOL highlighted;
 
 -(id)initWithType:(NSString*)type;
 

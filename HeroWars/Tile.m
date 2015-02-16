@@ -19,7 +19,6 @@
         // set anchor point, color, type, texture according to type, and size according to texture
         [self setAnchorPoint:CGPointZero];
         self.type = type;
-        self.highlighted = NO;
         self.moveCost = 1;
         if ([_type isEqualToString:@"p"]) {
             self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_lightGreen"];
