@@ -17,7 +17,7 @@
 
 -(id)initWithBoard:(Gameboard *)board;
 -(void)receiveInputWithNodes:(NSArray *)touchedNodes andString: (NSString *)touchType;
--(NSArray *)findTileCoordsToHighlight;
+-(NSDictionary *)findTileCoordsToHighlight;
 -(BOOL)canDrag;
 
 @property (strong, nonatomic) NSString *stage;
