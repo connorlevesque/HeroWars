@@ -117,7 +117,7 @@
     if (self.currentTile != self.originTile) {
         [self addCoordPairToDictionary];
         [self.path removeLastObject];
-        self.movePoints = self.movePoints + targetTile.moveCost;
+        self.movePoints = self.movePoints + self.currentTile.moveCost;
         self.currentTile = targetTile;
         NSLog(@"walk back to %d,%d", targetTile.x, targetTile.y);
     }

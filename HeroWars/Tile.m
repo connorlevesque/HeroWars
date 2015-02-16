@@ -19,13 +19,15 @@
         // set anchor point, color, type, texture according to type, and size according to texture
         [self setAnchorPoint:CGPointZero];
         self.type = type;
-        self.moveCost = 1;
         if ([_type isEqualToString:@"p"]) {
             self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_lightGreen"];
+            self.moveCost = 1;
         } else if ([_type isEqualToString:@"f"]) {
             self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_darkGreen"];
+            self.moveCost = 2;
         } else {
             self.texture = [SKTexture textureWithImageNamed:@"heroWars_tile_51_white"];
+            NSLog(@"Error: initialized tile with unknown tile type");
         }
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
