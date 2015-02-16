@@ -17,8 +17,10 @@
 @property (strong, nonatomic) NSMutableArray *unitGrid;
 
 
-
 -(id)initWithMapNamed:(NSString *)mapName;
+-(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y;
+-(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
+-(void)moveUnit:(Unit *)unit toTile:(Tile *)tile;
 
 /*
  Tile Types:
@@ -32,6 +34,5 @@
  Production Buildings (pending)
  */
 
-// tile grid use [][] okey
 
 @end

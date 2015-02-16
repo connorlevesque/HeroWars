@@ -21,10 +21,27 @@
     self = [super init];
     if (self) {
         [self makeGridsFromLevelName:levelName];
-        //NSLog(@"%@", self.tileGrid);
-        //NSLog(@"%@", self.unitGrid);
     }
     return self;
+}
+
+-(void)moveUnit:(Unit *)unit toTile:(Tile *)tile {
+    self.unitGrid[unit.y - 1][unit.x - 1] = [NSNull null];
+    unit.x = tile.x;
+    unit.y = tile.y;
+    self.unitGrid[tile.y - 1][tile.x - 1] = unit;
+}
+
+-(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y {
+    Tile *tile = [[Tile alloc]init];
+    tile = self.tileGrid[y - 1][x - 1];
+    return tile;
+}
+
+-(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y {
+    Unit *unit = [[Unit alloc]init];
+    unit = self.unitGrid[y - 1][x - 1];
+    return unit;
 }
 
 -(Unit *)makeUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner {

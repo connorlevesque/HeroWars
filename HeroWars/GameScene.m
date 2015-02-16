@@ -15,11 +15,10 @@ NSInteger CELL_SIZE = 51;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
-    self.inputManager = [[InputManager alloc]init];
-    _board = [[Gameboard alloc]initWithMapNamed:@"Campaign1"];
+    self.board = [[Gameboard alloc]initWithMapNamed:@"Campaign1"];
+    self.inputManager = [[InputManager alloc]initWithBoard:self.board];
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
-    //self.world.frame.size = CGSizeMake(self.board.map.width * CELL_SIZE, self.board.map.height * CELL_SIZE);
     [self addChild:self.world];
     [self drawGrids];
     self.touchState = 0;
@@ -28,15 +27,11 @@ NSInteger CELL_SIZE = 51;
     
     self.generalMenu = [[GeneralMenu alloc]init];
     self.generalMenu.position = CGPointMake(100, 100);
+    self.highlightedTiles = [[NSMutableArray alloc]init];
     
     // make scene observer of inputManager
 
     [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    
-    self.inputManager.pather = [[Pather alloc]initWithBoard:self.board];
-    
-//    NSArray *a = @[@"a", @"b", @"c", @"d"];
-//    NSLog(@"%@", a[a.count-1]);
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -62,13 +57,62 @@ NSInteger CELL_SIZE = 51;
     }
     // if stage is changing from battle to unitMove
     else if ([oldStage isEqualToString:@"battle"] & [newStage isEqualToString:@"unitMove"]) {
-        for (Tile *tile in self.inputManager.pather.toBeHighlighted) {
-            Highlight *highlight = [[Highlight alloc]init];
-            [tile addChild:highlight];
+        [self highlightTiles];
+    }
+    // if stage is changing from unitMove to battle
+    else if ([oldStage isEqualToString:@"unitMove"] & [newStage isEqualToString:@"battle"]) {
+        [self unHighlightTiles];
+    }
+    // if stage is changing from unitMove to unitAction
+    else if ([oldStage isEqualToString:@"unitMove"] & [newStage isEqualToString:@"unitAction"]) {
+        [self unHighlightTiles];
+        [self updateUnitPositions];
+    }
+    // if stage is changing from unitAction to unitMove
+    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"battle"]) {
+        //[self unHighlightTiles];
+    }
+}
+
+-(void)updateUnitPositions {
+    // updates unit positions
+    for (int r = 0; r < self.board.height; r++) {
+        for (int c = 0; c < self.board.width; c++) {
+            Tile *tile = self.board.tileGrid[r][c];
+            [tile removeAllChildren];
+            id unitMaybe = self.board.unitGrid[r][c];
+            if (!(unitMaybe == (id)[NSNull null])) {
+                Unit *unit = self.board.unitGrid[r][c];
+                [unit removeFromParent];
+                [tile addChild:unit];
+            }
         }
     }
 }
 
+-(void)highlightTiles {
+    NSDictionary *paths = [self.inputManager findTileCoordsToHighlight];
+    for (NSString *coordString in paths.allKeys) {
+        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
+        NSArray *coordArray = [coordString componentsSeparatedByString:@","];
+        NSInteger x = [coordArray[0] integerValue];
+        NSInteger y = [coordArray[1] integerValue];
+        Tile *tile = [self.board tileAtX:x andY:y];
+        [self.highlightedTiles addObject:tile];
+        [tile addChild:highlight];
+    }
+}
+
+-(void)unHighlightTiles {
+    for (Tile *tile in self.highlightedTiles) {
+        for (SKSpriteNode *child in tile.children) {
+            if ([child isKindOfClass:[Highlight class]]) {
+                [child removeFromParent];
+            }
+        }
+    }
+    [self.highlightedTiles removeAllObjects];
+}
 
 -(void)drawGrids {
     // draws the grids of tiles and units
