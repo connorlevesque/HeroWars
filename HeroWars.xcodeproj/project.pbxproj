@@ -33,6 +33,7 @@
 		CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */; };
 		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blueX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */; };
 		CDB97D701A8D7FBA00B5ECFA /* HeroWars_redX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */; };
+		CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB97D721A8E60B200B5ECFA /* Highlight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_transparentBlue.png; sourceTree = "<group>"; };
 		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_blueX.png; sourceTree = "<group>"; };
 		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_redX.png; sourceTree = "<group>"; };
+		CDB97D711A8E60B200B5ECFA /* Highlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highlight.h; sourceTree = "<group>"; };
+		CDB97D721A8E60B200B5ECFA /* Highlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highlight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,23 +141,25 @@
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
 				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
 				CDB97D601A8BA84E00B5ECFA /* Pather.m */,
+				197703A21A7D08E900E89CDE /* Gameboard.h */,
+				197703A31A7D09A700E89CDE /* Gameboard.m */,
 				CD26AC331A87EA6600A96EEB /* Unit.h */,
 				CD26AC341A87EA6600A96EEB /* Unit.m */,
 				CD26AC361A87EC1500A96EEB /* Axeman.h */,
 				CD26AC371A87EC1500A96EEB /* Axeman.m */,
+				197703A11A7D087000E89CDE /* Tile.h */,
+				192D619F1A7D32A50057213D /* Tile.m */,
+				CDB97D711A8E60B200B5ECFA /* Highlight.h */,
+				CDB97D721A8E60B200B5ECFA /* Highlight.m */,
 				CD55AB411A86A49C003AD677 /* Menu.h */,
 				CD55AB421A86A49C003AD677 /* Menu.m */,
 				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
 				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
 				CD26AC301A87DB2F00A96EEB /* Button.h */,
 				CD26AC311A87DB2F00A96EEB /* Button.m */,
-				197703A11A7D087000E89CDE /* Tile.h */,
-				192D619F1A7D32A50057213D /* Tile.m */,
-				197703A21A7D08E900E89CDE /* Gameboard.h */,
-				197703A31A7D09A700E89CDE /* Gameboard.m */,
-				197703801A7D075B00E89CDE /* GameScene.sks */,
 				197703821A7D075B00E89CDE /* GameViewController.h */,
 				197703831A7D075B00E89CDE /* GameViewController.m */,
+				197703801A7D075B00E89CDE /* GameScene.sks */,
 				197703851A7D075B00E89CDE /* Main.storyboard */,
 				197703881A7D075B00E89CDE /* Images.xcassets */,
 				1977038A1A7D075B00E89CDE /* LaunchScreen.xib */,
@@ -325,6 +330,7 @@
 				CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */,
 				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
+				CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */,
 				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

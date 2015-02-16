@@ -29,5 +29,6 @@
  */
 
 @property (strong, nonatomic) GeneralMenu *generalMenu;
+@property (strong, nonatomic) NSMutableArray *highlightedTiles;
 
 @end
