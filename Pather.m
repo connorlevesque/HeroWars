@@ -26,7 +26,7 @@
     self.lastCount = -1;
     self.pathsArray = [[NSMutableArray alloc]init];
     self.currentPath = [[NSMutableArray alloc]initWithObjects:self.board.tileGrid[self.y][self.x], nil];
-    self.toBeHighlighted = [[NSMutableSet alloc]initWithObjects:self.board.tileGrid[self.y][self.x], nil];
+    //self.toBeHighlighted = [[NSMutableSet alloc]initWithObjects:self.board.tileGrid[self.y - 1][self.x - 1], nil];
     [self path];
     //NSLog(@"%@", self.pathsArray);
 }

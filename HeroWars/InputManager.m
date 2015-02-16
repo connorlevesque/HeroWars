@@ -36,7 +36,7 @@
                 Unit *unit = keyNode;
                 
                 [self.pather loadWithUnit:unit];
-                NSLog(@"%@", self.pather.toBeHighlighted);
+                //NSLog(@"%@", self.pather.toBeHighlighted);
             }
             //if tile
             else if ([keyNode isKindOfClass:[Tile class]]) {

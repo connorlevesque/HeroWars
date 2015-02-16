@@ -10,6 +10,7 @@
 #import "Gameboard.h"
 #import "InputManager.h"
 #import "GeneralMenu.h"
+#import "Highlight.h"
 
 @interface GameScene : SKScene
 

@@ -19,6 +19,7 @@
 		1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1977038A1A7D075B00E89CDE /* LaunchScreen.xib */; };
 		197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703971A7D075C00E89CDE /* HeroWarsTests.m */; };
 		197703A41A7D09A700E89CDE /* Gameboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703A31A7D09A700E89CDE /* Gameboard.m */; };
+		199C8EC01A8E9D6100502AFA /* Highlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 199C8EBF1A8E9D6100502AFA /* Highlight.m */; };
 		19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D35E6B1A84426600A99BC8 /* InputManager.m */; };
 		CD26AC321A87DB2F00A96EEB /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC311A87DB2F00A96EEB /* Button.m */; };
 		CD26AC351A87EA6600A96EEB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC341A87EA6600A96EEB /* Unit.m */; };
@@ -67,6 +68,8 @@
 		197703A11A7D087000E89CDE /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
 		197703A21A7D08E900E89CDE /* Gameboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gameboard.h; sourceTree = "<group>"; };
 		197703A31A7D09A700E89CDE /* Gameboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameboard.m; sourceTree = "<group>"; };
+		199C8EBE1A8E9D6100502AFA /* Highlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highlight.h; sourceTree = "<group>"; };
+		199C8EBF1A8E9D6100502AFA /* Highlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highlight.m; sourceTree = "<group>"; };
 		19D35E6A1A84426600A99BC8 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
 		19D35E6B1A84426600A99BC8 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 		CD26AC301A87DB2F00A96EEB /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				1977037B1A7D075B00E89CDE /* AppDelegate.m */,
 				1977037D1A7D075B00E89CDE /* GameScene.h */,
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
+				199C8EBE1A8E9D6100502AFA /* Highlight.h */,
+				199C8EBF1A8E9D6100502AFA /* Highlight.m */,
 				19D35E6A1A84426600A99BC8 /* InputManager.h */,
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
 				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
@@ -325,6 +330,7 @@
 				CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */,
 				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
+				199C8EC01A8E9D6100502AFA /* Highlight.m in Sources */,
 				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

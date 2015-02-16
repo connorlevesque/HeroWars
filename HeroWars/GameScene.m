@@ -60,6 +60,13 @@ NSInteger CELL_SIZE = 51;
     else if ([oldStage isEqualToString:@"generalMenu"] & [newStage isEqualToString:@"battle"]) {
         [self.generalMenu removeFromParent];
     }
+    // if stage is changing from battle to unitMove
+    else if ([oldStage isEqualToString:@"battle"] & [newStage isEqualToString:@"unitMove"]) {
+        for (Tile *tile in self.inputManager.pather.toBeHighlighted) {
+            Highlight *highlight = [[Highlight alloc]init];
+            [tile addChild:highlight];
+        }
+    }
 }
 
 
