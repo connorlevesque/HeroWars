@@ -42,13 +42,13 @@
 -(NSMutableDictionary *)findPathsForUnit:(Unit *)unit andBoard:(Gameboard *)board {
     self.movePoints = unit.move;
     self.board = board;
+    self.unitOwner = unit.owner;
     self.originTile = [self.board tileAtX:unit.x andY:unit.y];
     self.currentTile = self.originTile;
     self.pathsFound = NO;
     [self.path removeAllObjects];
     [self.paths removeAllObjects];
     [self resetMoveRecords];
-    NSLog(@"COMMENCE THE WALKING!!!");
     [self walkInDirection:0];
     [self walkInDirection:2];
     return self.paths;
@@ -84,17 +84,14 @@
         //Back = 3
     for (NSInteger turn = 0; turn < 4; turn++) {
         //set function variables
-        NSLog(@"on %d,%d turn %d", self.currentTile.x, self.currentTile.y, turn);
         NSInteger newDirection = [self findNewDirectionFromTurn:turn withOldDirection:oldDirection];
         //if the tile exists
         id targetTileMaybe = [self findTileInDirection:newDirection];
         if (targetTileMaybe != (id)[NSNull null]) {
             Tile *targetTile = (Tile *)targetTileMaybe;
             //if you aren't moving back
-            NSLog(@"1");
             if (turn < 3) {
                 if ([self canMoveToTile:targetTile]) {
-                    NSLog(@"10");
                     [self moveForwardToTile:targetTile];
                     [self.path addObject:[NSNumber numberWithInteger:newDirection]];
                     [self walkInDirection:newDirection];
@@ -110,7 +107,6 @@
     self.movePoints = self.movePoints - targetTile.moveCost;
     [self setMoveRecordAtX:targetTile.x andY:targetTile.y To:self.movePoints];
     self.currentTile = targetTile;
-    NSLog(@"walk to %d,%d", targetTile.x, targetTile.y);
 }
 
 -(void)moveBackToTile:(Tile *)targetTile {
@@ -119,36 +115,41 @@
         [self.path removeLastObject];
         self.movePoints = self.movePoints + self.currentTile.moveCost;
         self.currentTile = targetTile;
-        NSLog(@"walk back to %d,%d", targetTile.x, targetTile.y);
+    } else {
+        [self addCoordPairToDictionary];
+        [self.path removeLastObject];
     }
 }
 
 -(void)addCoordPairToDictionary {
     NSString *coordString = [NSString stringWithFormat:@"%d,%d", self.currentTile.x, self.currentTile.y];
-//    NSString *relevantKey = coordString;
-//    for (NSString *key in self.paths) {
-//        if ([key isEqualToString:coordString]) {
-//            relevantKey = key;
-//        }
-//    }
     [self.paths setObject:self.path forKey:coordString];
-    NSLog(@"add path %@ for tile at %@", self.path, coordString);
 }
 
 -(BOOL)canMoveToTile:(Tile *)targetTile {
-    //returns true if the unit has more movepoints than the tile's moveCost and more movepoints than it had last time the tile was visited, else returns false
+    //returns true if the unit can move to the target Tile
+    // if there is enough movepoints
     if (self.movePoints >= targetTile.moveCost) {
-        NSLog(@"2");
+        // if there is a unit on the tile
+        id targetUnitMaybe = [self.board unitAtX:targetTile.x andY:targetTile.y];
+        if (targetUnitMaybe != (id)[NSNull null]) {
+            Unit *targetUnit = (Unit *)targetUnitMaybe;
+            // if it is an enemy unit
+            if (targetUnit.owner != self.unitOwner) {
+                return NO;
+            }
+        }
+        // if there is a move record
         if (self.moveRecords[targetTile.y - 1][targetTile.x - 1] != (id)[NSNull null]) {
-            NSLog(@"3");
             NSInteger targetMoveRecord = [self.moveRecords[targetTile.y - 1][targetTile.x - 1] integerValue];
-            NSLog(@"4");
+            // if you can set a better moverecord
             if ((self.movePoints - targetTile.moveCost) > targetMoveRecord) {
                 return YES;
             } else {
                 return NO;
             }
         } else {
+        // if there's no a move record
             return YES;
         }
     } else {
@@ -186,7 +187,6 @@
     }
     if ((tile.x >= 1) & (tile.x <= self.board.width) & (tile.y >= 1) & (tile.y <= self.board.height)) {
         tile = [self.board tileAtX:tile.x andY:tile.y];
-        NSLog(@"5");
         return tile;
     } else {
         return (Tile *)[NSNull null];

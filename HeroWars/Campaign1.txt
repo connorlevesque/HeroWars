@@ -5,11 +5,11 @@ Campaign1
 :
 
 p, p, p, p, p, p, p, p, p, p, p, p /
-p, p-1-x, p, p, p, p, p, p, p, p, p, p /
+p, p-1-x, p, p, p, p, p-1-x, p, p, p, p, p /
 p, f, p, p, p, p, p, p, p, f, p, p /
-p, p, f, p, p, p, p, p, p, p, p, p /
+p, p, f, p, p-1-x, p, p, p, p, p, p, p /
 p, p, p, f, p, p, f, p, p, f, p, p /
-p, p, p, p, p, p, p, p, p, p, p, p /
+p, p, p, p, p, p, p-2-x, p, p, p, p-2-x, p /
 p, p, p, p, p, p, p, p, p, p, p, f
 
 :

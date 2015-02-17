@@ -10,4 +10,6 @@
 
 @interface Button : SKSpriteNode
 
+- (id)initWithName:(NSString *)name;
+
 @end
