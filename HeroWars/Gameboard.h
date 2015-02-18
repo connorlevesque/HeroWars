@@ -16,11 +16,17 @@
 @property (strong, nonatomic) NSMutableArray *tileGrid;
 @property (strong, nonatomic) NSMutableArray *unitGrid;
 
+@property (nonatomic) NSInteger currentPlayer;
+@property (nonatomic) NSInteger day;
+
+@property (strong, nonatomic) NSMutableArray *lastMoveInfo;
+// @[x1,y1,x2,y2]
 
 -(id)initWithMapNamed:(NSString *)mapName;
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y;
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile;
+-(Unit *)undoMoveUnit;
 
 /*
  Tile Types:

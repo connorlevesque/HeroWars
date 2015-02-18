@@ -16,13 +16,14 @@
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
+        self.type = @"axeman";
         self.move = 4;
         if (self.owner == 1) {
-            self.texture = [SKTexture textureWithImageNamed:@"HeroWars_blueX"];
+            self.texture = [SKTexture textureWithImageNamed:@"HeroWars_blue_axeman"];
         } else if (self.owner == 2) {
-            self.texture = [SKTexture textureWithImageNamed:@"HeroWars_redX"];
+            self.texture = [SKTexture textureWithImageNamed:@"HeroWars_red_axeman"];
         } else {
-            NSLog(@"Error: invalid owner integer for Axeman unit");
+            NSLog(@"Error: invalid owner integer for Axeman unit %@", self);
         }
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];

@@ -31,9 +31,16 @@
 		CDB97D671A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */; };
 		CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D691A8D145C00B5ECFA /* Campaign1.txt */; };
 		CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */; };
-		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blueX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */; };
-		CDB97D701A8D7FBA00B5ECFA /* HeroWars_redX.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */; };
+		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */; };
+		CDB97D701A8D7FBA00B5ECFA /* HeroWars_red_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */; };
 		CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB97D721A8E60B200B5ECFA /* Highlight.m */; };
+		CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */; };
+		CDBE25271A92AE01001312C0 /* HeroWars_button_end.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */; };
+		CDBE25281A92AE01001312C0 /* HeroWars_button_options.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */; };
+		CDBE25291A92AE01001312C0 /* HeroWars_button_wait.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */; };
+		CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */; };
+		CDBE252B1A92AE01001312C0 /* HeroWars_gray_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */; };
+		CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE252E1A92B1BA001312C0 /* ActionMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,10 +94,18 @@
 		CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_lightGreen.png; sourceTree = "<group>"; };
 		CDB97D691A8D145C00B5ECFA /* Campaign1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campaign1.txt; sourceTree = "<group>"; };
 		CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_transparentBlue.png; sourceTree = "<group>"; };
-		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_blueX.png; sourceTree = "<group>"; };
-		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_redX.png; sourceTree = "<group>"; };
+		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_blue_axeman.png; sourceTree = "<group>"; };
+		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_red_axeman.png; sourceTree = "<group>"; };
 		CDB97D711A8E60B200B5ECFA /* Highlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highlight.h; sourceTree = "<group>"; };
 		CDB97D721A8E60B200B5ECFA /* Highlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highlight.m; sourceTree = "<group>"; };
+		CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_attack.png; sourceTree = "<group>"; };
+		CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_end.png; sourceTree = "<group>"; };
+		CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_options.png; sourceTree = "<group>"; };
+		CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_wait.png; sourceTree = "<group>"; };
+		CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_generalMenu1.png; sourceTree = "<group>"; };
+		CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_gray_axeman.png; sourceTree = "<group>"; };
+		CDBE252D1A92B1BA001312C0 /* ActionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMenu.h; sourceTree = "<group>"; };
+		CDBE252E1A92B1BA001312C0 /* ActionMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +168,8 @@
 				CDB97D721A8E60B200B5ECFA /* Highlight.m */,
 				CD55AB411A86A49C003AD677 /* Menu.h */,
 				CD55AB421A86A49C003AD677 /* Menu.m */,
+				CDBE252D1A92B1BA001312C0 /* ActionMenu.h */,
+				CDBE252E1A92B1BA001312C0 /* ActionMenu.m */,
 				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
 				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
 				CD26AC301A87DB2F00A96EEB /* Button.h */,
@@ -171,13 +188,9 @@
 		197703761A7D075B00E89CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */,
+				CDBE252C1A92AE0E001312C0 /* Images */,
 				CDB97D681A8D111100B5ECFA /* Levels */,
-				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
-				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
-				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
-				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
-				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blueX.png */,
-				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_redX.png */,
 				197703771A7D075B00E89CDE /* Info.plist */,
 				197703781A7D075B00E89CDE /* main.m */,
 			);
@@ -207,6 +220,24 @@
 				CDB97D691A8D145C00B5ECFA /* Campaign1.txt */,
 			);
 			name = Levels;
+			sourceTree = "<group>";
+		};
+		CDBE252C1A92AE0E001312C0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */,
+				CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */,
+				CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */,
+				CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */,
+				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
+				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
+				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
+				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
+				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
+				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
+				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +322,16 @@
 			files = (
 				CDB97D651A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
+				CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
-				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blueX.png in Resources */,
+				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
+				CDBE25271A92AE01001312C0 /* HeroWars_button_end.png in Resources */,
+				CDBE25291A92AE01001312C0 /* HeroWars_button_wait.png in Resources */,
+				CDBE25281A92AE01001312C0 /* HeroWars_button_options.png in Resources */,
+				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png in Resources */,
+				CDBE252B1A92AE01001312C0 /* HeroWars_gray_axeman.png in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
-				CDB97D701A8D7FBA00B5ECFA /* HeroWars_redX.png in Resources */,
+				CDB97D701A8D7FBA00B5ECFA /* HeroWars_red_axeman.png in Resources */,
 				CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
 				CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */,
@@ -330,6 +367,7 @@
 				CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */,
 				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
+				CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */,
 				CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */,
 				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);

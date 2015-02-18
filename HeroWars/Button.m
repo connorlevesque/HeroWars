@@ -10,4 +10,17 @@
 
 @implementation Button
 
+- (id)initWithName:(NSString *)name {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_button_%@",name];
+        self.texture = [SKTexture textureWithImageNamed:imageName];
+        self.size = self.texture.size;
+        self.color = [UIColor whiteColor];
+    }
+    return self;
+}
+
+
 @end
