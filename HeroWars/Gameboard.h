@@ -16,7 +16,9 @@
 @property (strong, nonatomic) NSMutableArray *tileGrid;
 @property (strong, nonatomic) NSMutableArray *unitGrid;
 
+@property (nonatomic) NSInteger players;
 @property (nonatomic) NSInteger currentPlayer;
+//1-n^
 @property (nonatomic) NSInteger day;
 
 @property (strong, nonatomic) NSMutableArray *lastMoveInfo;

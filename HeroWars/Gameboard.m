@@ -23,6 +23,7 @@
         self.currentPlayer = 1;
         self.day = 1;
         self.lastMoveInfo = [[NSMutableArray alloc]init];
+        self.players = 2;
     }
     return self;
 }

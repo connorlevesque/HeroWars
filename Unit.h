@@ -20,7 +20,9 @@
 @property (strong, nonatomic) NSString *type;
 @property (nonatomic) NSInteger move;
 
--(void)changeState;
+-(void)changeStateTo:(NSString *)state;
+
+-(void)refreshTexture;
 
 @end
 
