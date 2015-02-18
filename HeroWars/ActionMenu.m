@@ -1,14 +1,14 @@
 //
-//  GeneralMenu.m
+//  ActionMenu.m
 //  HeroWars
 //
-//  Created by Connor Levesque on 2/7/15.
+//  Created by Connor Levesque on 2/16/15.
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#import "GeneralMenu.h"
+#import "ActionMenu.h"
 
-@implementation GeneralMenu
+@implementation ActionMenu
 
 -(id)init {
     self = [super init];
@@ -19,7 +19,7 @@
         self.color = [UIColor whiteColor];
         self.anchorPoint = CGPointZero;
         //create buttons
-        self.buttons = @[@"options",@"end"];
+        self.buttons = @[@"wait"];
         for (int i = 0; i < [self.buttons count]; i++) {
             NSString *buttonName = self.buttons[i];
             Button *button = [[Button alloc]initWithName:buttonName];

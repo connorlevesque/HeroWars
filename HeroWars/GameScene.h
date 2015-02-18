@@ -10,6 +10,7 @@
 #import "Gameboard.h"
 #import "InputManager.h"
 #import "GeneralMenu.h"
+#import "ActionMenu.h"
 
 @interface GameScene : SKScene
 
@@ -29,6 +30,7 @@
  */
 
 @property (strong, nonatomic) GeneralMenu *generalMenu;
+@property (strong, nonatomic) ActionMenu *actionMenu;
 @property (strong, nonatomic) NSMutableArray *highlightedTiles;
 
 @end

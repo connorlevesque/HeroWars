@@ -16,20 +16,41 @@
 
 @implementation Gameboard
 
-
 -(id)initWithMapNamed:(NSString *)levelName {
     self = [super init];
     if (self) {
         [self makeGridsFromLevelName:levelName];
+        self.currentPlayer = 1;
+        self.day = 1;
+        self.lastMoveInfo = [[NSMutableArray alloc]init];
     }
     return self;
 }
 
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile {
+    [self.lastMoveInfo removeAllObjects];
+    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:unit.x]];
+    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:unit.y]];
+    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:tile.x]];
+    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:tile.y]];
     self.unitGrid[unit.y - 1][unit.x - 1] = [NSNull null];
     unit.x = tile.x;
     unit.y = tile.y;
     self.unitGrid[tile.y - 1][tile.x - 1] = unit;
+}
+
+-(Unit *)undoMoveUnit {
+    NSInteger x1 = [self.lastMoveInfo[0] integerValue];
+    NSInteger y1 = [self.lastMoveInfo[1] integerValue];
+    NSInteger x2 = [self.lastMoveInfo[2] integerValue];
+    NSInteger y2 = [self.lastMoveInfo[3] integerValue];
+    Unit *unit = [self unitAtX:x2 andY:y2];
+    self.unitGrid[y1 - 1][x1 - 1] = unit;
+    unit.x = x1;
+    unit.y = y1;
+    self.unitGrid[y2 - 1][x2 - 1] = [NSNull null];
+    NSLog(@"gameboard says unit moved back to (%d,%d)",x1,y1);
+    return unit;
 }
 
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y {

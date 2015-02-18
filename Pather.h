@@ -13,10 +13,11 @@
 @interface Pather : NSObject
 
 @property (weak, nonatomic) Gameboard *board;
-//@property (strong, nonatomic) Unit *unit;
 @property (strong, nonatomic) Tile *originTile;
 @property (strong, nonatomic) Tile *currentTile;
+
 @property (nonatomic) NSInteger movePoints;
+@property (nonatomic) NSInteger unitOwner;
 
 @property (strong, nonatomic) NSMutableArray *path;
 @property (strong, nonatomic) NSMutableDictionary *paths;

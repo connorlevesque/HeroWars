@@ -14,7 +14,13 @@
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
 
-@property (nonatomic) NSInteger move;
 @property (nonatomic) NSInteger owner;
+@property (strong, nonatomic) NSString *state;
+
+@property (strong, nonatomic) NSString *type;
+@property (nonatomic) NSInteger move;
+
+-(void)changeState;
 
 @end
+

@@ -26,7 +26,7 @@ NSInteger CELL_SIZE = 51;
     // initialize menus
     
     self.generalMenu = [[GeneralMenu alloc]init];
-    self.generalMenu.position = CGPointMake(100, 100);
+    self.generalMenu.position = CGPointMake(25, 50);
     self.highlightedTiles = [[NSMutableArray alloc]init];
     
     // make scene observer of inputManager
@@ -67,11 +67,24 @@ NSInteger CELL_SIZE = 51;
     else if ([oldStage isEqualToString:@"unitMove"] & [newStage isEqualToString:@"unitAction"]) {
         [self unHighlightTiles];
         [self updateUnitPositions];
+        [self setUpActionMenu];
     }
     // if stage is changing from unitAction to unitMove
-    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"battle"]) {
-        //[self unHighlightTiles];
+    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"unitMove"]) {
+        [self.actionMenu removeFromParent];
+        [self updateUnitPositions];
+        [self highlightTiles];
     }
+    //if stage is changing from unitAction to battle
+    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"battle"]) {
+        [self.actionMenu removeFromParent];
+    }
+}
+
+-(void)setUpActionMenu {
+    self.actionMenu = [[ActionMenu alloc]init];
+    self.actionMenu.position = CGPointMake(25, 50);
+    [self addChild:self.actionMenu];
 }
 
 -(void)updateUnitPositions {
