@@ -62,7 +62,7 @@
         if ([keyNode isKindOfClass:[Unit class]]) {
             Unit *thisUnit = (Unit *)keyNode;
             //if clicking selected unit again (i.e. no move)
-            if((thisUnit.x == self.selectedUnit.x) & (thisUnit.y == self.selectedUnit.y)) {
+            if((thisUnit.x == self.selectedUnit.x) && (thisUnit.y == self.selectedUnit.y)) {
                 [self setValue:@"unitAction" forKey:@"stage"];
                 [self setValue:@"battle" forKey:@"stage"];
             }

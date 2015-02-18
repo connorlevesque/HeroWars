@@ -185,7 +185,7 @@
             NSLog(@"Error: cannot find tile in non-cardinal direction");
             break;
     }
-    if ((tile.x >= 1) & (tile.x <= self.board.width) & (tile.y >= 1) & (tile.y <= self.board.height)) {
+    if ((tile.x >= 1) && (tile.x <= self.board.width) && (tile.y >= 1) && (tile.y <= self.board.height)) {
         tile = [self.board tileAtX:tile.x andY:tile.y];
         return tile;
     } else {
