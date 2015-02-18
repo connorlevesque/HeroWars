@@ -51,7 +51,8 @@
     // if generalMenu stage
     else if ([self.stage isEqualToString:@"generalMenu"]) {
         if ([keyNode isKindOfClass:[Button class]] || [keyNode isKindOfClass:[GeneralMenu class]]){
-            NSLog(@"menu stuff");
+            Button *button = (Button *)keyNode;
+            NSLog(@"%@ button pressed", button.name);
         } else {
             [self setValue:@"battle" forKey:@"stage"];
         }
@@ -83,6 +84,7 @@
         // if button
         if ([keyNode isKindOfClass:[Button class]]) {
             Button *button = (Button *)keyNode;
+            NSLog(@"%@ button pressed", button.name);
             // if wait
             if ([button.name isEqualToString:@"wait"]) {
                 [self.selectedUnit changeState];
