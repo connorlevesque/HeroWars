@@ -33,9 +33,12 @@
         }else if ([touchType isEqualToString: @"tap"]) {
             // if unit
             if ([keyNode isKindOfClass:[Unit class]]) {
-                self.selectedUnit = (Unit *)keyNode;
-                NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
-                [self setValue:@"unitMove" forKey:@"stage"];
+                Unit *unit = (Unit *)keyNode;
+                if ([unit.state isEqualToString:@"awake"]) {
+                    self.selectedUnit = (Unit *)keyNode;
+                    NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
+                    [self setValue:@"unitMove" forKey:@"stage"];
+                }
             }
             //if tile
             else if ([keyNode isKindOfClass:[Tile class]]) {
