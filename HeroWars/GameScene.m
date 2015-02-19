@@ -48,35 +48,35 @@ NSInteger CELL_SIZE = 51;
     //edit visuals based on the old stage and the new stage
     NSLog(@"Stage has changed from %@ to %@", oldStage, newStage);
     // if stage is changing from battle to generalMenu
-    if ([oldStage isEqualToString:@"battle"] & [newStage isEqualToString:@"generalMenu"]) {
+    if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"generalMenu"]) {
         [self addChild:self.generalMenu];
     }
     // if stage is changing from generalMenu to battle
-    else if ([oldStage isEqualToString:@"generalMenu"] & [newStage isEqualToString:@"battle"]) {
+    else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
         [self.generalMenu removeFromParent];
     }
     // if stage is changing from battle to unitMove
-    else if ([oldStage isEqualToString:@"battle"] & [newStage isEqualToString:@"unitMove"]) {
+    else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
         [self highlightTiles];
     }
     // if stage is changing from unitMove to battle
-    else if ([oldStage isEqualToString:@"unitMove"] & [newStage isEqualToString:@"battle"]) {
+    else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
         [self unHighlightTiles];
     }
     // if stage is changing from unitMove to unitAction
-    else if ([oldStage isEqualToString:@"unitMove"] & [newStage isEqualToString:@"unitAction"]) {
+    else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
         [self unHighlightTiles];
         [self updateUnitPositions];
         [self setUpActionMenu];
     }
     // if stage is changing from unitAction to unitMove
-    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"unitMove"]) {
+    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
         [self.actionMenu removeFromParent];
         [self updateUnitPositions];
         [self highlightTiles];
     }
     //if stage is changing from unitAction to battle
-    else if ([oldStage isEqualToString:@"unitAction"] & [newStage isEqualToString:@"battle"]) {
+    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
         [self.actionMenu removeFromParent];
     }
     //if stage is changing from turnEnded to battle
@@ -159,7 +159,7 @@ NSInteger CELL_SIZE = 51;
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     // if there is no touch or dragging is already occuring, and if we canDrag
-    if ((self.touchState < 2) & [self.inputManager canDrag]){
+    if ((self.touchState < 2) && [self.inputManager canDrag]){
         //reord that a drag is occuring
         self.touchState = 1;
         // make the transformation vector and adjust the scene accordingly
@@ -211,22 +211,22 @@ NSInteger CELL_SIZE = 51;
     float minY = self.frame.size.height - self.board.height * CELL_SIZE;
     
     //if we dont wanna drag left anymore
-    if ((self.world.position.x <= minX) & (dragPoint.x < 0)) {
+    if ((self.world.position.x <= minX) && (dragPoint.x < 0)) {
         dragPoint.x = 0;
         self.world.position = CGPointMake(minX, self.world.position.y);
     }
     //if we dont wanna drag right anymore
-    if ((self.world.position.x >= 0) & (dragPoint.x > 0)) {
+    if ((self.world.position.x >= 0) && (dragPoint.x > 0)) {
         dragPoint.x = 0;
         self.world.position = CGPointMake(0, self.world.position.y);
     }
     //if we dont wanna drag up anymore
-    if ((self.world.position.y >= 0) & (dragPoint.y > 0)) {
+    if ((self.world.position.y >= 0) && (dragPoint.y > 0)) {
         dragPoint.y = 0;
         self.world.position = CGPointMake(self.world.position.x, 0);
     }
     //if we dont wanna drag down anymore
-    if ((self.world.position.y <= minY) & (dragPoint.y < 0)) {
+    if ((self.world.position.y <= minY) && (dragPoint.y < 0)) {
         dragPoint.y = 0;
         self.world.position = CGPointMake(self.world.position.x, minY);
     }
