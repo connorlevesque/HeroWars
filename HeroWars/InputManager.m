@@ -36,8 +36,12 @@
                 Unit *unit = (Unit *)keyNode;
                 if ([unit.state isEqualToString:@"awake"]) {
                     self.selectedUnit = (Unit *)keyNode;
-                    NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
+                    //NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
+                    if (unit.owner == self.board.currentPlayer) {
                     [self setValue:@"unitMove" forKey:@"stage"];
+                    } else {
+                        NSLog(@"no no no, NOT YOUR TURN!");
+                    }
                 }
             }
             //if tile
@@ -51,7 +55,12 @@
     // if generalMenu stage
     else if ([self.stage isEqualToString:@"generalMenu"]) {
         if ([keyNode isKindOfClass:[Button class]] || [keyNode isKindOfClass:[GeneralMenu class]]){
-            NSLog(@"menu stuff");
+            Button *button = (Button *)keyNode;
+            NSLog(@"%@ button pressed", button.name);
+            if ([button.name isEqualToString:@"end"]) {
+                [self setValue:@"turnEnded" forKey:@"stage"];
+                [self setValue:@"battle" forKey:@"stage"];
+            }
         } else {
             [self setValue:@"battle" forKey:@"stage"];
         }
@@ -83,9 +92,10 @@
         // if button
         if ([keyNode isKindOfClass:[Button class]]) {
             Button *button = (Button *)keyNode;
+            NSLog(@"%@ button pressed", button.name);
             // if wait
             if ([button.name isEqualToString:@"wait"]) {
-                [self.selectedUnit changeState];
+                [self.selectedUnit changeStateTo:@"asleep"];
                 [self setValue:@"battle" forKey:@"stage"];
             } else {
                 NSLog(@"Error: unknown button name passed to input manager");

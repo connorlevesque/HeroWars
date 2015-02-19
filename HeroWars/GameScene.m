@@ -79,6 +79,11 @@ NSInteger CELL_SIZE = 51;
     else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
         [self.actionMenu removeFromParent];
     }
+    //if stage is changing from turnEnded to battle
+    else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
+        [self.generalMenu removeFromParent];
+        [self endTurn];
+    }
 }
 
 -(void)setUpActionMenu {
@@ -226,6 +231,22 @@ NSInteger CELL_SIZE = 51;
         self.world.position = CGPointMake(self.world.position.x, minY);
     }
     return dragPoint;
+}
+
+-(void)endTurn {
+    // when turn is over, 1) set all the units to awake. 2) change whose turn it is.
+    NSLog(@"%d", self.board.currentPlayer);
+    self.board.currentPlayer = (self.board.currentPlayer) % self.board.players +1;
+    NSLog(@"Turn Over; it is now player %d's turn", self.board.currentPlayer);
+    for (NSMutableArray *row in self.board.unitGrid) {
+        for (id unitMaybe in row){
+            if ([unitMaybe isKindOfClass:[Unit class]]){
+                Unit *unit = (Unit *)unitMaybe;
+                [unit changeStateTo:@"awake"];
+                
+            }
+        }
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
