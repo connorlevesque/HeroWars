@@ -15,6 +15,8 @@
     if (self) {
         self.anchorPoint = CGPointMake(0,0);
         self.state = @"awake";
+        self.health = 100;
+        self.experience = 0;
     }
     return self;
 }

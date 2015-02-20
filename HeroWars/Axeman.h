@@ -13,4 +13,15 @@
 
 -(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner;
 
+/* properties to set
+    type
+    group
+    move
+    range
+    power
+    weapon
+    accuracy
+    armor
+ */
+
 @end

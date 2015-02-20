@@ -16,8 +16,6 @@
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
-        self.type = @"axeman";
-        self.move = 4;
         if (self.owner == 1) {
             self.texture = [SKTexture textureWithImageNamed:@"HeroWars_blue_axeman"];
         } else if (self.owner == 2) {
@@ -27,6 +25,15 @@
         }
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
+        // Set Gameplay Peoperties
+        self.type = @"axeman";
+        self.group = @"infantry";
+        self.move = 4;
+        self.range = @[@1,@1];
+        self.power = 7;
+        self.weapon = 2;
+        self.accuracy = 70;
+        self.armor = 1;
     }
     return self;
 }
