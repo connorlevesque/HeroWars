@@ -11,18 +11,32 @@
 
 @interface Unit : SKSpriteNode
 
+//General Unit Properties
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
-
 @property (nonatomic) NSInteger owner;
+@property (strong, nonatomic) NSString *teamColor;
 @property (strong, nonatomic) NSString *state;
 
-@property (strong, nonatomic) NSString *type;
-@property (nonatomic) NSInteger move;
-
+//Methods
 -(void)changeStateTo:(NSString *)state;
-
 -(void)refreshTexture;
+
+//Static Gameplay Properties
+@property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSString *group;
+
+@property (nonatomic) NSInteger move;
+@property (nonatomic) NSArray *range;
+
+@property (nonatomic) NSInteger power;
+@property (nonatomic) NSInteger weapon;
+@property (nonatomic) NSInteger accuracy;
+@property (nonatomic) NSInteger armor;
+
+//Dynamic Gameplay Properties
+@property (nonatomic) NSInteger health;
+@property (nonatomic) NSInteger experience;
 
 @end
 

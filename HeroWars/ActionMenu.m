@@ -19,7 +19,7 @@
         self.color = [UIColor whiteColor];
         self.anchorPoint = CGPointZero;
         //create buttons
-        self.buttons = @[@"wait"];
+        self.buttons = @[@"attack",@"wait"];
         for (int i = 0; i < [self.buttons count]; i++) {
             NSString *buttonName = self.buttons[i];
             Button *button = [[Button alloc]initWithName:buttonName];

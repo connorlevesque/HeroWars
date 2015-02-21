@@ -7,6 +7,8 @@
 //
 
 #import "Axeman.h"
+#import "Footman.h"
+#import "Archer.h"
 #import "Tile.h"
 
 @interface Gameboard : NSObject
@@ -29,6 +31,9 @@
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile;
 -(Unit *)undoMoveUnit;
+-(Unit *)addUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner;
+-(void)removeUnitFromTile:(Tile *)tile;
+-(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b;
 
 /*
  Tile Types:
