@@ -19,6 +19,8 @@
 -(id)initWithMapNamed:(NSString *)levelName {
     self = [super init];
     if (self) {
+        self.width = 0;
+        self.height = 0;
         [self makeGridsFromLevelName:levelName];
         self.currentPlayer = 1;
         self.day = 1;
@@ -26,6 +28,18 @@
         self.players = 2;
     }
     return self;
+}
+
+-(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b {
+    NSInteger dx = a.x - b.x;
+    NSInteger dy = a.y - b.y;
+    NSInteger distance = abs(dx) + abs(dy);
+    if ((distance >= [(NSNumber *)[b.range objectAtIndex:0] integerValue]) &&
+        (distance <= [(NSNumber *)[b.range objectAtIndex:1] integerValue])) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile {
@@ -50,7 +64,6 @@
     unit.x = x1;
     unit.y = y1;
     self.unitGrid[y2 - 1][x2 - 1] = [NSNull null];
-    NSLog(@"gameboard says unit moved back to (%d,%d)",x1,y1);
     return unit;
 }
 
@@ -67,9 +80,15 @@
 }
 
 -(Unit *)addUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner {
-    if ([name isEqualToString:@"Axeman"]) {
+    if ([name isEqualToString:@"footman"]) {
+        Footman *footman = [[Footman alloc]initOnTile:tile withOwner:owner];
+        return footman;
+    } else if ([name isEqualToString:@"axeman"]) {
         Axeman *axeman = [[Axeman alloc]initOnTile:tile withOwner:owner];
         return axeman;
+    } else if ([name isEqualToString:@"archer"]) {
+        Archer *archer = [[Archer alloc]initOnTile:tile withOwner:owner];
+        return archer;
     } else {
         NSLog(@"Error: unknown unit name");
         return nil;
@@ -139,7 +158,7 @@
 }
 
 -(NSString *)findUnitNameFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"Axeman",@"x", nil];
+    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"f",@"axeman",@"x",@"archer",@"a", nil];
     NSString *unitName = [unitAbbreviationGuide objectForKey:abbreviation];
     return unitName;
 }

@@ -20,7 +20,7 @@
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
         self.type = @"footman";
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.teamColor, self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];
         self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
