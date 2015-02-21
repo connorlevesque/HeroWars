@@ -77,8 +77,9 @@
 }
 
 -(void)removeUnitFromTile:(Tile *)tile {
-    //Unit *unit = [self unitAtX:tile.x andY:tile.y];
+    Unit *unit = [self unitAtX:tile.x andY:tile.y];
     self.unitGrid[tile.y - 1][tile.x - 1] = [NSNull null];
+    NSLog(@"%@ %@ died", unit.teamColor, unit.type);
 }
 
 -(void)makeGridsFromLevelName:(NSString *)levelName {

@@ -203,7 +203,6 @@
 		197703761A7D075B00E89CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */,
 				CDBE252C1A92AE0E001312C0 /* Images */,
 				CDB97D681A8D111100B5ECFA /* Levels */,
 				197703771A7D075B00E89CDE /* Info.plist */,
@@ -240,19 +239,76 @@
 		CDBE252C1A92AE0E001312C0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */,
-				CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */,
-				CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */,
-				CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */,
-				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
-				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
-				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
-				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
-				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
-				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
-				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+				CDBE253E1A991A5B001312C0 /* UI */,
+				CDBE253B1A991A04001312C0 /* Units */,
+				CDBE253D1A991A26001312C0 /* Tiles */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CDBE25391A9919D6001312C0 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */,
+				CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */,
+				CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */,
+				CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		CDBE253A1A9919F2001312C0 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */,
+			);
+			name = Menus;
+			sourceTree = "<group>";
+		};
+		CDBE253B1A991A04001312C0 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE253C1A991A0F001312C0 /* Axeman */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		CDBE253C1A991A0F001312C0 /* Axeman */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
+				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
+				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
+			);
+			name = Axeman;
+			sourceTree = "<group>";
+		};
+		CDBE253D1A991A26001312C0 /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
+				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
+				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
+			);
+			name = Tiles;
+			sourceTree = "<group>";
+		};
+		CDBE253E1A991A5B001312C0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE253A1A9919F2001312C0 /* Menus */,
+				CDBE25391A9919D6001312C0 /* Buttons */,
+				CDBE253F1A991A6E001312C0 /* Highlights */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		CDBE253F1A991A6E001312C0 /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+			);
+			name = Highlights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
