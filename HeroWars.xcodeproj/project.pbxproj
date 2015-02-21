@@ -41,6 +41,9 @@
 		CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */; };
 		CDBE252B1A92AE01001312C0 /* HeroWars_gray_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */; };
 		CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE252E1A92B1BA001312C0 /* ActionMenu.m */; };
+		CDBE25321A97ED7D001312C0 /* Combat.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25311A97ED7D001312C0 /* Combat.m */; };
+		CDBE25351A990F55001312C0 /* Footman.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25341A990F55001312C0 /* Footman.m */; };
+		CDBE25381A990F63001312C0 /* Archer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25371A990F63001312C0 /* Archer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,12 @@
 		CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_gray_axeman.png; sourceTree = "<group>"; };
 		CDBE252D1A92B1BA001312C0 /* ActionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMenu.h; sourceTree = "<group>"; };
 		CDBE252E1A92B1BA001312C0 /* ActionMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMenu.m; sourceTree = "<group>"; };
+		CDBE25301A97ED7D001312C0 /* Combat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combat.h; sourceTree = "<group>"; };
+		CDBE25311A97ED7D001312C0 /* Combat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Combat.m; sourceTree = "<group>"; };
+		CDBE25331A990F55001312C0 /* Footman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footman.h; sourceTree = "<group>"; };
+		CDBE25341A990F55001312C0 /* Footman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footman.m; sourceTree = "<group>"; };
+		CDBE25361A990F63001312C0 /* Archer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archer.h; sourceTree = "<group>"; };
+		CDBE25371A990F63001312C0 /* Archer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Archer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,14 +163,18 @@
 				1977037E1A7D075B00E89CDE /* GameScene.m */,
 				19D35E6A1A84426600A99BC8 /* InputManager.h */,
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
-				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
-				CDB97D601A8BA84E00B5ECFA /* Pather.m */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
 				197703A31A7D09A700E89CDE /* Gameboard.m */,
+				CDBE25301A97ED7D001312C0 /* Combat.h */,
+				CDBE25311A97ED7D001312C0 /* Combat.m */,
 				CD26AC331A87EA6600A96EEB /* Unit.h */,
 				CD26AC341A87EA6600A96EEB /* Unit.m */,
+				CDBE25331A990F55001312C0 /* Footman.h */,
+				CDBE25341A990F55001312C0 /* Footman.m */,
 				CD26AC361A87EC1500A96EEB /* Axeman.h */,
 				CD26AC371A87EC1500A96EEB /* Axeman.m */,
+				CDBE25361A990F63001312C0 /* Archer.h */,
+				CDBE25371A990F63001312C0 /* Archer.m */,
 				197703A11A7D087000E89CDE /* Tile.h */,
 				192D619F1A7D32A50057213D /* Tile.m */,
 				CDB97D711A8E60B200B5ECFA /* Highlight.h */,
@@ -174,6 +187,8 @@
 				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
 				CD26AC301A87DB2F00A96EEB /* Button.h */,
 				CD26AC311A87DB2F00A96EEB /* Button.m */,
+				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
+				CDB97D601A8BA84E00B5ECFA /* Pather.m */,
 				197703821A7D075B00E89CDE /* GameViewController.h */,
 				197703831A7D075B00E89CDE /* GameViewController.m */,
 				197703801A7D075B00E89CDE /* GameScene.sks */,
@@ -188,7 +203,6 @@
 		197703761A7D075B00E89CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */,
 				CDBE252C1A92AE0E001312C0 /* Images */,
 				CDB97D681A8D111100B5ECFA /* Levels */,
 				197703771A7D075B00E89CDE /* Info.plist */,
@@ -225,19 +239,76 @@
 		CDBE252C1A92AE0E001312C0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */,
-				CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */,
-				CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */,
-				CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */,
-				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
-				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
-				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
-				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
-				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
-				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
-				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+				CDBE253E1A991A5B001312C0 /* UI */,
+				CDBE253B1A991A04001312C0 /* Units */,
+				CDBE253D1A991A26001312C0 /* Tiles */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CDBE25391A9919D6001312C0 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */,
+				CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */,
+				CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */,
+				CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		CDBE253A1A9919F2001312C0 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */,
+			);
+			name = Menus;
+			sourceTree = "<group>";
+		};
+		CDBE253B1A991A04001312C0 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE253C1A991A0F001312C0 /* Axeman */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		CDBE253C1A991A0F001312C0 /* Axeman */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
+				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
+				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
+			);
+			name = Axeman;
+			sourceTree = "<group>";
+		};
+		CDBE253D1A991A26001312C0 /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
+				CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */,
+				CDB97D621A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png */,
+			);
+			name = Tiles;
+			sourceTree = "<group>";
+		};
+		CDBE253E1A991A5B001312C0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE253A1A9919F2001312C0 /* Menus */,
+				CDBE25391A9919D6001312C0 /* Buttons */,
+				CDBE253F1A991A6E001312C0 /* Highlights */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		CDBE253F1A991A6E001312C0 /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
+			);
+			name = Highlights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +428,7 @@
 			files = (
 				CDB97D611A8BA84E00B5ECFA /* Pather.m in Sources */,
 				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
+				CDBE25351A990F55001312C0 /* Footman.m in Sources */,
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
 				19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */,
@@ -364,11 +436,13 @@
 				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
 				CD26AC321A87DB2F00A96EEB /* Button.m in Sources */,
 				192D61A01A7D32A50057213D /* Tile.m in Sources */,
+				CDBE25321A97ED7D001312C0 /* Combat.m in Sources */,
 				CD26AC381A87EC1500A96EEB /* Axeman.m in Sources */,
 				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
 				CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */,
 				CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */,
+				CDBE25381A990F63001312C0 /* Archer.m in Sources */,
 				CD55AB431A86A49C003AD677 /* Menu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

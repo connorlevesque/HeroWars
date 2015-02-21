@@ -12,17 +12,20 @@
 #import "GeneralMenu.h"
 #import "Highlight.h"
 #import "Pather.h"
+#import "Combat.h"
 
 @interface InputManager : NSObject
 
 -(id)initWithBoard:(Gameboard *)board;
 -(void)receiveInputWithNodes:(NSArray *)touchedNodes andString: (NSString *)touchType;
--(NSDictionary *)findTileCoordsToHighlight;
+-(NSDictionary *)findTileCoordsToMoveHighlight;
+-(NSMutableArray *)findTileCoordsToAttackHighlight;
 -(BOOL)canDrag;
 
 @property (strong, nonatomic) NSString *stage;
 @property (weak, nonatomic) Gameboard *board;
 @property (strong, nonatomic) Unit *selectedUnit;
 @property (strong, nonatomic) Pather *pather;
+@property (strong, nonatomic) Combat *combat;
 
 @end
