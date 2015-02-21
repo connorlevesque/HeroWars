@@ -17,7 +17,7 @@
         [self setValue:@"battle" forKey:@"stage"];
         self.board = board;
         self.pather = [[Pather alloc]init];
-        self.combat = [[Combat alloc]init];
+        self.combat = [[Combat alloc]initWithBoard:self.board];
     }
     return self;
 }
@@ -37,7 +37,6 @@
                 Unit *unit = (Unit *)keyNode;
                 if ([unit.state isEqualToString:@"awake"]) {
                     self.selectedUnit = (Unit *)keyNode;
-                    //NSLog(@"Unit tapped at %d,%d", self.selectedUnit.x, self.selectedUnit.y);
                     if (unit.owner == self.board.currentPlayer) {
                         [self setValue:@"unitMove" forKey:@"stage"];
                     } else {
@@ -76,7 +75,6 @@
             //if clicking selected unit again (i.e. no move)
             if((thisUnit.x == self.selectedUnit.x) && (thisUnit.y == self.selectedUnit.y)) {
                 [self setValue:@"unitAction" forKey:@"stage"];
-                [self setValue:@"battle" forKey:@"stage"];
             }
         }
         // if highlight
@@ -84,7 +82,6 @@
             Tile *highlightedTile = (Tile *)[keyNode parent];
             [self.board moveUnit:self.selectedUnit toTile:highlightedTile];
             [self setValue:@"unitAction" forKey:@"stage"];
-            NSLog(@"unit moved to point (%d,%d)", self.selectedUnit.x, self.selectedUnit.y);
         // otherwise
         } else {
             [self setValue:@"battle" forKey:@"stage"];
@@ -112,13 +109,12 @@
         // otherwise
         } else {
             self.selectedUnit = [self.board undoMoveUnit];
-            NSLog(@"unit moved back to point (%d,%d)", self.selectedUnit.x, self.selectedUnit.y);
             [self setValue:@"unitMove" forKey:@"stage"];
         }
     }
     // if chooseAttack stage
     else if ([self.stage isEqualToString:@"chooseAttack"]) {
-        //if highlight
+        //if unit (which is on a highlight)
         if ([keyNode isKindOfClass:[Unit class]]) {
             Tile *tile = (Tile *)[keyNode parent];
             for (SKNode *child in tile.children) {

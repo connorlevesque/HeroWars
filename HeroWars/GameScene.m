@@ -71,13 +71,13 @@ NSInteger CELL_SIZE = 51;
     // if stage is changing from unitMove to unitAction
     else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
         [self unHighlightTiles];
-        [self updateUnitPositions];
+        [self updateUnits];
         [self setUpActionMenu];
     }
     // if stage is changing from unitAction to unitMove
     else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
         [self.actionMenu removeFromParent];
-        [self updateUnitPositions];
+        [self updateUnits];
         [self highlightMoveTiles];
     }
     // if stage is changing from unitAction to Battle
@@ -97,7 +97,7 @@ NSInteger CELL_SIZE = 51;
     //if stage is changing from chooseAttack to battle
     else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
         [self unHighlightTiles];
-        [self updateUnitPositions];
+        [self updateUnits];
     }
 }
 
@@ -107,7 +107,7 @@ NSInteger CELL_SIZE = 51;
     [self addChild:self.actionMenu];
 }
 
--(void)updateUnitPositions {
+-(void)updateUnits {
     // updates unit positions
     for (int r = 0; r < self.board.height; r++) {
         NSInteger thisY = r + 1;
@@ -121,6 +121,13 @@ NSInteger CELL_SIZE = 51;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
+                    NSInteger healthInteger = ceil(unit.health / 10);
+                    if ((healthInteger <= 9) && (healthInteger > 0)) {
+                        NSString *imageName = [NSString stringWithFormat:@"HeroWars_health_%d.png", healthInteger];
+                        SKSpriteNode *healthIndicator = [[SKSpriteNode alloc]initWithImageNamed:imageName];
+                        healthIndicator.anchorPoint = CGPointZero;
+                        [tile addChild:healthIndicator];
+                    }
                 } else {
                     [self.board removeUnitFromTile:tile];
                 }
@@ -268,8 +275,7 @@ NSInteger CELL_SIZE = 51;
 
 -(void)endTurn {
     // when turn is over, 1) set all the units to awake. 2) change whose turn it is.
-    NSLog(@"%d", self.board.currentPlayer);
-    self.board.currentPlayer = (self.board.currentPlayer) % self.board.players +1;
+    self.board.currentPlayer = (self.board.currentPlayer) % self.board.players + 1;
     NSLog(@"Turn Over; it is now player %d's turn", self.board.currentPlayer);
     for (NSMutableArray *row in self.board.unitGrid) {
         for (id unitMaybe in row){

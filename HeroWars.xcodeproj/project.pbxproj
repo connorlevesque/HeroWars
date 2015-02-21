@@ -31,19 +31,41 @@
 		CDB97D671A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */; };
 		CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D691A8D145C00B5ECFA /* Campaign1.txt */; };
 		CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */; };
-		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */; };
-		CDB97D701A8D7FBA00B5ECFA /* HeroWars_red_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */; };
+		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png */; };
+		CDB97D701A8D7FBA00B5ECFA /* HeroWars_axeman_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_axeman_red.png */; };
 		CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB97D721A8E60B200B5ECFA /* Highlight.m */; };
 		CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */; };
 		CDBE25271A92AE01001312C0 /* HeroWars_button_end.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25211A92AE01001312C0 /* HeroWars_button_end.png */; };
 		CDBE25281A92AE01001312C0 /* HeroWars_button_options.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */; };
 		CDBE25291A92AE01001312C0 /* HeroWars_button_wait.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */; };
 		CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */; };
-		CDBE252B1A92AE01001312C0 /* HeroWars_gray_axeman.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */; };
+		CDBE252B1A92AE01001312C0 /* HeroWars_axeman_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25251A92AE01001312C0 /* HeroWars_axeman_gray.png */; };
 		CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE252E1A92B1BA001312C0 /* ActionMenu.m */; };
 		CDBE25321A97ED7D001312C0 /* Combat.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25311A97ED7D001312C0 /* Combat.m */; };
 		CDBE25351A990F55001312C0 /* Footman.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25341A990F55001312C0 /* Footman.m */; };
 		CDBE25381A990F63001312C0 /* Archer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25371A990F63001312C0 /* Archer.m */; };
+		CDBE25421A991F0E001312C0 /* HeroWars_axeman_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25401A991F0E001312C0 /* HeroWars_axeman_green.png */; };
+		CDBE25431A991F0E001312C0 /* HeroWars_axeman_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25411A991F0E001312C0 /* HeroWars_axeman_yellow.png */; };
+		CDBE254B1A991F88001312C0 /* HeroWars_archer_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25461A991F88001312C0 /* HeroWars_archer_blue.png */; };
+		CDBE254C1A991F88001312C0 /* HeroWars_archer_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25471A991F88001312C0 /* HeroWars_archer_gray.png */; };
+		CDBE254D1A991F88001312C0 /* HeroWars_archer_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25481A991F88001312C0 /* HeroWars_archer_green.png */; };
+		CDBE254E1A991F88001312C0 /* HeroWars_archer_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25491A991F88001312C0 /* HeroWars_archer_red.png */; };
+		CDBE254F1A991F88001312C0 /* HeroWars_archer_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE254A1A991F88001312C0 /* HeroWars_archer_yellow.png */; };
+		CDBE25551A991F97001312C0 /* HeroWars_footman_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25501A991F97001312C0 /* HeroWars_footman_blue.png */; };
+		CDBE25561A991F97001312C0 /* HeroWars_footman_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25511A991F97001312C0 /* HeroWars_footman_gray.png */; };
+		CDBE25571A991F97001312C0 /* HeroWars_footman_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25521A991F97001312C0 /* HeroWars_footman_green.png */; };
+		CDBE25581A991F97001312C0 /* HeroWars_footman_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25531A991F97001312C0 /* HeroWars_footman_red.png */; };
+		CDBE25591A991F97001312C0 /* HeroWars_footman_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25541A991F97001312C0 /* HeroWars_footman_yellow.png */; };
+		CDBE25641A991FEC001312C0 /* HeroWars_health_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE255B1A991FEC001312C0 /* HeroWars_health_1.png */; };
+		CDBE25651A991FEC001312C0 /* HeroWars_health_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE255C1A991FEC001312C0 /* HeroWars_health_2.png */; };
+		CDBE25661A991FEC001312C0 /* HeroWars_health_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE255D1A991FEC001312C0 /* HeroWars_health_3.png */; };
+		CDBE25671A991FEC001312C0 /* HeroWars_health_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE255E1A991FEC001312C0 /* HeroWars_health_4.png */; };
+		CDBE25681A991FEC001312C0 /* HeroWars_health_5.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE255F1A991FEC001312C0 /* HeroWars_health_5.png */; };
+		CDBE25691A991FEC001312C0 /* HeroWars_health_6.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25601A991FEC001312C0 /* HeroWars_health_6.png */; };
+		CDBE256A1A991FEC001312C0 /* HeroWars_health_7.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25611A991FEC001312C0 /* HeroWars_health_7.png */; };
+		CDBE256B1A991FEC001312C0 /* HeroWars_health_8.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25621A991FEC001312C0 /* HeroWars_health_8.png */; };
+		CDBE256C1A991FEC001312C0 /* HeroWars_health_9.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25631A991FEC001312C0 /* HeroWars_health_9.png */; };
+		CDBE256E1A9922E0001312C0 /* Sandbox1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBE256D1A9922E0001312C0 /* Sandbox1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +119,8 @@
 		CDB97D641A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_lightGreen.png; sourceTree = "<group>"; };
 		CDB97D691A8D145C00B5ECFA /* Campaign1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campaign1.txt; sourceTree = "<group>"; };
 		CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_transparentBlue.png; sourceTree = "<group>"; };
-		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_blue_axeman.png; sourceTree = "<group>"; };
-		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_red_axeman.png; sourceTree = "<group>"; };
+		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_axeman_blue.png; sourceTree = "<group>"; };
+		CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_axeman_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_axeman_red.png; sourceTree = "<group>"; };
 		CDB97D711A8E60B200B5ECFA /* Highlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highlight.h; sourceTree = "<group>"; };
 		CDB97D721A8E60B200B5ECFA /* Highlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highlight.m; sourceTree = "<group>"; };
 		CDBE25201A92AE01001312C0 /* HeroWars_button_attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_attack.png; sourceTree = "<group>"; };
@@ -106,7 +128,7 @@
 		CDBE25221A92AE01001312C0 /* HeroWars_button_options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_options.png; sourceTree = "<group>"; };
 		CDBE25231A92AE01001312C0 /* HeroWars_button_wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_button_wait.png; sourceTree = "<group>"; };
 		CDBE25241A92AE01001312C0 /* HeroWars_generalMenu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_generalMenu1.png; sourceTree = "<group>"; };
-		CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_gray_axeman.png; sourceTree = "<group>"; };
+		CDBE25251A92AE01001312C0 /* HeroWars_axeman_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_axeman_gray.png; sourceTree = "<group>"; };
 		CDBE252D1A92B1BA001312C0 /* ActionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMenu.h; sourceTree = "<group>"; };
 		CDBE252E1A92B1BA001312C0 /* ActionMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMenu.m; sourceTree = "<group>"; };
 		CDBE25301A97ED7D001312C0 /* Combat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combat.h; sourceTree = "<group>"; };
@@ -115,6 +137,28 @@
 		CDBE25341A990F55001312C0 /* Footman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footman.m; sourceTree = "<group>"; };
 		CDBE25361A990F63001312C0 /* Archer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archer.h; sourceTree = "<group>"; };
 		CDBE25371A990F63001312C0 /* Archer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Archer.m; sourceTree = "<group>"; };
+		CDBE25401A991F0E001312C0 /* HeroWars_axeman_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_axeman_green.png; path = ../../../Downloads/HeroWars_axeman_green.png; sourceTree = "<group>"; };
+		CDBE25411A991F0E001312C0 /* HeroWars_axeman_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_axeman_yellow.png; path = ../../../Downloads/HeroWars_axeman_yellow.png; sourceTree = "<group>"; };
+		CDBE25461A991F88001312C0 /* HeroWars_archer_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_archer_blue.png; path = ../../../Downloads/HeroWars_archer_blue.png; sourceTree = "<group>"; };
+		CDBE25471A991F88001312C0 /* HeroWars_archer_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_archer_gray.png; path = ../../../Downloads/HeroWars_archer_gray.png; sourceTree = "<group>"; };
+		CDBE25481A991F88001312C0 /* HeroWars_archer_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_archer_green.png; path = ../../../Downloads/HeroWars_archer_green.png; sourceTree = "<group>"; };
+		CDBE25491A991F88001312C0 /* HeroWars_archer_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_archer_red.png; path = ../../../Downloads/HeroWars_archer_red.png; sourceTree = "<group>"; };
+		CDBE254A1A991F88001312C0 /* HeroWars_archer_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_archer_yellow.png; path = ../../../Downloads/HeroWars_archer_yellow.png; sourceTree = "<group>"; };
+		CDBE25501A991F97001312C0 /* HeroWars_footman_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_footman_blue.png; path = ../../../Downloads/HeroWars_footman_blue.png; sourceTree = "<group>"; };
+		CDBE25511A991F97001312C0 /* HeroWars_footman_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_footman_gray.png; path = ../../../Downloads/HeroWars_footman_gray.png; sourceTree = "<group>"; };
+		CDBE25521A991F97001312C0 /* HeroWars_footman_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_footman_green.png; path = ../../../Downloads/HeroWars_footman_green.png; sourceTree = "<group>"; };
+		CDBE25531A991F97001312C0 /* HeroWars_footman_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_footman_red.png; path = ../../../Downloads/HeroWars_footman_red.png; sourceTree = "<group>"; };
+		CDBE25541A991F97001312C0 /* HeroWars_footman_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_footman_yellow.png; path = ../../../Downloads/HeroWars_footman_yellow.png; sourceTree = "<group>"; };
+		CDBE255B1A991FEC001312C0 /* HeroWars_health_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_1.png; path = ../../../Downloads/HeroWars_health_1.png; sourceTree = "<group>"; };
+		CDBE255C1A991FEC001312C0 /* HeroWars_health_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_2.png; path = ../../../Downloads/HeroWars_health_2.png; sourceTree = "<group>"; };
+		CDBE255D1A991FEC001312C0 /* HeroWars_health_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_3.png; path = ../../../Downloads/HeroWars_health_3.png; sourceTree = "<group>"; };
+		CDBE255E1A991FEC001312C0 /* HeroWars_health_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_4.png; path = ../../../Downloads/HeroWars_health_4.png; sourceTree = "<group>"; };
+		CDBE255F1A991FEC001312C0 /* HeroWars_health_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_5.png; path = ../../../Downloads/HeroWars_health_5.png; sourceTree = "<group>"; };
+		CDBE25601A991FEC001312C0 /* HeroWars_health_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_6.png; path = ../../../Downloads/HeroWars_health_6.png; sourceTree = "<group>"; };
+		CDBE25611A991FEC001312C0 /* HeroWars_health_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_7.png; path = ../../../Downloads/HeroWars_health_7.png; sourceTree = "<group>"; };
+		CDBE25621A991FEC001312C0 /* HeroWars_health_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_8.png; path = ../../../Downloads/HeroWars_health_8.png; sourceTree = "<group>"; };
+		CDBE25631A991FEC001312C0 /* HeroWars_health_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeroWars_health_9.png; path = ../../../Downloads/HeroWars_health_9.png; sourceTree = "<group>"; };
+		CDBE256D1A9922E0001312C0 /* Sandbox1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sandbox1.txt; path = ../../Sandbox1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CDB97D691A8D145C00B5ECFA /* Campaign1.txt */,
+				CDBE256D1A9922E0001312C0 /* Sandbox1.txt */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -268,7 +313,9 @@
 		CDBE253B1A991A04001312C0 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				CDBE25441A991F14001312C0 /* Footman */,
 				CDBE253C1A991A0F001312C0 /* Axeman */,
+				CDBE25451A991F2E001312C0 /* Archer */,
 			);
 			name = Units;
 			sourceTree = "<group>";
@@ -276,9 +323,11 @@
 		CDBE253C1A991A0F001312C0 /* Axeman */ = {
 			isa = PBXGroup;
 			children = (
-				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png */,
-				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_red_axeman.png */,
-				CDBE25251A92AE01001312C0 /* HeroWars_gray_axeman.png */,
+				CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png */,
+				CDB97D6D1A8D7FBA00B5ECFA /* HeroWars_axeman_red.png */,
+				CDBE25401A991F0E001312C0 /* HeroWars_axeman_green.png */,
+				CDBE25411A991F0E001312C0 /* HeroWars_axeman_yellow.png */,
+				CDBE25251A92AE01001312C0 /* HeroWars_axeman_gray.png */,
 			);
 			name = Axeman;
 			sourceTree = "<group>";
@@ -299,6 +348,7 @@
 				CDBE253A1A9919F2001312C0 /* Menus */,
 				CDBE25391A9919D6001312C0 /* Buttons */,
 				CDBE253F1A991A6E001312C0 /* Highlights */,
+				CDBE255A1A991FBB001312C0 /* Health Indicators */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -309,6 +359,46 @@
 				CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */,
 			);
 			name = Highlights;
+			sourceTree = "<group>";
+		};
+		CDBE25441A991F14001312C0 /* Footman */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25501A991F97001312C0 /* HeroWars_footman_blue.png */,
+				CDBE25511A991F97001312C0 /* HeroWars_footman_gray.png */,
+				CDBE25521A991F97001312C0 /* HeroWars_footman_green.png */,
+				CDBE25531A991F97001312C0 /* HeroWars_footman_red.png */,
+				CDBE25541A991F97001312C0 /* HeroWars_footman_yellow.png */,
+			);
+			name = Footman;
+			sourceTree = "<group>";
+		};
+		CDBE25451A991F2E001312C0 /* Archer */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE25461A991F88001312C0 /* HeroWars_archer_blue.png */,
+				CDBE25471A991F88001312C0 /* HeroWars_archer_gray.png */,
+				CDBE25481A991F88001312C0 /* HeroWars_archer_green.png */,
+				CDBE25491A991F88001312C0 /* HeroWars_archer_red.png */,
+				CDBE254A1A991F88001312C0 /* HeroWars_archer_yellow.png */,
+			);
+			name = Archer;
+			sourceTree = "<group>";
+		};
+		CDBE255A1A991FBB001312C0 /* Health Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE255B1A991FEC001312C0 /* HeroWars_health_1.png */,
+				CDBE255C1A991FEC001312C0 /* HeroWars_health_2.png */,
+				CDBE255D1A991FEC001312C0 /* HeroWars_health_3.png */,
+				CDBE255E1A991FEC001312C0 /* HeroWars_health_4.png */,
+				CDBE255F1A991FEC001312C0 /* HeroWars_health_5.png */,
+				CDBE25601A991FEC001312C0 /* HeroWars_health_6.png */,
+				CDBE25611A991FEC001312C0 /* HeroWars_health_7.png */,
+				CDBE25621A991FEC001312C0 /* HeroWars_health_8.png */,
+				CDBE25631A991FEC001312C0 /* HeroWars_health_9.png */,
+			);
+			name = "Health Indicators";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,21 +484,43 @@
 				CDB97D651A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
 				CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */,
+				CDBE254D1A991F88001312C0 /* HeroWars_archer_green.png in Resources */,
+				CDBE254B1A991F88001312C0 /* HeroWars_archer_blue.png in Resources */,
+				CDBE25591A991F97001312C0 /* HeroWars_footman_yellow.png in Resources */,
+				CDBE25661A991FEC001312C0 /* HeroWars_health_3.png in Resources */,
+				CDBE25551A991F97001312C0 /* HeroWars_footman_blue.png in Resources */,
+				CDBE256E1A9922E0001312C0 /* Sandbox1.txt in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
+				CDBE256A1A991FEC001312C0 /* HeroWars_health_7.png in Resources */,
+				CDBE25691A991FEC001312C0 /* HeroWars_health_6.png in Resources */,
 				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
 				CDBE25271A92AE01001312C0 /* HeroWars_button_end.png in Resources */,
+				CDBE25671A991FEC001312C0 /* HeroWars_health_4.png in Resources */,
 				CDBE25291A92AE01001312C0 /* HeroWars_button_wait.png in Resources */,
 				CDBE25281A92AE01001312C0 /* HeroWars_button_options.png in Resources */,
-				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_blue_axeman.png in Resources */,
-				CDBE252B1A92AE01001312C0 /* HeroWars_gray_axeman.png in Resources */,
+				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png in Resources */,
+				CDBE252B1A92AE01001312C0 /* HeroWars_axeman_gray.png in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
-				CDB97D701A8D7FBA00B5ECFA /* HeroWars_red_axeman.png in Resources */,
+				CDBE256B1A991FEC001312C0 /* HeroWars_health_8.png in Resources */,
+				CDB97D701A8D7FBA00B5ECFA /* HeroWars_axeman_red.png in Resources */,
+				CDBE256C1A991FEC001312C0 /* HeroWars_health_9.png in Resources */,
+				CDBE25581A991F97001312C0 /* HeroWars_footman_red.png in Resources */,
+				CDBE25561A991F97001312C0 /* HeroWars_footman_gray.png in Resources */,
+				CDBE25421A991F0E001312C0 /* HeroWars_axeman_green.png in Resources */,
 				CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
 				CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */,
+				CDBE25431A991F0E001312C0 /* HeroWars_axeman_yellow.png in Resources */,
+				CDBE254E1A991F88001312C0 /* HeroWars_archer_red.png in Resources */,
 				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
+				CDBE25651A991FEC001312C0 /* HeroWars_health_2.png in Resources */,
+				CDBE25681A991FEC001312C0 /* HeroWars_health_5.png in Resources */,
 				CDB97D671A8BC24E00B5ECFA /* heroWars_tile_51_lightGreen.png in Resources */,
+				CDBE254C1A991F88001312C0 /* HeroWars_archer_gray.png in Resources */,
+				CDBE254F1A991F88001312C0 /* HeroWars_archer_yellow.png in Resources */,
 				CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */,
+				CDBE25571A991F97001312C0 /* HeroWars_footman_green.png in Resources */,
+				CDBE25641A991FEC001312C0 /* HeroWars_health_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

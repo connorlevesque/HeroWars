@@ -24,10 +24,10 @@
 -(void)changeStateTo:(NSString *)state {
     self.state = state;
     if ([self.state isEqualToString:@"awake"]) {
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.teamColor, self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     } else if ([self.state isEqualToString:@"asleep"]) {
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_gray_%@", self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_gray", self.type];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     } else {
         NSLog(@"Error: unknown state named passed to unit %@", self);
@@ -36,10 +36,10 @@
 
 -(void)refreshTexture {
     if ([self.state isEqualToString:@"awake"]) {
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.teamColor, self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     } else if ([self.state isEqualToString:@"asleep"]) {
-            NSString *imageName = [NSString stringWithFormat:@"HeroWars_gray_%@", self.type];
+            NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_gray", self.type];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     }
 }
