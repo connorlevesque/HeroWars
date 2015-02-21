@@ -55,9 +55,14 @@ NSInteger CELL_SIZE = 51;
     else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
         [self.generalMenu removeFromParent];
     }
+    //if stage is changing from turnEnded to battle
+    else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
+        [self.generalMenu removeFromParent];
+        [self endTurn];
+    }
     // if stage is changing from battle to unitMove
     else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
-        [self highlightTiles];
+        [self highlightMoveTiles];
     }
     // if stage is changing from unitMove to battle
     else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
@@ -73,16 +78,26 @@ NSInteger CELL_SIZE = 51;
     else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
         [self.actionMenu removeFromParent];
         [self updateUnitPositions];
-        [self highlightTiles];
+        [self highlightMoveTiles];
     }
-    //if stage is changing from unitAction to battle
+    // if stage is changing from unitAction to Battle
     else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
         [self.actionMenu removeFromParent];
     }
-    //if stage is changing from turnEnded to battle
-    else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
-        [self.generalMenu removeFromParent];
-        [self endTurn];
+    //if stage is changing from unitAction to chooseAttack
+    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"chooseAttack"]) {
+        [self.actionMenu removeFromParent];
+        [self highlightAttackTiles];
+    }
+    //if stage is changing from chooseAttack to unitAction
+    else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"unitAction"]) {
+        [self unHighlightTiles];
+        [self setUpActionMenu];
+    }
+    //if stage is changing from chooseAttack to battle
+    else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
+        [self unHighlightTiles];
+        [self updateUnitPositions];
     }
 }
 
@@ -95,26 +110,44 @@ NSInteger CELL_SIZE = 51;
 -(void)updateUnitPositions {
     // updates unit positions
     for (int r = 0; r < self.board.height; r++) {
+        NSInteger thisY = r + 1;
         for (int c = 0; c < self.board.width; c++) {
-            Tile *tile = self.board.tileGrid[r][c];
+            NSInteger thisX = c + 1;
+            Tile *tile = [self.board tileAtX:thisX andY:thisY];
             [tile removeAllChildren];
-            id unitMaybe = self.board.unitGrid[r][c];
+            id unitMaybe = [self.board unitAtX:thisX andY:thisY];
             if (!(unitMaybe == (id)[NSNull null])) {
                 Unit *unit = self.board.unitGrid[r][c];
                 [unit removeFromParent];
-                [tile addChild:unit];
+                if (unit.health > 0) {
+                    [tile addChild:unit];
+                } else {
+                    [self.board removeUnitFromTile:tile];
+                }
             }
         }
     }
 }
 
--(void)highlightTiles {
-    NSDictionary *paths = [self.inputManager findTileCoordsToHighlight];
+-(void)highlightMoveTiles {
+    NSDictionary *paths = [self.inputManager findTileCoordsToMoveHighlight];
     for (NSString *coordString in paths.allKeys) {
         Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
         NSArray *coordArray = [coordString componentsSeparatedByString:@","];
         NSInteger x = [coordArray[0] integerValue];
         NSInteger y = [coordArray[1] integerValue];
+        Tile *tile = [self.board tileAtX:x andY:y];
+        [self.highlightedTiles addObject:tile];
+        [tile addChild:highlight];
+    }
+}
+
+-(void)highlightAttackTiles {
+    NSArray *tileCoords = [self.inputManager findTileCoordsToAttackHighlight];
+    for (NSArray *coordPair in tileCoords) {
+        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
+        NSInteger x = [coordPair[0] integerValue];
+        NSInteger y = [coordPair[1] integerValue];
         Tile *tile = [self.board tileAtX:x andY:y];
         [self.highlightedTiles addObject:tile];
         [tile addChild:highlight];

@@ -66,7 +66,7 @@
     return unit;
 }
 
--(Unit *)makeUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner {
+-(Unit *)addUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner {
     if ([name isEqualToString:@"Axeman"]) {
         Axeman *axeman = [[Axeman alloc]initOnTile:tile withOwner:owner];
         return axeman;
@@ -74,6 +74,11 @@
         NSLog(@"Error: unknown unit name");
         return nil;
     }
+}
+
+-(void)removeUnitFromTile:(Tile *)tile {
+    //Unit *unit = [self unitAtX:tile.x andY:tile.y];
+    self.unitGrid[tile.y - 1][tile.x - 1] = [NSNull null];
 }
 
 -(void)makeGridsFromLevelName:(NSString *)levelName {
@@ -113,7 +118,7 @@
                 NSInteger owner = [ownerString integerValue];
                 NSString *unitString = squareComponents[2];
                 NSString *unitName = [self findUnitNameFromAbbreviation:unitString];
-                Unit *unit = [self makeUnitOnTile:tile withName:unitName andOwner:owner];
+                Unit *unit = [self addUnitOnTile:tile withName:unitName andOwner:owner];
                 [unitRow addObject:unit];
             } else {
                 [unitRow addObject:[NSNull null]];

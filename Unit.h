@@ -15,6 +15,7 @@
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
 @property (nonatomic) NSInteger owner;
+@property (strong, nonatomic) NSString *teamColor;
 @property (strong, nonatomic) NSString *state;
 
 //Methods

@@ -24,9 +24,7 @@
 -(void)changeStateTo:(NSString *)state {
     self.state = state;
     if ([self.state isEqualToString:@"awake"]) {
-        NSArray *playerColors = @[@"blue",@"red"];
-        NSString *playerColor = playerColors[self.owner - 1];
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", playerColor, self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.teamColor, self.type];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     } else if ([self.state isEqualToString:@"asleep"]) {
         NSString *imageName = [NSString stringWithFormat:@"HeroWars_gray_%@", self.type];
@@ -38,9 +36,7 @@
 
 -(void)refreshTexture {
     if ([self.state isEqualToString:@"awake"]) {
-        NSArray *playerColors = @[@"blue",@"red"];
-        NSString *playerColor = playerColors[self.owner - 1];
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", playerColor, self.type];
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.teamColor, self.type];
         self.texture = [SKTexture textureWithImageNamed:imageName];
     } else if ([self.state isEqualToString:@"asleep"]) {
             NSString *imageName = [NSString stringWithFormat:@"HeroWars_gray_%@", self.type];

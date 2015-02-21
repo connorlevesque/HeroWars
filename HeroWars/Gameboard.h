@@ -29,6 +29,8 @@
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile;
 -(Unit *)undoMoveUnit;
+-(Unit *)addUnitOnTile:(Tile *)tile withName:(NSString *)name andOwner:(NSInteger)owner;
+-(void)removeUnitFromTile:(Tile *)tile;
 
 /*
  Tile Types:

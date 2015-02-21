@@ -13,7 +13,7 @@
 
 -(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner;
 
-/* properties to set
+/* gameplay properties to set
     type
     group
     move
