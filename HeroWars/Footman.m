@@ -16,7 +16,7 @@
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
-        NSArray *playerColors = @[@"blue",@"red"];
+        NSArray *playerColors = @[@"blue",@"red", @"green", @"yellow"];
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
         self.type = @"footman";
