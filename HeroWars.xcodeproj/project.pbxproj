@@ -44,7 +44,6 @@
 		CDBE25321A97ED7D001312C0 /* Combat.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25311A97ED7D001312C0 /* Combat.m */; };
 		CDBE25351A990F55001312C0 /* Footman.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25341A990F55001312C0 /* Footman.m */; };
 		CDBE25381A990F63001312C0 /* Archer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE25371A990F63001312C0 /* Archer.m */; };
-		CDBE256E1A9922E0001312C0 /* Sandbox1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBE256D1A9922E0001312C0 /* Sandbox1.txt */; };
 		CDBE25841A9938B1001312C0 /* HeroWars_archer_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE256F1A9938B1001312C0 /* HeroWars_archer_blue.png */; };
 		CDBE25851A9938B1001312C0 /* HeroWars_archer_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25701A9938B1001312C0 /* HeroWars_archer_gray.png */; };
 		CDBE25861A9938B1001312C0 /* HeroWars_archer_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25711A9938B1001312C0 /* HeroWars_archer_green.png */; };
@@ -66,6 +65,7 @@
 		CDBE25961A9938B1001312C0 /* HeroWars_health_7.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25811A9938B1001312C0 /* HeroWars_health_7.png */; };
 		CDBE25971A9938B1001312C0 /* HeroWars_health_8.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25821A9938B1001312C0 /* HeroWars_health_8.png */; };
 		CDBE25981A9938B1001312C0 /* HeroWars_health_9.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25831A9938B1001312C0 /* HeroWars_health_9.png */; };
+		CDBE259A1A993DD0001312C0 /* Sandbox1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25991A993DD0001312C0 /* Sandbox1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +137,6 @@
 		CDBE25341A990F55001312C0 /* Footman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footman.m; sourceTree = "<group>"; };
 		CDBE25361A990F63001312C0 /* Archer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archer.h; sourceTree = "<group>"; };
 		CDBE25371A990F63001312C0 /* Archer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Archer.m; sourceTree = "<group>"; };
-		CDBE256D1A9922E0001312C0 /* Sandbox1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sandbox1.txt; path = ../../Sandbox1.txt; sourceTree = "<group>"; };
 		CDBE256F1A9938B1001312C0 /* HeroWars_archer_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_archer_blue.png; sourceTree = "<group>"; };
 		CDBE25701A9938B1001312C0 /* HeroWars_archer_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_archer_gray.png; sourceTree = "<group>"; };
 		CDBE25711A9938B1001312C0 /* HeroWars_archer_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_archer_green.png; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 		CDBE25811A9938B1001312C0 /* HeroWars_health_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_health_7.png; sourceTree = "<group>"; };
 		CDBE25821A9938B1001312C0 /* HeroWars_health_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_health_8.png; sourceTree = "<group>"; };
 		CDBE25831A9938B1001312C0 /* HeroWars_health_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_health_9.png; sourceTree = "<group>"; };
+		CDBE25991A993DD0001312C0 /* Sandbox1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sandbox1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CDB97D691A8D145C00B5ECFA /* Campaign1.txt */,
-				CDBE256D1A9922E0001312C0 /* Sandbox1.txt */,
+				CDBE25991A993DD0001312C0 /* Sandbox1.txt */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -489,8 +489,8 @@
 				CDB97D651A8BC24E00B5ECFA /* heroWars_tile_51_darkGreen.png in Resources */,
 				CDBE25841A9938B1001312C0 /* HeroWars_archer_blue.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
+				CDBE259A1A993DD0001312C0 /* Sandbox1.txt in Resources */,
 				CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */,
-				CDBE256E1A9922E0001312C0 /* Sandbox1.txt in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
 				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
 				CDBE25951A9938B1001312C0 /* HeroWars_health_6.png in Resources */,
