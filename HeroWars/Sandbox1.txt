@@ -1,0 +1,23 @@
+
+Sandbox1
+13 x 13 with 1 unit for player 1
+
+:
+
+p, p, p, p, p, p, p, p, p, p, p, p, p /
+p, p-1-a, p-1-a, p-1-a, p, p, p, p, p, f, p, p, p /
+p, p-1-x, p-1-x, p-1-x, p, p, p, p, f, p, p, p, p /
+p, p-1-f, p-1-f, p-1-f, p, p, p, p, p, p, p, p, p /
+f, p, p, p, p, p, p, p, p, p, p, p, p /
+f, f, p, p, p, f, p, p, p, p, p, f, p /
+p, f, f, p, p, f, f, f, p, p, f, f, p /
+p, f, p, p, p, p, p, f, p, p, p, f, f /
+p, p, p, p, p, p, p, p, p, p, p, p, f /
+p, p, p, p, p, p, p, p, p, p-2-f, p-2-f, p-2-f, p /
+p, p, p, p, f, p, p, p, p, p-2-x, p-2-x, p-2-x, p /
+p, p, p, f, p, p, p, p, p, p-2-a, p-2-a, p-2-a, p /
+p, p, p, p, p, p, p, p, p, p, p, p, p 
+
+:
+
+standard
