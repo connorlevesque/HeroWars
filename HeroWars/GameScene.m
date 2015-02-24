@@ -335,7 +335,34 @@ NSInteger CELL_SIZE = 51;
     self.world.xScale *= self.zoomRecognizer.scale;
     self.world.yScale *= self.zoomRecognizer.scale;
     self.zoomRecognizer.scale = 1;
-        }
+    }
+    
+    // if world is getting off the screen, nudge it back
+    float minX = self.frame.size.width - self.board.width * CELL_SIZE * self.world.xScale;
+    float minY = self.frame.size.height - self.board.height * CELL_SIZE * self.world.yScale;
+    
+    CGFloat posX = self.world.position.x;
+    CGFloat posY = self.world.position.y;
+    
+    if (self.world.position.x <= minX) {
+        posX = 0;
+        self.world.position = CGPointMake(minX, self.world.position.y);
+    }
+    //if new drag right will be too far, set x transform to zero
+    if (self.world.position.x >= 0) {
+        posX = 0;
+        self.world.position = CGPointMake(0, self.world.position.y);
+    }
+    //if new drag up will be too far, set y transform to zero
+    if (self.world.position.y >= 0) {
+        posY = 0;
+        self.world.position = CGPointMake(self.world.position.x, 0);
+    }
+    //if new drag down will be too far, set y transform to zero
+    if (self.world.position.y <= minY) {
+        posY = 0;
+        self.world.position = CGPointMake(self.world.position.x, minY);
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
