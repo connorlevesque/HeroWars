@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		192D61A01A7D32A50057213D /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D619F1A7D32A50057213D /* Tile.m */; };
 		192D61A21A7D382F0057213D /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = 192D61A11A7D382F0057213D /* Notes */; };
+		194871451A9C2C14002B60A0 /* MaxLevel1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 194871441A9C2C14002B60A0 /* MaxLevel1.txt */; };
 		197703791A7D075B00E89CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703781A7D075B00E89CDE /* main.m */; };
 		1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037B1A7D075B00E89CDE /* AppDelegate.m */; };
 		1977037F1A7D075B00E89CDE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977037E1A7D075B00E89CDE /* GameScene.m */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		192D619F1A7D32A50057213D /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		192D61A11A7D382F0057213D /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
+		194871441A9C2C14002B60A0 /* MaxLevel1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MaxLevel1.txt; sourceTree = "<group>"; };
 		197703731A7D075B00E89CDE /* HeroWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197703771A7D075B00E89CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197703781A7D075B00E89CDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				CDB97D691A8D145C00B5ECFA /* Campaign1.txt */,
 				CDBE25991A993DD0001312C0 /* Sandbox1.txt */,
+				194871441A9C2C14002B60A0 /* MaxLevel1.txt */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
 				CDBE25951A9938B1001312C0 /* HeroWars_health_6.png in Resources */,
 				CDBE25881A9938B1001312C0 /* HeroWars_archer_yellow.png in Resources */,
+				194871451A9C2C14002B60A0 /* MaxLevel1.txt in Resources */,
 				CDBE25931A9938B1001312C0 /* HeroWars_health_4.png in Resources */,
 				CDBE25921A9938B1001312C0 /* HeroWars_health_3.png in Resources */,
 				CDBE258E1A9938B1001312C0 /* HeroWars_footman_red.png in Resources */,

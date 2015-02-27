@@ -22,6 +22,7 @@
 @property (nonatomic) CGPoint lastTouch;
 @property (strong, nonatomic) NSTimer *touchTimer;
 
+
 @property (nonatomic) int touchState;
 /*
  0 = no touch detected
@@ -33,6 +34,12 @@
 @property (strong, nonatomic) ActionMenu *actionMenu;
 @property (strong, nonatomic) NSMutableArray *highlightedTiles;
 
+
+// for zoom
+@property (nonatomic) CGPoint origPoint;
+@property (strong, nonatomic) UIPinchGestureRecognizer *zoomRecognizer;
+@property (nonatomic) CGFloat maxScale;
+@property (nonatomic) CGFloat minScale;
 
 
 @end

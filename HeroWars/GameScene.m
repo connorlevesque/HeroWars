@@ -6,6 +6,12 @@
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
+
+
+
+// do the thing you did in the zooming that makes the stopping points smooth with the drag ie: if the resulting position will be too big, set the current position to max. that way it doesnt lag and accidentally drag too far.
+
+
 #import "GameScene.h"
 
 @implementation GameScene
@@ -15,7 +21,7 @@ NSInteger CELL_SIZE = 51;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
-    self.board = [[Gameboard alloc]initWithMapNamed:@"Campaign1"];
+    self.board = [[Gameboard alloc]initWithMapNamed:@"MaxLevel1"];
     self.inputManager = [[InputManager alloc]initWithBoard:self.board];
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
@@ -32,6 +38,28 @@ NSInteger CELL_SIZE = 51;
     // make scene observer of inputManager
 
     [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    
+    // zoom gesture stuff
+    self.zoomRecognizer = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(handleZoom)];
+    [self.view addGestureRecognizer:self.zoomRecognizer];
+    
+    CGFloat worldHeight = self.board.height * CELL_SIZE;
+    CGFloat worldWidth = self.board.width * CELL_SIZE;
+    
+    
+    self.minScale = MAX(self.frame.size.height / worldHeight, self.frame.size.width / worldWidth);
+    self.maxScale = 1;
+    
+    
+    
+    NSLog(@"self.frame.size.height = %f", self.frame.size.height);
+    NSLog(@"self.frame.size.width = %f", self.frame.size.width);
+    NSLog(@"world.size.height = %f", self.world.frame.size.height);
+    NSLog(@"world.size.width = %f", self.world.frame.size.width);
+    NSLog(@"maxScale = %f", self.maxScale);
+    NSLog(@"minScale = %f", self.minScale);
+    NSLog(@"scale = %f", self.world.yScale);
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -247,26 +275,27 @@ NSInteger CELL_SIZE = 51;
     CGPoint old = self.lastTouch;
     CGPoint dragPoint = CGPointMake(new.x - old.x, new.y - old.y);
 
-    float minX = self.frame.size.width - self.board.width * CELL_SIZE;
-    float minY = self.frame.size.height - self.board.height * CELL_SIZE;
     
-    //if we dont wanna drag left anymore
-    if ((self.world.position.x <= minX) && (dragPoint.x < 0)) {
+    float minX = self.frame.size.width - self.board.width * CELL_SIZE * self.world.xScale;
+    float minY = self.frame.size.height - self.board.height * CELL_SIZE * self.world.yScale;
+    
+    //if new drag left will be too far, set x transform to zero
+    if (self.world.position.x + dragPoint.x <= minX) {
         dragPoint.x = 0;
         self.world.position = CGPointMake(minX, self.world.position.y);
     }
-    //if we dont wanna drag right anymore
-    if ((self.world.position.x >= 0) && (dragPoint.x > 0)) {
+    //if new drag right will be too far, set x transform to zero
+    if (self.world.position.x + dragPoint.x >= 0) {
         dragPoint.x = 0;
         self.world.position = CGPointMake(0, self.world.position.y);
     }
-    //if we dont wanna drag up anymore
-    if ((self.world.position.y >= 0) && (dragPoint.y > 0)) {
+    //if new drag up will be too far, set y transform to zero
+    if (self.world.position.y + dragPoint.y >= 0) {
         dragPoint.y = 0;
         self.world.position = CGPointMake(self.world.position.x, 0);
     }
-    //if we dont wanna drag down anymore
-    if ((self.world.position.y <= minY) && (dragPoint.y < 0)) {
+    //if new drag down will be too far, set y transform to zero
+    if (self.world.position.y + dragPoint.y <= minY) {
         dragPoint.y = 0;
         self.world.position = CGPointMake(self.world.position.x, minY);
     }
@@ -288,9 +317,56 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
+-(void)handleZoom {
+    //NSLog(@"scaleFactor = %f", self.zoomRecognizer.scale);
+    
+    // if new scale will be too big, set current scale to max
+    if ((self.world.xScale *= self.zoomRecognizer.scale) > self.maxScale || (self.world.yScale *= self.zoomRecognizer.scale) > self.maxScale){
+        NSLog(@"too much zoom in");
+        self.world.xScale = self.maxScale;
+        self.world.yScale = self.maxScale;
+        
+    // if new scale will be too small, set current scale to min
+    } else if ((self.world.xScale *= self.zoomRecognizer.scale) < self.minScale || (self.world.xScale *= self.zoomRecognizer.scale) < self.minScale) {
+        NSLog(@"too much zoom out");
+        self.world.xScale = self.minScale;
+        self.world.yScale = self.minScale;
+    } else {
+    self.world.xScale *= self.zoomRecognizer.scale;
+    self.world.yScale *= self.zoomRecognizer.scale;
+    self.zoomRecognizer.scale = 1;
+    }
+    
+    // if world is getting off the screen, nudge it back
+    float minX = self.frame.size.width - self.board.width * CELL_SIZE * self.world.xScale;
+    float minY = self.frame.size.height - self.board.height * CELL_SIZE * self.world.yScale;
+    
+    CGFloat posX = self.world.position.x;
+    CGFloat posY = self.world.position.y;
+    
+    if (self.world.position.x <= minX) {
+        posX = 0;
+        self.world.position = CGPointMake(minX, self.world.position.y);
+    }
+    //if new drag right will be too far, set x transform to zero
+    if (self.world.position.x >= 0) {
+        posX = 0;
+        self.world.position = CGPointMake(0, self.world.position.y);
+    }
+    //if new drag up will be too far, set y transform to zero
+    if (self.world.position.y >= 0) {
+        posY = 0;
+        self.world.position = CGPointMake(self.world.position.x, 0);
+    }
+    //if new drag down will be too far, set y transform to zero
+    if (self.world.position.y <= minY) {
+        posY = 0;
+        self.world.position = CGPointMake(self.world.position.x, minY);
+    }
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    
 }
 
 @end
