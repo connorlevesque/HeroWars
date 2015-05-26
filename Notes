@@ -1,5 +1,46 @@
 Hello, welcome to our game.
 
+Key
+    Tile Types
+        Terrain
+            p - plain
+            f - forest
+            m - mountain
+            r - road
+            v - river
+            s - sea
+        Buldings
+            t - town
+            b - barracks
+            c - castle
+    Unit Types
+        F - footman
+        X - axeman
+        A - archer
+        C - cavalier
+        P - pikeman
+        K - knight
+        B - ballista
+        T - trebuchet
+    Players
+        0 - unowned
+        1 - player 1
+        2 - player 2
+            etc...
+        
+Tile situations
+    terrain or unowned building
+        p,
+    owned building
+        1-f,
+    terrain or unowned building and unit
+        p-1-f,
+    owned bulding and unit
+        1-t-1-f,
+
+
+
+
 Classes:
     Tile
     Gameboard

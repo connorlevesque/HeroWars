@@ -21,7 +21,7 @@ NSInteger CELL_SIZE = 51;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
-    self.board = [[Gameboard alloc]initWithMapNamed:@"MaxLevel1"];
+    self.board = [[Gameboard alloc]initWithLevelNamed:@"Campaign1"];
     self.inputManager = [[InputManager alloc]initWithBoard:self.board];
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
@@ -149,7 +149,7 @@ NSInteger CELL_SIZE = 51;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
-                    NSInteger healthInteger = ceil(unit.health / 10);
+                    NSInteger healthInteger = ceil((float)unit.health / 10);
                     if ((healthInteger <= 9) && (healthInteger > 0)) {
                         NSString *imageName = [NSString stringWithFormat:@"HeroWars_health_%d.png", healthInteger];
                         SKSpriteNode *healthIndicator = [[SKSpriteNode alloc]initWithImageNamed:imageName];

@@ -11,7 +11,7 @@
 
 @interface Axeman : Unit
 
--(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner;
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
 
 /* gameplay properties to set
     type

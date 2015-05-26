@@ -10,4 +10,20 @@
 
 @implementation Barracks
 
+-(id)initWithColors:(NSArray *)playerColors andOwner:(NSInteger)owner {
+    self = [super init];
+    if (self) {
+        self.owner = owner;
+        self.playerColors = playerColors;
+        self.teamColor = playerColors[owner - 1];
+        self.control = 20;
+        self.type = @"barracks";
+        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];
+        self.texture = [SKTexture textureWithImageNamed:imageName];
+        self.size = self.texture.size;
+        self.color = [UIColor whiteColor];
+    }
+    return self;
+}
+
 @end

@@ -34,6 +34,8 @@
 @property (nonatomic) NSInteger accuracy;
 @property (nonatomic) NSInteger armor;
 
+@property (nonatomic) BOOL canMoveAndAttack; //whether or not a unit can attack in the same turn that it moves
+
 //Dynamic Gameplay Properties
 @property (nonatomic) NSInteger health;
 @property (nonatomic) NSInteger experience;

@@ -10,6 +10,6 @@
 
 @interface Archer : Unit
 
--(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner;
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
 
 @end

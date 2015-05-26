@@ -31,7 +31,7 @@
         if ([touchType isEqualToString: @"hold"]) {
             NSLog(@"Tile held");
         // if tap
-        }else if ([touchType isEqualToString: @"tap"]) {
+        } else if ([touchType isEqualToString: @"tap"]) {
             // if unit
             if ([keyNode isKindOfClass:[Unit class]]) {
                 Unit *unit = (Unit *)keyNode;

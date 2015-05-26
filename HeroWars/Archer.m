@@ -10,13 +10,12 @@
 
 @implementation Archer
 
--(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner {
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
-        NSArray *playerColors = @[@"blue",@"red", @"green", @"yellow"];
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
         self.type = @"archer";
@@ -28,9 +27,9 @@
         self.group = @"archer";
         self.move = 4;
         self.range = @[@2,@2];
-        self.power = 60;
-        self.weapon = 1;
+        self.power = 75;
         self.accuracy = 80;
+        self.weapon = 5;
         self.armor = 0;
     }
     return self;

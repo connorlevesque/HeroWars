@@ -17,6 +17,7 @@
         self.state = @"awake";
         self.health = 100;
         self.experience = 0;
+        self.canMoveAndAttack = YES;
     }
     return self;
 }

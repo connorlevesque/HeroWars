@@ -1,18 +1,25 @@
 
 Campaign1
-12 x 7 with 1 unit for player 1
 
 :
 
 p, p, p, p, p, p, p, p, p, p, p, p /
-p, p-1-a, p, p, p, p, p, p, p, p, p, p /
-p, f, p-1-x, p, p, p, p, p, p, f, p, p /
-p, p, f-1-f, p, p, p, p, p, p, p, p, p /
+p, p-A-1, p, p, p, p, p, p, p, p, p, p /
+p, f, p-X-1, p, p, p, p, p, p, f, p, p /
+p, p, f-F-1, p, p, p, p, p, p, p, p, p /
 p, p, p, f, p, p, f, p, p, f, p, p /
-p, p, p, p, p, p, p-2-x, p, p-2-f, p, p-2-a, p /
+p, p, p, p, p, p, p-X-2, p, p-F-2, p, p-A-2, p /
 p, p, p, p, p, p, p, p, p, p, p, f
 
 :
 
+blue,red
+
+:
+
 standard
+
+:
+
+12x7 testing level
 

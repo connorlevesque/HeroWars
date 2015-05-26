@@ -10,4 +10,6 @@
 
 @interface Barracks : Production
 
+-(id)initWithColors:(NSArray *)playerColors andOwner:(NSInteger)owner;
+
 @end

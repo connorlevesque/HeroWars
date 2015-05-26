@@ -10,13 +10,12 @@
 
 @implementation Footman
 
--(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner {
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
-        NSArray *playerColors = @[@"blue",@"red", @"green", @"yellow"];
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
         self.type = @"footman";
@@ -28,10 +27,10 @@
         self.group = @"infantry";
         self.move = 4;
         self.range = @[@1,@1];
-        self.power = 30;
-        self.weapon = 1;
+        self.power = 50;
         self.accuracy = 90;
-        self.armor = 1;
+        self.weapon = 10;
+        self.armor = 50;
     }
     return self;
 }

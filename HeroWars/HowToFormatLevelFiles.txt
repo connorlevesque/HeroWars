@@ -1,0 +1,100 @@
+
+How to format level files:
+
+This file contains information regarding how to format level files so that they are parsed properly by the level parser.
+All whitespace is removed by the parser.
+All levels are broken into 5 parts referred to as the level's components. These components are separated by ":" (meaning ":" should not be used except to separate components) as follows:
+
+
+    LevelName
+
+    :
+
+    The mapString - a grid containing all tile types and units
+        rows are separated by "/" (does not follow the final row)
+        columns are separated by "," (does not follow the final column)
+        each square of the grid contains between one and four parts referred to as the square's componenents. These components are separated by "-".
+        square components are always formatted as one of the following:
+            just a terrain tile = terrainAbbreviation   (p)
+            just a building tile = buildingAbbreviation-buildingOwner   (t-0)
+            terrain tile with unit on it = tileAbbreviation-unitAbbreviation-unitOwner  (p-F-1)
+            building tile with unit on it = buildingAbbreviation-buildingOwner-unitAbbreviation-unitOwner   (t-2-F-2)
+        buildingOwner and unitOwner are integers between 0 and the number of players(inclusive)
+            the number of players is determined by the number of colors in the colorString)
+        The tile, building, unit, and owner number abbreviation key is shown below
+
+    :
+
+    The colorstring - a list of the colors of each player (in order) separated by ","
+        make sure that there are as many distinct colors listed as there are distinct owners specified in the mapString
+        make sure that these colors are lower case and supported by the corresponding images in the image folders
+
+    :
+
+    special information for win conditions
+        if you want the level to have normal win conditions, just put "standard" here
+        formatting for non-standard conditions is to be determined
+
+    :
+
+    notes on the level
+        this should always be the final component regardless of how many components there are
+        this information is purely for use in development
+
+
+This is the structure of a level file.
+Here's the abbreviation key'
+
+    Abbreviation Key:
+        Terrain
+            p - plain
+            f - forest
+            m - mountain
+            r - road
+            v - river
+            s - sea
+        Buldings
+            t - town
+            b - barracks
+            c - castle
+        Units
+            F - footman
+            X - axeman
+            A - archer
+            C - cavalier
+            P - pikeman
+            K - knight
+            B - ballista
+            T - trebuchet
+        Owner Numbers
+            0 - unowned (buildings only)
+            1 - player 1
+            2 - player 2
+            etc...
+
+This is the structure of a level file. A sample level is shown here:
+
+
+    SampleLevel
+
+    :
+
+    p, t-1, p, p, t-0, p, p, p, p, p, v, p /
+    p, c-1-A-1, b-1, p, f, p, p, p, p, p, v, v /
+    p, f, p-X-1, p, f, p, t-0, f, p, f, p, p /
+    p, p, f-F-1, p, p, p, p, p, p, p, p, p /
+    p, p, p, f, p, p, f, p, p, f, b-2, p /
+    p, m, m, m, p, p, p-X-2, p, c-2-F-2, p, p-A-2, p /
+    p, p, t-0, p, p, p, p, p, t-2, p, p, f
+
+    :
+
+    blue,red
+
+    :
+
+    standard
+
+    :
+
+    12x7 sample level showing all four squareComponent situations

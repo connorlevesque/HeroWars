@@ -10,4 +10,11 @@
 
 @interface Building : Tile
 
+@property (nonatomic) NSInteger control;
+@property (nonatomic) NSInteger owner;
+@property (strong, nonatomic) NSString *teamColor;
+@property (strong, nonatomic) NSArray *playerColors;
+
+-(id)initTownWithColors:(NSArray *)playerColors andOwner:(NSInteger)owner;
+
 @end

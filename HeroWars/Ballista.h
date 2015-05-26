@@ -10,4 +10,6 @@
 
 @interface Ballista : Unit
 
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
+
 @end

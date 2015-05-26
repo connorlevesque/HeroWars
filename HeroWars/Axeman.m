@@ -10,13 +10,12 @@
 
 @implementation Axeman
 
--(id)initOnTile:(Tile *)tile withOwner:(NSInteger)owner {
+-(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
         self.x = tile.x;
         self.y = tile.y;
         self.owner = owner;
-        NSArray *playerColors = @[@"blue",@"red", @"green", @"yellow"];
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
         self.type = @"axeman";
@@ -28,10 +27,10 @@
         self.group = @"infantry";
         self.move = 4;
         self.range = @[@1,@1];
-        self.power = 70;
-        self.weapon = 2;
+        self.power = 60;
         self.accuracy = 70;
-        self.armor = 1;
+        self.weapon = 50;
+        self.armor = 30;
     }
     return self;
 }
