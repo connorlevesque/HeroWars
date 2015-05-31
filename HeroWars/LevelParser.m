@@ -33,7 +33,6 @@
     [self getPlayerColors];     //levelComponents[2]
     [self buildGridsFromSquareStringGrid:[self getSquareStringGrid]];   //levelComponents[1]
     // handle win condition information here    //levelComponents[3]
-    
 }
 
 -(void)getLevelComponents:(NSString *)levelFile {
@@ -56,7 +55,8 @@
 -(NSMutableArray *)getSquareStringGrid {
     //returns a grid a strings containing the information for each square, also sets the height and width
     NSString *mapString = self.levelComponents[1];
-    NSArray *mapRows = [mapString componentsSeparatedByString:@"/"];
+    NSMutableArray *mapRows = (NSMutableArray *)[mapString componentsSeparatedByString:@"/"];
+    [self reverseArray:mapRows];
     self.height = [mapRows count];
     NSMutableArray *squareStringGrid = [[NSMutableArray alloc]init];
     for (NSString *rowString in mapRows) {
@@ -67,6 +67,18 @@
         [squareStringGrid addObject:rowComponents];
     }
     return squareStringGrid;
+}
+
+-(void)reverseArray:(NSMutableArray *)array {
+    if ([array count] > 1) {
+        int i = 0;
+        int j = [array count] - 1;
+        while (i < j) {
+            [array exchangeObjectAtIndex:i withObjectAtIndex:j];
+            i++;
+            j--;
+        }
+    }
 }
 
 -(void)buildGridsFromSquareStringGrid:(NSArray *)squareStringGrid {
@@ -127,7 +139,7 @@
 }
 
 -(NSString *)findTileTypeFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *tileAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"plains",@"p",@"forest",@"f",@"mountain",@"m",@"road",@"r",@"river",@"v",@"sea",@"s",@"town",@"t",@"barracks",@"b",@"castle",@"c", nil];
+    NSDictionary *tileAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"plain",@"p",@"forest",@"f",@"mountain",@"m",@"road",@"r",@"river",@"v",@"sea",@"s",@"town",@"t",@"barracks",@"b",@"castle",@"c", nil];
     NSString *tileType = [tileAbbreviationGuide objectForKey:abbreviation];
     return tileType;
 }

@@ -33,8 +33,27 @@
         self.currentPlayer = 1;
         self.day = 1;
         self.lastMoveInfo = [[NSMutableArray alloc]init];
+        self.funds = [[NSMutableArray alloc]init];
+        for (int i = 0; i < [self.playerColors count]; i++) {
+            [self.funds addObject:@0];
+        }
     }
     return self;
+}
+
+-(NSInteger)getFundsForPlayer:(NSInteger)player {
+    // returns the players funds
+    if (0 < player && player <= self.players) {
+        return [self.funds[player - 1] integerValue];
+    } else {
+        NSLog(@"Error: invalid player number for getFunds");
+        return -1;
+    }
+}
+
+-(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount {
+    // adjusts a players funds by the amount given
+    self.funds[player - 1] = [NSNumber numberWithInteger:([self getFundsForPlayer:player] + amount)];
 }
 
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b {

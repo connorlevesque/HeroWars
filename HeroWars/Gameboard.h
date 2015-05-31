@@ -24,8 +24,10 @@
 
 @property (nonatomic) NSInteger currentPlayer;
 @property (nonatomic) NSInteger day;
-@property (strong, nonatomic) NSMutableArray *lastMoveInfo;
-// @[x1,y1,x2,y2]
+@property (strong, nonatomic) NSMutableArray *lastMoveInfo; // @[x1,y1,x2,y2]
+@property (strong, nonatomic) NSMutableArray *funds;
+
+
 
 -(id)initWithLevelNamed:(NSString *)mapName;
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y;

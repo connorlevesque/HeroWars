@@ -15,7 +15,11 @@
     if (self) {
         self.owner = owner;
         self.playerColors = playerColors;
-        self.teamColor = playerColors[owner - 1];
+        if (owner == 0) {
+            self.teamColor = @"gray";
+        } else {
+            self.teamColor = playerColors[owner - 1];
+        }
         self.control = 20;
         self.type = @"castle";
         NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];

@@ -3,17 +3,22 @@ Campaign1
 
 :
 
-p, p, p, p, p, p, p, p, p, p, p, p /
-p, p-A-1, p, p, p, p, p, p, p, p, p, p /
-p, f, p-X-1, p, p, p, p, p, p, f, p, p /
-p, p, f-F-1, p, p, p, p, p, p, p, p, p /
-p, p, p, f, p, p, f, p, p, f, p, p /
-p, p, p, p, p, p, p-X-2, p, p-F-2, p, p-A-2, p /
-p, p, p, p, p, p, p, p, p, p, p, f
+p, p, p, f, f, m, p, p, v, p, p, p, p, p, p /
+p, p, p, p, p, p, p, v, v, p, p, p, p, t, p /
+p, p, b-1, p, p-P-1, p, p, v, p, p, m, m, m, p, p /
+p, c-1, r, r-B-1, t, p, p, v, t, p, p, p-F-2, p, p, p /
+p, p, b-1, r, r-K-1, r, r, r, r, r, r, r, r, p, p /
+m, p, p, p, p, p, p, v, p, p, t, p, r-C-2, p, p /
+m, p, p, f, p, f, t, v, p, p, p, p, r, p, p /
+p, p, p, p, p, v, v, v, p, f, p, p, r, t-T-2, p /
+p, p, p, p, p, v, m, p, p, f, f, p, r, p, p /
+p, p, p, p, v, v, p, p, p, p, p, b-2, r, b-2, p /
+s, t, p, t, v, p, p, t, p, p, p, p, c-2, p, p /
+s, s, p, p, v, p, p, p, p, p, p, p, p, p, p
 
 :
 
-blue,red
+yellow, blue
 
 :
 
@@ -21,5 +26,5 @@ standard
 
 :
 
-12x7 testing level
+15x12 testing level
 

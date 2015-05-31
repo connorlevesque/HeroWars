@@ -36,11 +36,55 @@
 		CD6966721B14B7DA009F4EC5 /* Production.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6966711B14B7DA009F4EC5 /* Production.m */; };
 		CD6966751B14B7F3009F4EC5 /* Barracks.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6966741B14B7F3009F4EC5 /* Barracks.m */; };
 		CD6966781B14B805009F4EC5 /* Castle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6966771B14B805009F4EC5 /* Castle.m */; };
+		CD69669E1B1786FC009F4EC5 /* HeroWars_barracks_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966941B1786FC009F4EC5 /* HeroWars_barracks_blue.png */; };
+		CD69669F1B1786FC009F4EC5 /* HeroWars_barracks_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966951B1786FC009F4EC5 /* HeroWars_barracks_gray.png */; };
+		CD6966A01B1786FC009F4EC5 /* HeroWars_barracks_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966961B1786FC009F4EC5 /* HeroWars_barracks_green.png */; };
+		CD6966A11B1786FC009F4EC5 /* HeroWars_barracks_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966971B1786FC009F4EC5 /* HeroWars_barracks_red.png */; };
+		CD6966A21B1786FC009F4EC5 /* HeroWars_barracks_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966981B1786FC009F4EC5 /* HeroWars_barracks_yellow.png */; };
+		CD6966A31B1786FC009F4EC5 /* HeroWars_town_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966991B1786FC009F4EC5 /* HeroWars_town_blue.png */; };
+		CD6966A41B1786FC009F4EC5 /* HeroWars_town_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69669A1B1786FC009F4EC5 /* HeroWars_town_gray.png */; };
+		CD6966A51B1786FC009F4EC5 /* HeroWars_town_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69669B1B1786FC009F4EC5 /* HeroWars_town_green.png */; };
+		CD6966A61B1786FC009F4EC5 /* HeroWars_town_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69669C1B1786FC009F4EC5 /* HeroWars_town_red.png */; };
+		CD6966A71B1786FC009F4EC5 /* HeroWars_town_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69669D1B1786FC009F4EC5 /* HeroWars_town_yellow.png */; };
+		CD6966AD1B17871B009F4EC5 /* HeroWars_castle_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966A81B17871B009F4EC5 /* HeroWars_castle_blue.png */; };
+		CD6966AE1B17871B009F4EC5 /* HeroWars_castle_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966A91B17871B009F4EC5 /* HeroWars_castle_gray.png */; };
+		CD6966AF1B17871B009F4EC5 /* HeroWars_castle_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966AA1B17871B009F4EC5 /* HeroWars_castle_green.png */; };
+		CD6966B01B17871B009F4EC5 /* HeroWars_castle_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966AB1B17871B009F4EC5 /* HeroWars_castle_red.png */; };
+		CD6966B11B17871B009F4EC5 /* HeroWars_castle_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966AC1B17871B009F4EC5 /* HeroWars_castle_yellow.png */; };
+		CD6966B81B17875D009F4EC5 /* HeroWars_sea.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B21B17875D009F4EC5 /* HeroWars_sea.png */; };
+		CD6966B91B17875D009F4EC5 /* HeroWars_road.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B31B17875D009F4EC5 /* HeroWars_road.png */; };
+		CD6966BA1B17875D009F4EC5 /* HeroWars_river.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B41B17875D009F4EC5 /* HeroWars_river.png */; };
+		CD6966BB1B17875D009F4EC5 /* HeroWars_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B51B17875D009F4EC5 /* HeroWars_plain.png */; };
+		CD6966BC1B17875D009F4EC5 /* HeroWars_mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B61B17875D009F4EC5 /* HeroWars_mountain.png */; };
+		CD6966BD1B17875D009F4EC5 /* HeroWars_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966B71B17875D009F4EC5 /* HeroWars_forest.png */; };
+		CD6966C81B1787F8009F4EC5 /* HeroWars_trebuchet_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966C31B1787F8009F4EC5 /* HeroWars_trebuchet_yellow.png */; };
+		CD6966C91B1787F8009F4EC5 /* HeroWars_trebuchet_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966C41B1787F8009F4EC5 /* HeroWars_trebuchet_red.png */; };
+		CD6966CA1B1787F8009F4EC5 /* HeroWars_trebuchet_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966C51B1787F8009F4EC5 /* HeroWars_trebuchet_green.png */; };
+		CD6966CB1B1787F8009F4EC5 /* HeroWars_trebuchet_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966C61B1787F8009F4EC5 /* HeroWars_trebuchet_gray.png */; };
+		CD6966CC1B1787F8009F4EC5 /* HeroWars_trebuchet_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966C71B1787F8009F4EC5 /* HeroWars_trebuchet_blue.png */; };
+		CD6966D21B178804009F4EC5 /* HeroWars_pikeman_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966CD1B178804009F4EC5 /* HeroWars_pikeman_yellow.png */; };
+		CD6966D31B178804009F4EC5 /* HeroWars_pikeman_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966CE1B178804009F4EC5 /* HeroWars_pikeman_red.png */; };
+		CD6966D41B178804009F4EC5 /* HeroWars_pikeman_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966CF1B178804009F4EC5 /* HeroWars_pikeman_green.png */; };
+		CD6966D51B178804009F4EC5 /* HeroWars_pikeman_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966D01B178804009F4EC5 /* HeroWars_pikeman_gray.png */; };
+		CD6966D61B178804009F4EC5 /* HeroWars_pikeman_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966D11B178804009F4EC5 /* HeroWars_pikeman_blue.png */; };
+		CD6966DC1B178810009F4EC5 /* HeroWars_knight_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966D71B178810009F4EC5 /* HeroWars_knight_yellow.png */; };
+		CD6966DD1B178810009F4EC5 /* HeroWars_knight_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966D81B178810009F4EC5 /* HeroWars_knight_red.png */; };
+		CD6966DE1B178810009F4EC5 /* HeroWars_knight_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966D91B178810009F4EC5 /* HeroWars_knight_green.png */; };
+		CD6966DF1B178810009F4EC5 /* HeroWars_knight_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966DA1B178810009F4EC5 /* HeroWars_knight_gray.png */; };
+		CD6966E01B178810009F4EC5 /* HeroWars_knight_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966DB1B178810009F4EC5 /* HeroWars_knight_blue.png */; };
+		CD6966E61B17882D009F4EC5 /* HeroWars_cavalier_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966E11B17882D009F4EC5 /* HeroWars_cavalier_yellow.png */; };
+		CD6966E71B17882D009F4EC5 /* HeroWars_cavalier_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966E21B17882D009F4EC5 /* HeroWars_cavalier_red.png */; };
+		CD6966E81B17882D009F4EC5 /* HeroWars_cavalier_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966E31B17882D009F4EC5 /* HeroWars_cavalier_green.png */; };
+		CD6966E91B17882D009F4EC5 /* HeroWars_cavalier_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966E41B17882D009F4EC5 /* HeroWars_cavalier_gray.png */; };
+		CD6966EA1B17882D009F4EC5 /* HeroWars_cavalier_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966E51B17882D009F4EC5 /* HeroWars_cavalier_blue.png */; };
+		CD6966F01B178837009F4EC5 /* HeroWars_ballista_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966EB1B178837009F4EC5 /* HeroWars_ballista_yellow.png */; };
+		CD6966F11B178837009F4EC5 /* HeroWars_ballista_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966EC1B178837009F4EC5 /* HeroWars_ballista_red.png */; };
+		CD6966F21B178837009F4EC5 /* HeroWars_ballista_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966ED1B178837009F4EC5 /* HeroWars_ballista_green.png */; };
+		CD6966F31B178837009F4EC5 /* HeroWars_ballista_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966EE1B178837009F4EC5 /* HeroWars_ballista_gray.png */; };
+		CD6966F41B178837009F4EC5 /* HeroWars_ballista_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6966EF1B178837009F4EC5 /* HeroWars_ballista_blue.png */; };
 		CD6AC7B91AF10EE400B07785 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AC7B81AF10EE400B07785 /* Building.m */; };
 		CDB97D611A8BA84E00B5ECFA /* Pather.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB97D601A8BA84E00B5ECFA /* Pather.m */; };
-		CDB97D651A8BC24E00B5ECFA /* HeroWars_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D621A8BC24E00B5ECFA /* HeroWars_forest.png */; };
 		CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */; };
-		CDB97D671A8BC24E00B5ECFA /* HeroWars_plains.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D641A8BC24E00B5ECFA /* HeroWars_plains.png */; };
 		CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D691A8D145C00B5ECFA /* Campaign1.txt */; };
 		CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */; };
 		CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png */; };
@@ -146,13 +190,57 @@
 		CD6966761B14B805009F4EC5 /* Castle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Castle.h; sourceTree = "<group>"; };
 		CD6966771B14B805009F4EC5 /* Castle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Castle.m; sourceTree = "<group>"; };
 		CD6966791B14BAA8009F4EC5 /* AllBuildings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllBuildings.h; sourceTree = "<group>"; };
+		CD6966941B1786FC009F4EC5 /* HeroWars_barracks_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_barracks_blue.png; sourceTree = "<group>"; };
+		CD6966951B1786FC009F4EC5 /* HeroWars_barracks_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_barracks_gray.png; sourceTree = "<group>"; };
+		CD6966961B1786FC009F4EC5 /* HeroWars_barracks_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_barracks_green.png; sourceTree = "<group>"; };
+		CD6966971B1786FC009F4EC5 /* HeroWars_barracks_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_barracks_red.png; sourceTree = "<group>"; };
+		CD6966981B1786FC009F4EC5 /* HeroWars_barracks_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_barracks_yellow.png; sourceTree = "<group>"; };
+		CD6966991B1786FC009F4EC5 /* HeroWars_town_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_town_blue.png; sourceTree = "<group>"; };
+		CD69669A1B1786FC009F4EC5 /* HeroWars_town_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_town_gray.png; sourceTree = "<group>"; };
+		CD69669B1B1786FC009F4EC5 /* HeroWars_town_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_town_green.png; sourceTree = "<group>"; };
+		CD69669C1B1786FC009F4EC5 /* HeroWars_town_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_town_red.png; sourceTree = "<group>"; };
+		CD69669D1B1786FC009F4EC5 /* HeroWars_town_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_town_yellow.png; sourceTree = "<group>"; };
+		CD6966A81B17871B009F4EC5 /* HeroWars_castle_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_castle_blue.png; sourceTree = "<group>"; };
+		CD6966A91B17871B009F4EC5 /* HeroWars_castle_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_castle_gray.png; sourceTree = "<group>"; };
+		CD6966AA1B17871B009F4EC5 /* HeroWars_castle_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_castle_green.png; sourceTree = "<group>"; };
+		CD6966AB1B17871B009F4EC5 /* HeroWars_castle_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_castle_red.png; sourceTree = "<group>"; };
+		CD6966AC1B17871B009F4EC5 /* HeroWars_castle_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_castle_yellow.png; sourceTree = "<group>"; };
+		CD6966B21B17875D009F4EC5 /* HeroWars_sea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_sea.png; sourceTree = "<group>"; };
+		CD6966B31B17875D009F4EC5 /* HeroWars_road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_road.png; sourceTree = "<group>"; };
+		CD6966B41B17875D009F4EC5 /* HeroWars_river.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_river.png; sourceTree = "<group>"; };
+		CD6966B51B17875D009F4EC5 /* HeroWars_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_plain.png; sourceTree = "<group>"; };
+		CD6966B61B17875D009F4EC5 /* HeroWars_mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_mountain.png; sourceTree = "<group>"; };
+		CD6966B71B17875D009F4EC5 /* HeroWars_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_forest.png; sourceTree = "<group>"; };
+		CD6966C31B1787F8009F4EC5 /* HeroWars_trebuchet_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_trebuchet_yellow.png; sourceTree = "<group>"; };
+		CD6966C41B1787F8009F4EC5 /* HeroWars_trebuchet_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_trebuchet_red.png; sourceTree = "<group>"; };
+		CD6966C51B1787F8009F4EC5 /* HeroWars_trebuchet_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_trebuchet_green.png; sourceTree = "<group>"; };
+		CD6966C61B1787F8009F4EC5 /* HeroWars_trebuchet_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_trebuchet_gray.png; sourceTree = "<group>"; };
+		CD6966C71B1787F8009F4EC5 /* HeroWars_trebuchet_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_trebuchet_blue.png; sourceTree = "<group>"; };
+		CD6966CD1B178804009F4EC5 /* HeroWars_pikeman_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_pikeman_yellow.png; sourceTree = "<group>"; };
+		CD6966CE1B178804009F4EC5 /* HeroWars_pikeman_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_pikeman_red.png; sourceTree = "<group>"; };
+		CD6966CF1B178804009F4EC5 /* HeroWars_pikeman_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_pikeman_green.png; sourceTree = "<group>"; };
+		CD6966D01B178804009F4EC5 /* HeroWars_pikeman_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_pikeman_gray.png; sourceTree = "<group>"; };
+		CD6966D11B178804009F4EC5 /* HeroWars_pikeman_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_pikeman_blue.png; sourceTree = "<group>"; };
+		CD6966D71B178810009F4EC5 /* HeroWars_knight_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_knight_yellow.png; sourceTree = "<group>"; };
+		CD6966D81B178810009F4EC5 /* HeroWars_knight_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_knight_red.png; sourceTree = "<group>"; };
+		CD6966D91B178810009F4EC5 /* HeroWars_knight_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_knight_green.png; sourceTree = "<group>"; };
+		CD6966DA1B178810009F4EC5 /* HeroWars_knight_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_knight_gray.png; sourceTree = "<group>"; };
+		CD6966DB1B178810009F4EC5 /* HeroWars_knight_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_knight_blue.png; sourceTree = "<group>"; };
+		CD6966E11B17882D009F4EC5 /* HeroWars_cavalier_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_cavalier_yellow.png; sourceTree = "<group>"; };
+		CD6966E21B17882D009F4EC5 /* HeroWars_cavalier_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_cavalier_red.png; sourceTree = "<group>"; };
+		CD6966E31B17882D009F4EC5 /* HeroWars_cavalier_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_cavalier_green.png; sourceTree = "<group>"; };
+		CD6966E41B17882D009F4EC5 /* HeroWars_cavalier_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_cavalier_gray.png; sourceTree = "<group>"; };
+		CD6966E51B17882D009F4EC5 /* HeroWars_cavalier_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_cavalier_blue.png; sourceTree = "<group>"; };
+		CD6966EB1B178837009F4EC5 /* HeroWars_ballista_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_ballista_yellow.png; sourceTree = "<group>"; };
+		CD6966EC1B178837009F4EC5 /* HeroWars_ballista_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_ballista_red.png; sourceTree = "<group>"; };
+		CD6966ED1B178837009F4EC5 /* HeroWars_ballista_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_ballista_green.png; sourceTree = "<group>"; };
+		CD6966EE1B178837009F4EC5 /* HeroWars_ballista_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_ballista_gray.png; sourceTree = "<group>"; };
+		CD6966EF1B178837009F4EC5 /* HeroWars_ballista_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_ballista_blue.png; sourceTree = "<group>"; };
 		CD6AC7B71AF10EE400B07785 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
 		CD6AC7B81AF10EE400B07785 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
 		CDB97D5F1A8BA84E00B5ECFA /* Pather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pather.h; path = ../Pather.h; sourceTree = "<group>"; };
 		CDB97D601A8BA84E00B5ECFA /* Pather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pather.m; path = ../Pather.m; sourceTree = "<group>"; };
-		CDB97D621A8BC24E00B5ECFA /* HeroWars_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_forest.png; sourceTree = "<group>"; };
 		CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroWars_tile_51_white.png; sourceTree = "<group>"; };
-		CDB97D641A8BC24E00B5ECFA /* HeroWars_plains.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_plains.png; sourceTree = "<group>"; };
 		CDB97D691A8D145C00B5ECFA /* Campaign1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campaign1.txt; sourceTree = "<group>"; };
 		CDB97D6B1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_transparentBlue.png; sourceTree = "<group>"; };
 		CDB97D6C1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroWars_axeman_blue.png; sourceTree = "<group>"; };
@@ -245,22 +333,13 @@
 				19D35E6B1A84426600A99BC8 /* InputManager.m */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
 				197703A31A7D09A700E89CDE /* Gameboard.m */,
+				CDC30BA81ADC40F80092AC82 /* Tiles */,
+				CDC30BA71ADC40B90092AC82 /* Units */,
+				CD69667A1B14D9E3009F4EC5 /* UI Elements */,
 				CD6966581B13B48D009F4EC5 /* LevelParser.h */,
 				CD6966591B13B48D009F4EC5 /* LevelParser.m */,
-				CDC30BA81ADC40F80092AC82 /* Tiles */,
 				CDBE25301A97ED7D001312C0 /* Combat.h */,
 				CDBE25311A97ED7D001312C0 /* Combat.m */,
-				CDC30BA71ADC40B90092AC82 /* Units */,
-				CDB97D711A8E60B200B5ECFA /* Highlight.h */,
-				CDB97D721A8E60B200B5ECFA /* Highlight.m */,
-				CD55AB411A86A49C003AD677 /* Menu.h */,
-				CD55AB421A86A49C003AD677 /* Menu.m */,
-				CDBE252D1A92B1BA001312C0 /* ActionMenu.h */,
-				CDBE252E1A92B1BA001312C0 /* ActionMenu.m */,
-				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
-				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
-				CD26AC301A87DB2F00A96EEB /* Button.h */,
-				CD26AC311A87DB2F00A96EEB /* Button.m */,
 				CDB97D5F1A8BA84E00B5ECFA /* Pather.h */,
 				CDB97D601A8BA84E00B5ECFA /* Pather.m */,
 				197703821A7D075B00E89CDE /* GameViewController.h */,
@@ -302,6 +381,129 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CD69667A1B14D9E3009F4EC5 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				CD55AB411A86A49C003AD677 /* Menu.h */,
+				CD55AB421A86A49C003AD677 /* Menu.m */,
+				CDBE252D1A92B1BA001312C0 /* ActionMenu.h */,
+				CDBE252E1A92B1BA001312C0 /* ActionMenu.m */,
+				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
+				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
+				CD26AC301A87DB2F00A96EEB /* Button.h */,
+				CD26AC311A87DB2F00A96EEB /* Button.m */,
+				CDB97D711A8E60B200B5ECFA /* Highlight.h */,
+				CDB97D721A8E60B200B5ECFA /* Highlight.m */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		CD69667C1B1785D0009F4EC5 /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				CD69667D1B1785F3009F4EC5 /* Town */,
+				CD69667E1B1785FB009F4EC5 /* Barracks */,
+				CD69667F1B17860D009F4EC5 /* Castle */,
+			);
+			name = Buildings;
+			sourceTree = "<group>";
+		};
+		CD69667D1B1785F3009F4EC5 /* Town */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966991B1786FC009F4EC5 /* HeroWars_town_blue.png */,
+				CD69669A1B1786FC009F4EC5 /* HeroWars_town_gray.png */,
+				CD69669B1B1786FC009F4EC5 /* HeroWars_town_green.png */,
+				CD69669C1B1786FC009F4EC5 /* HeroWars_town_red.png */,
+				CD69669D1B1786FC009F4EC5 /* HeroWars_town_yellow.png */,
+			);
+			name = Town;
+			sourceTree = "<group>";
+		};
+		CD69667E1B1785FB009F4EC5 /* Barracks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966941B1786FC009F4EC5 /* HeroWars_barracks_blue.png */,
+				CD6966951B1786FC009F4EC5 /* HeroWars_barracks_gray.png */,
+				CD6966961B1786FC009F4EC5 /* HeroWars_barracks_green.png */,
+				CD6966971B1786FC009F4EC5 /* HeroWars_barracks_red.png */,
+				CD6966981B1786FC009F4EC5 /* HeroWars_barracks_yellow.png */,
+			);
+			name = Barracks;
+			sourceTree = "<group>";
+		};
+		CD69667F1B17860D009F4EC5 /* Castle */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966A81B17871B009F4EC5 /* HeroWars_castle_blue.png */,
+				CD6966A91B17871B009F4EC5 /* HeroWars_castle_gray.png */,
+				CD6966AA1B17871B009F4EC5 /* HeroWars_castle_green.png */,
+				CD6966AB1B17871B009F4EC5 /* HeroWars_castle_red.png */,
+				CD6966AC1B17871B009F4EC5 /* HeroWars_castle_yellow.png */,
+			);
+			name = Castle;
+			sourceTree = "<group>";
+		};
+		CD6966BE1B1787AC009F4EC5 /* Trebuchet */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966C31B1787F8009F4EC5 /* HeroWars_trebuchet_yellow.png */,
+				CD6966C41B1787F8009F4EC5 /* HeroWars_trebuchet_red.png */,
+				CD6966C51B1787F8009F4EC5 /* HeroWars_trebuchet_green.png */,
+				CD6966C61B1787F8009F4EC5 /* HeroWars_trebuchet_gray.png */,
+				CD6966C71B1787F8009F4EC5 /* HeroWars_trebuchet_blue.png */,
+			);
+			name = Trebuchet;
+			sourceTree = "<group>";
+		};
+		CD6966BF1B1787AF009F4EC5 /* Ballista */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966EB1B178837009F4EC5 /* HeroWars_ballista_yellow.png */,
+				CD6966EC1B178837009F4EC5 /* HeroWars_ballista_red.png */,
+				CD6966ED1B178837009F4EC5 /* HeroWars_ballista_green.png */,
+				CD6966EE1B178837009F4EC5 /* HeroWars_ballista_gray.png */,
+				CD6966EF1B178837009F4EC5 /* HeroWars_ballista_blue.png */,
+			);
+			name = Ballista;
+			sourceTree = "<group>";
+		};
+		CD6966C01B1787B1009F4EC5 /* Knight */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966D71B178810009F4EC5 /* HeroWars_knight_yellow.png */,
+				CD6966D81B178810009F4EC5 /* HeroWars_knight_red.png */,
+				CD6966D91B178810009F4EC5 /* HeroWars_knight_green.png */,
+				CD6966DA1B178810009F4EC5 /* HeroWars_knight_gray.png */,
+				CD6966DB1B178810009F4EC5 /* HeroWars_knight_blue.png */,
+			);
+			name = Knight;
+			sourceTree = "<group>";
+		};
+		CD6966C11B1787B3009F4EC5 /* Pikeman */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966CD1B178804009F4EC5 /* HeroWars_pikeman_yellow.png */,
+				CD6966CE1B178804009F4EC5 /* HeroWars_pikeman_red.png */,
+				CD6966CF1B178804009F4EC5 /* HeroWars_pikeman_green.png */,
+				CD6966D01B178804009F4EC5 /* HeroWars_pikeman_gray.png */,
+				CD6966D11B178804009F4EC5 /* HeroWars_pikeman_blue.png */,
+			);
+			name = Pikeman;
+			sourceTree = "<group>";
+		};
+		CD6966C21B1787B5009F4EC5 /* Cavalier */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966E11B17882D009F4EC5 /* HeroWars_cavalier_yellow.png */,
+				CD6966E21B17882D009F4EC5 /* HeroWars_cavalier_red.png */,
+				CD6966E31B17882D009F4EC5 /* HeroWars_cavalier_green.png */,
+				CD6966E41B17882D009F4EC5 /* HeroWars_cavalier_gray.png */,
+				CD6966E51B17882D009F4EC5 /* HeroWars_cavalier_blue.png */,
+			);
+			name = Cavalier;
+			sourceTree = "<group>";
+		};
 		CDB97D681A8D111100B5ECFA /* Levels */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,7 +520,8 @@
 			children = (
 				CDBE253E1A991A5B001312C0 /* UI */,
 				CDBE253B1A991A04001312C0 /* Units */,
-				CDBE253D1A991A26001312C0 /* Tiles */,
+				CD69667C1B1785D0009F4EC5 /* Buildings */,
+				CDBE253D1A991A26001312C0 /* Terrain */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -348,6 +551,11 @@
 				CDBE25441A991F14001312C0 /* Footman */,
 				CDBE253C1A991A0F001312C0 /* Axeman */,
 				CDBE25451A991F2E001312C0 /* Archer */,
+				CD6966C21B1787B5009F4EC5 /* Cavalier */,
+				CD6966C11B1787B3009F4EC5 /* Pikeman */,
+				CD6966C01B1787B1009F4EC5 /* Knight */,
+				CD6966BF1B1787AF009F4EC5 /* Ballista */,
+				CD6966BE1B1787AC009F4EC5 /* Trebuchet */,
 			);
 			name = Units;
 			sourceTree = "<group>";
@@ -364,14 +572,18 @@
 			name = Axeman;
 			sourceTree = "<group>";
 		};
-		CDBE253D1A991A26001312C0 /* Tiles */ = {
+		CDBE253D1A991A26001312C0 /* Terrain */ = {
 			isa = PBXGroup;
 			children = (
+				CD6966B21B17875D009F4EC5 /* HeroWars_sea.png */,
+				CD6966B31B17875D009F4EC5 /* HeroWars_road.png */,
+				CD6966B41B17875D009F4EC5 /* HeroWars_river.png */,
+				CD6966B51B17875D009F4EC5 /* HeroWars_plain.png */,
+				CD6966B61B17875D009F4EC5 /* HeroWars_mountain.png */,
+				CD6966B71B17875D009F4EC5 /* HeroWars_forest.png */,
 				CDB97D631A8BC24E00B5ECFA /* heroWars_tile_51_white.png */,
-				CDB97D641A8BC24E00B5ECFA /* HeroWars_plains.png */,
-				CDB97D621A8BC24E00B5ECFA /* HeroWars_forest.png */,
 			);
-			name = Tiles;
+			name = Terrain;
 			sourceTree = "<group>";
 		};
 		CDBE253E1A991A5B001312C0 /* UI */ = {
@@ -557,39 +769,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6966E91B17882D009F4EC5 /* HeroWars_cavalier_gray.png in Resources */,
 				CDBE25981A9938B1001312C0 /* HeroWars_health_9.png in Resources */,
 				CDBE25941A9938B1001312C0 /* HeroWars_health_5.png in Resources */,
 				CDBE258F1A9938B1001312C0 /* HeroWars_footman_yellow.png in Resources */,
+				CD6966F41B178837009F4EC5 /* HeroWars_ballista_blue.png in Resources */,
+				CD6966DE1B178810009F4EC5 /* HeroWars_knight_green.png in Resources */,
 				CDBE258C1A9938B1001312C0 /* HeroWars_footman_gray.png in Resources */,
 				CDBE25971A9938B1001312C0 /* HeroWars_health_8.png in Resources */,
-				CDB97D651A8BC24E00B5ECFA /* HeroWars_forest.png in Resources */,
+				CD6966C81B1787F8009F4EC5 /* HeroWars_trebuchet_yellow.png in Resources */,
 				CDBE25841A9938B1001312C0 /* HeroWars_archer_blue.png in Resources */,
+				CD6966CC1B1787F8009F4EC5 /* HeroWars_trebuchet_blue.png in Resources */,
+				CD6966EA1B17882D009F4EC5 /* HeroWars_cavalier_blue.png in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
 				CDBE259A1A993DD0001312C0 /* Sandbox1.txt in Resources */,
+				CD6966D21B178804009F4EC5 /* HeroWars_pikeman_yellow.png in Resources */,
+				CD6966CB1B1787F8009F4EC5 /* HeroWars_trebuchet_gray.png in Resources */,
 				CDBE252A1A92AE01001312C0 /* HeroWars_generalMenu1.png in Resources */,
 				192D61A21A7D382F0057213D /* Notes in Resources */,
+				CD6966C91B1787F8009F4EC5 /* HeroWars_trebuchet_red.png in Resources */,
 				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
+				CD6966BB1B17875D009F4EC5 /* HeroWars_plain.png in Resources */,
+				CD6966DD1B178810009F4EC5 /* HeroWars_knight_red.png in Resources */,
+				CD6966A01B1786FC009F4EC5 /* HeroWars_barracks_green.png in Resources */,
+				CD6966CA1B1787F8009F4EC5 /* HeroWars_trebuchet_green.png in Resources */,
+				CD6966BC1B17875D009F4EC5 /* HeroWars_mountain.png in Resources */,
 				CDBE25951A9938B1001312C0 /* HeroWars_health_6.png in Resources */,
 				CDBE25881A9938B1001312C0 /* HeroWars_archer_yellow.png in Resources */,
+				CD6966A11B1786FC009F4EC5 /* HeroWars_barracks_red.png in Resources */,
+				CD6966DC1B178810009F4EC5 /* HeroWars_knight_yellow.png in Resources */,
+				CD6966F21B178837009F4EC5 /* HeroWars_ballista_green.png in Resources */,
+				CD6966A51B1786FC009F4EC5 /* HeroWars_town_green.png in Resources */,
 				194871451A9C2C14002B60A0 /* MaxLevel1.txt in Resources */,
 				CDBE25931A9938B1001312C0 /* HeroWars_health_4.png in Resources */,
+				CD6966E61B17882D009F4EC5 /* HeroWars_cavalier_yellow.png in Resources */,
+				CD6966A31B1786FC009F4EC5 /* HeroWars_town_blue.png in Resources */,
 				CDBE25921A9938B1001312C0 /* HeroWars_health_3.png in Resources */,
+				CD6966D31B178804009F4EC5 /* HeroWars_pikeman_red.png in Resources */,
 				CDBE258E1A9938B1001312C0 /* HeroWars_footman_red.png in Resources */,
 				CDBE25271A92AE01001312C0 /* HeroWars_button_end.png in Resources */,
+				CD6966D51B178804009F4EC5 /* HeroWars_pikeman_gray.png in Resources */,
 				CDBE25291A92AE01001312C0 /* HeroWars_button_wait.png in Resources */,
+				CD6966A61B1786FC009F4EC5 /* HeroWars_town_red.png in Resources */,
 				CDBE25861A9938B1001312C0 /* HeroWars_archer_green.png in Resources */,
 				CDBE25281A92AE01001312C0 /* HeroWars_button_options.png in Resources */,
+				CD6966A41B1786FC009F4EC5 /* HeroWars_town_gray.png in Resources */,
+				CD6966AD1B17871B009F4EC5 /* HeroWars_castle_blue.png in Resources */,
 				CDB97D6F1A8D7FBA00B5ECFA /* HeroWars_axeman_blue.png in Resources */,
 				CDBE252B1A92AE01001312C0 /* HeroWars_axeman_gray.png in Resources */,
 				197703891A7D075B00E89CDE /* Images.xcassets in Resources */,
 				CDBE25961A9938B1001312C0 /* HeroWars_health_7.png in Resources */,
+				CD6966AE1B17871B009F4EC5 /* HeroWars_castle_gray.png in Resources */,
+				CD6966B01B17871B009F4EC5 /* HeroWars_castle_red.png in Resources */,
 				CDBE258D1A9938B1001312C0 /* HeroWars_footman_green.png in Resources */,
 				CDB97D701A8D7FBA00B5ECFA /* HeroWars_axeman_red.png in Resources */,
 				CDB97D661A8BC24E00B5ECFA /* heroWars_tile_51_white.png in Resources */,
 				197703811A7D075B00E89CDE /* GameScene.sks in Resources */,
+				CD6966B11B17871B009F4EC5 /* HeroWars_castle_yellow.png in Resources */,
 				CDBE258A1A9938B1001312C0 /* HeroWars_axeman_yellow.png in Resources */,
 				CDB97D6A1A8D145C00B5ECFA /* Campaign1.txt in Resources */,
 				CDBE25901A9938B1001312C0 /* HeroWars_health_1.png in Resources */,
+				CD6966F31B178837009F4EC5 /* HeroWars_ballista_gray.png in Resources */,
+				CD69669E1B1786FC009F4EC5 /* HeroWars_barracks_blue.png in Resources */,
+				CD69669F1B1786FC009F4EC5 /* HeroWars_barracks_gray.png in Resources */,
+				CD6966E01B178810009F4EC5 /* HeroWars_knight_blue.png in Resources */,
+				CD6966E81B17882D009F4EC5 /* HeroWars_cavalier_green.png in Resources */,
+				CD6966D61B178804009F4EC5 /* HeroWars_pikeman_blue.png in Resources */,
 				197703871A7D075B00E89CDE /* Main.storyboard in Resources */,
 				CDBE25871A9938B1001312C0 /* HeroWars_archer_red.png in Resources */,
 				CDBE25851A9938B1001312C0 /* HeroWars_archer_gray.png in Resources */,
@@ -597,7 +842,18 @@
 				CDBE25891A9938B1001312C0 /* HeroWars_axeman_green.png in Resources */,
 				CD69665C1B13C456009F4EC5 /* HowToFormatLevelFiles.txt in Resources */,
 				CDBE25911A9938B1001312C0 /* HeroWars_health_2.png in Resources */,
-				CDB97D671A8BC24E00B5ECFA /* HeroWars_plains.png in Resources */,
+				CD6966A71B1786FC009F4EC5 /* HeroWars_town_yellow.png in Resources */,
+				CD6966BD1B17875D009F4EC5 /* HeroWars_forest.png in Resources */,
+				CD6966E71B17882D009F4EC5 /* HeroWars_cavalier_red.png in Resources */,
+				CD6966B91B17875D009F4EC5 /* HeroWars_road.png in Resources */,
+				CD6966F11B178837009F4EC5 /* HeroWars_ballista_red.png in Resources */,
+				CD6966D41B178804009F4EC5 /* HeroWars_pikeman_green.png in Resources */,
+				CD6966BA1B17875D009F4EC5 /* HeroWars_river.png in Resources */,
+				CD6966A21B1786FC009F4EC5 /* HeroWars_barracks_yellow.png in Resources */,
+				CD6966AF1B17871B009F4EC5 /* HeroWars_castle_green.png in Resources */,
+				CD6966F01B178837009F4EC5 /* HeroWars_ballista_yellow.png in Resources */,
+				CD6966DF1B178810009F4EC5 /* HeroWars_knight_gray.png in Resources */,
+				CD6966B81B17875D009F4EC5 /* HeroWars_sea.png in Resources */,
 				CDB97D6E1A8D7FBA00B5ECFA /* HeroWars_transparentBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

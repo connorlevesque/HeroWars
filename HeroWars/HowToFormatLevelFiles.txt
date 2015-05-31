@@ -21,6 +21,7 @@ All levels are broken into 5 parts referred to as the level's components. These 
             building tile with unit on it = buildingAbbreviation-buildingOwner-unitAbbreviation-unitOwner   (t-2-F-2)
         buildingOwner and unitOwner are integers between 0 and the number of players(inclusive)
             the number of players is determined by the number of colors in the colorString)
+            buildings without buildingOwner values are assumed to be unowned
         The tile, building, unit, and owner number abbreviation key is shown below
 
     :

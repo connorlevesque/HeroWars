@@ -97,10 +97,12 @@
             if ([button.name isEqualToString:@"wait"]) {
                 [self.selectedUnit changeStateTo:@"asleep"];
                 [self setValue:@"battle" forKey:@"stage"];
+                self.selectedUnit = (Unit *)[NSNull null];
             }
             // if attack
             else if ([button.name isEqualToString:@"attack"]) {
                 [self setValue:@"chooseAttack" forKey:@"stage"];
+                self.selectedUnit = (Unit *)[NSNull null];
             }
             // otherwise
             else {

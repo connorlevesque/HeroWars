@@ -22,7 +22,7 @@
         self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
-        NSDictionary *moveCosts = [[NSDictionary alloc]initWithObjectsAndKeys:@1,@"plains",@2,@"forest",@3,@"mountain",@1,@"road",@3,@"river",@100,@"sea", nil];
+        NSDictionary *moveCosts = [[NSDictionary alloc]initWithObjectsAndKeys:@1,@"plain",@2,@"forest",@3,@"mountain",@1,@"road",@3,@"river",@100,@"sea", nil];
         self.moveCost = [[moveCosts objectForKey:self.type] integerValue];
     }
     return self;
