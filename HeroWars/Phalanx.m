@@ -1,14 +1,14 @@
 //
-//  Archer.m
+//  Phalanx.m
 //  HeroWars
 //
-//  Created by Connor Levesque on 2/21/15.
+//  Created by Connor Levesque on 7/23/15.
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#import "Archer.h"
+#import "Phalanx.h"
 
-@implementation Archer
+@implementation Phalanx
 
 -(id)initOnTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
@@ -18,7 +18,7 @@
         self.owner = owner;
         self.teamColor = playerColors[self.owner - 1];
         // set type specific properties
-        self.type = @"archer";
+        self.type = @"phalanx";
         NSString *imageName = [NSString stringWithFormat:@"%@_%@", self.type, self.teamColor];
         self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
@@ -26,7 +26,7 @@
         // Set Gameplay Properties
         self.group = @"infantry";
         self.move = 4;
-        self.range = @[@2,@2];
+        self.range = @[@1,@1];
         // Set combat properties
         self.accuracy = 100;
         self.evasion = 5;

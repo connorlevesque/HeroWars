@@ -17,6 +17,7 @@
 @property (strong, nonatomic) Gameboard *board;
 @property (strong, nonatomic) InputManager *inputManager;
 @property (strong, nonatomic) SKNode *world;
+@property (strong, nonatomic) SKLabelNode *fundsLabel;
 
 @property (strong, nonatomic) NSArray *touchedNodes;
 @property (nonatomic) CGPoint lastTouch;

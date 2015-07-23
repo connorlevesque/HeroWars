@@ -6,12 +6,6 @@
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-
-
-
-// do the thing you did in the zooming that makes the stopping points smooth with the drag ie: if the resulting position will be too big, set the current position to max. that way it doesnt lag and accidentally drag too far.
-
-
 #import "GameScene.h"
 
 @implementation GameScene
@@ -21,38 +15,25 @@ NSInteger CELL_SIZE = 51;
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     [self setAnchorPoint:CGPointMake(0, 0)];
-    self.board = [[Gameboard alloc]initWithLevelNamed:@"Campaign1"];
+    self.board = [[Gameboard alloc]initWithLevelNamed:@"Sandbox1"];
     self.inputManager = [[InputManager alloc]initWithBoard:self.board];
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
     [self addChild:self.world];
     [self drawGrids];
     self.touchState = 0;
-    
-    // initialize menus
-    
     self.generalMenu = [[GeneralMenu alloc]init];
     self.generalMenu.position = CGPointMake(25, 50);
     self.highlightedTiles = [[NSMutableArray alloc]init];
-    
     // make scene observer of inputManager
-
     [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    
-    
     // zoom gesture stuff
     self.zoomRecognizer = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(handleZoom)];
     [self.view addGestureRecognizer:self.zoomRecognizer];
-    
     CGFloat worldHeight = self.board.height * CELL_SIZE;
     CGFloat worldWidth = self.board.width * CELL_SIZE;
-    
-    
     self.minScale = MAX(self.frame.size.height / worldHeight, self.frame.size.width / worldWidth);
     self.maxScale = 1;
-    
-    
-    
     NSLog(@"self.frame.size.height = %f", self.frame.size.height);
     NSLog(@"self.frame.size.width = %f", self.frame.size.width);
     NSLog(@"world.size.height = %f", self.world.frame.size.height);
@@ -60,6 +41,28 @@ NSInteger CELL_SIZE = 51;
     NSLog(@"maxScale = %f", self.maxScale);
     NSLog(@"minScale = %f", self.minScale);
     NSLog(@"scale = %f", self.world.yScale);
+    
+    self.fundsLabel = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
+    self.fundsLabel.fontSize = 40;
+    self.fundsLabel.position = CGPointMake(self.frame.size.width,self.frame.size.height);
+    self.fundsLabel.horizontalAlignmentMode = 2; //right aligned
+    self.fundsLabel.verticalAlignmentMode = 2; //top aligned
+    [self updateFundsLabel];
+    [self addChild:self.fundsLabel];
+}
+
+-(UIColor *)colorWithPlayerColor:(NSString *)playerColor {
+    if ([playerColor isEqualToString:@"red"]) {
+        return [UIColor redColor];
+    } else if ([playerColor isEqualToString:@"blue"]) {
+        return [UIColor blueColor];
+    } else if ([playerColor isEqualToString:@"yellow"]) {
+        return [UIColor yellowColor];
+    } else if ([playerColor isEqualToString:@"green"]) {
+        return [UIColor greenColor];
+    } else {
+        return [UIColor whiteColor];
+    }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -78,52 +81,43 @@ NSInteger CELL_SIZE = 51;
     // if stage is changing from battle to generalMenu
     if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"generalMenu"]) {
         [self addChild:self.generalMenu];
-    }
     // if stage is changing from generalMenu to battle
-    else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
+    } else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
         [self.generalMenu removeFromParent];
-    }
     //if stage is changing from turnEnded to battle
-    else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
+    } else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
         [self.generalMenu removeFromParent];
-        [self endTurn];
-    }
+        [self.board endTurn];
+        [self updateFundsLabel];
     // if stage is changing from battle to unitMove
-    else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
+    } else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
         [self highlightMoveTiles];
-    }
     // if stage is changing from unitMove to battle
-    else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
+    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
         [self unHighlightTiles];
-    }
     // if stage is changing from unitMove to unitAction
-    else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
+    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
         [self unHighlightTiles];
         [self updateUnits];
         [self setUpActionMenu];
-    }
     // if stage is changing from unitAction to unitMove
-    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
+    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
         [self.actionMenu removeFromParent];
         [self updateUnits];
         [self highlightMoveTiles];
-    }
     // if stage is changing from unitAction to Battle
-    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
+    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
         [self.actionMenu removeFromParent];
-    }
     //if stage is changing from unitAction to chooseAttack
-    else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"chooseAttack"]) {
+    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"chooseAttack"]) {
         [self.actionMenu removeFromParent];
         [self highlightAttackTiles];
-    }
     //if stage is changing from chooseAttack to unitAction
-    else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"unitAction"]) {
+    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"unitAction"]) {
         [self unHighlightTiles];
         [self setUpActionMenu];
-    }
     //if stage is changing from chooseAttack to battle
-    else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
+    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
         [self unHighlightTiles];
         [self updateUnits];
     }
@@ -133,6 +127,11 @@ NSInteger CELL_SIZE = 51;
     self.actionMenu = [[ActionMenu alloc]init];
     self.actionMenu.position = CGPointMake(25, 50);
     [self addChild:self.actionMenu];
+}
+
+-(void)updateFundsLabel {
+    self.fundsLabel.fontColor = [self colorWithPlayerColor:self.board.playerColors[self.board.currentPlayer - 1]];
+    self.fundsLabel.text = [NSString stringWithFormat:@"%@",self.board.funds[self.board.currentPlayer - 1]];
 }
 
 -(void)updateUnits {
@@ -149,7 +148,7 @@ NSInteger CELL_SIZE = 51;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
-                    NSInteger healthInteger = ceil((float)unit.health / 10);
+                    NSInteger healthInteger = ceil((float)unit.health / unit.totalHealth * 10);
                     if ((healthInteger <= 9) && (healthInteger > 0)) {
                         NSString *imageName = [NSString stringWithFormat:@"HeroWars_health_%d.png", healthInteger];
                         SKSpriteNode *healthIndicator = [[SKSpriteNode alloc]initWithImageNamed:imageName];
@@ -300,21 +299,6 @@ NSInteger CELL_SIZE = 51;
         self.world.position = CGPointMake(self.world.position.x, minY);
     }
     return dragPoint;
-}
-
--(void)endTurn {
-    // when turn is over, 1) set all the units to awake. 2) change whose turn it is.
-    self.board.currentPlayer = (self.board.currentPlayer) % self.board.players + 1;
-    NSLog(@"Turn Over; it is now player %d's turn", self.board.currentPlayer);
-    for (NSMutableArray *row in self.board.unitGrid) {
-        for (id unitMaybe in row){
-            if ([unitMaybe isKindOfClass:[Unit class]]){
-                Unit *unit = (Unit *)unitMaybe;
-                [unit changeStateTo:@"awake"];
-                
-            }
-        }
-    }
 }
 
 -(void)handleZoom {

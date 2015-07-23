@@ -6,7 +6,7 @@ Campaign1
 p, p, p, f, f, m, p, p, v, p, p, p, p, p, p /
 p, p, p, p, p, p, p, v, v, p, p, p, p, t, p /
 p, p, b-1, p, p-P-1, p, p, v, p, p, m, m, m, p, p /
-p, c-1, r, r-B-1, t, p, p, v, t, p, p, p-F-2, p, p, p /
+p, c-1, r, r-B-1, t-1, p, p, v, t, p, p, p-C-2, p, p, p /
 p, p, b-1, r, r-K-1, r, r, r, r, r, r, r, r, p, p /
 m, p, p, p, p, p, p, v, p, p, t, p, r-C-2, p, p /
 m, p, p, f, p, f, t, v, p, p, p, p, r, p, p /
@@ -18,7 +18,7 @@ s, s, p, p, v, p, p, p, p, p, p, p, p, p, p
 
 :
 
-yellow, blue
+red, blue
 
 :
 

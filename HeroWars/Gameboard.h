@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#import "AllUnits.h"
+#import "Unit.h"
 #import "Building.h"
 #import "LevelParser.h"
 
@@ -17,14 +17,16 @@
 @property (strong, nonatomic) NSString *levelName;
 @property (nonatomic) NSInteger width;
 @property (nonatomic) NSInteger height;
-@property (strong, nonatomic) NSMutableArray *tileGrid;
-@property (strong, nonatomic) NSMutableArray *unitGrid;
 @property (nonatomic) NSInteger players;
 @property (strong, nonatomic) NSArray *playerColors;
 
+@property (strong, nonatomic) NSMutableArray *tileGrid;
+@property (strong, nonatomic) NSMutableArray *unitGrid;
+@property (strong, nonatomic) NSMutableArray *lastMoveInfo; // @[x1,y1,x2,y2]
+
+// changes every turn
 @property (nonatomic) NSInteger currentPlayer;
 @property (nonatomic) NSInteger day;
-@property (strong, nonatomic) NSMutableArray *lastMoveInfo; // @[x1,y1,x2,y2]
 @property (strong, nonatomic) NSMutableArray *funds;
 
 
@@ -36,5 +38,6 @@
 -(Unit *)undoMoveUnit;
 -(void)removeUnitFromTile:(Tile *)tile;
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b;
+-(void)endTurn;
 
 @end

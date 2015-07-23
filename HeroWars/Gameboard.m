@@ -16,6 +16,8 @@
 
 @implementation Gameboard
 
+NSInteger INCOME_PER_BUILDING = 100;
+
 -(id)initWithLevelNamed:(NSString *)levelFile {
     self = [super init];
     if (self) {
@@ -37,8 +39,42 @@
         for (int i = 0; i < [self.playerColors count]; i++) {
             [self.funds addObject:@0];
         }
+        [self adjustFundsForPlayer:self.currentPlayer byAmount:[self getIncomeForPlayer:self.currentPlayer]];
     }
     return self;
+}
+
+-(void)endTurn {
+    // when turn is over, 1) set all the units to awake. 2) adjust turn variables
+    for (NSMutableArray *row in self.unitGrid) {
+        for (id unitMaybe in row){
+            if ([unitMaybe isKindOfClass:[Unit class]]){
+                Unit *unit = (Unit *)unitMaybe;
+                [unit changeStateTo:@"awake"];
+                
+            }
+        }
+    }
+    self.day++;
+    self.currentPlayer = (self.currentPlayer) % self.players + 1;
+    [self adjustFundsForPlayer:self.currentPlayer byAmount:[self getIncomeForPlayer:self.currentPlayer]];
+    NSLog(@"Player %d's turn", self.currentPlayer);
+    NSLog(@"Day %d; Funds = %d", self.day, [self getFundsForPlayer:self.currentPlayer]);
+}
+
+-(NSInteger)getIncomeForPlayer:(NSInteger)player {
+    NSInteger buildings = 0;
+    for (NSArray *tileRow in self.tileGrid) {
+        for (Tile *tile in tileRow) {
+            if ([tile isKindOfClass:[Building class]]) {
+                Building *building = (Building *)tile;
+                if (building.owner == player) {
+                    buildings++;
+                }
+            }
+        }
+    }
+    return buildings * INCOME_PER_BUILDING;
 }
 
 -(NSInteger)getFundsForPlayer:(NSInteger)player {

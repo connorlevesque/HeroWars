@@ -158,39 +158,12 @@
 -(Unit *)processUnitComponents:(NSString *)abbreviation and:(NSNumber *)ownerNumber onTile:(Tile *)tile {
     //returns unit indicated by components
     NSInteger owner = [ownerNumber integerValue];
-    NSString *name = [self findUnitNameFromAbbreviation:abbreviation];
-    if ([name isEqualToString:@"footman"]) {
-        Footman *footman = [[Footman alloc]initOnTile:tile withColors:self.playerColors withOwner: owner];
-        return footman;
-    } else if ([name isEqualToString:@"axeman"]) {
-        Axeman *axeman = [[Axeman alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return axeman;
-    } else if ([name isEqualToString:@"archer"]) {
-        Archer *archer = [[Archer alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return archer;
-    } else if ([name isEqualToString:@"cavalier"]) {
-        Cavalier *cavalier = [[Cavalier alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return cavalier;
-    } else if ([name isEqualToString:@"pikeman"]) {
-        Pikeman *pikeman = [[Pikeman alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return pikeman;
-    } else if ([name isEqualToString:@"knight"]) {
-        Knight *knight = [[Knight alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return knight;
-    } else if ([name isEqualToString:@"ballista"]) {
-        Ballista *ballista = [[Ballista alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return ballista;
-    } else if ([name isEqualToString:@"trebuchet"]) {
-        Trebuchet *trebuchet = [[Trebuchet alloc]initOnTile:tile withColors:self.playerColors withOwner:owner];
-        return trebuchet;
-    } else {
-        NSLog(@"Error: unknown unit name");
-        return nil;
-    }
+    NSString *unitName = [self findUnitNameFromAbbreviation:abbreviation];
+    return [[Unit alloc]initUnitNamed:unitName onTile:tile withColors:self.playerColors withOwner:owner];
 }
 
 -(NSString *)findUnitNameFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"axeman",@"X",@"archer",@"A",@"cavalier",@"C",@"pikeman",@"P",@"knight",@"K",@"ballista",@"B",@"trebuchet",@"T", nil];
+    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"archer",@"A",@"axeman",@"X",@"phalanx",@"P",@"scout",@"S",@"knight",@"K",@"greatknight",@"G",@"catapult",@"C",@"megapult",@"T",@"Ballista",@"B", nil];
     NSString *unitName = [unitAbbreviationGuide objectForKey:abbreviation];
     return unitName;
 }

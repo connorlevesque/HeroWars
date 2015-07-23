@@ -1,26 +1,18 @@
 //
-//  Unit.h
+//  UnitStatsParser.h
 //  HeroWars
 //
-//  Created by Connor Levesque on 2/8/15.
+//  Created by Connor Levesque on 7/23/15.
 //  Copyright (c) 2015 Max Shashoua. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
-#import "Tile.h"
-#import "UnitStatsParser.h"
+#import <Foundation/Foundation.h>
 
-@interface Unit : SKSpriteNode
+@interface UnitStatsParser : NSObject
 
-// General Properties
-@property (nonatomic) NSInteger x;
-@property (nonatomic) NSInteger y;
-@property (nonatomic) NSInteger owner;
-@property (strong, nonatomic) NSString *teamColor;
-@property (strong, nonatomic) NSString *state;
+// Unit Name
 @property (strong, nonatomic) NSString *unitName;
-
-// Combat Properties
+// Unit Combat Properties
 @property (nonatomic) NSInteger accuracy;
 @property (nonatomic) NSInteger evasion;
 @property (nonatomic) NSInteger critical;
@@ -29,8 +21,7 @@
 @property (nonatomic) NSInteger totalHealth;
 @property (strong, nonatomic) NSString *bonusCondition;
 @property (nonatomic) NSInteger bonusDamage;
-
-// Function Properties
+// Unit Function Properties
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *zone;
 @property (strong, nonatomic) NSArray *targets;
@@ -40,14 +31,6 @@
 @property (strong, nonatomic) NSArray *actions;
 @property (nonatomic) NSInteger cost;
 
-// Dynamic Properties
-@property (nonatomic) NSInteger health;
-@property (nonatomic) NSInteger level;
-
-// Methods
--(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
--(void)changeStateTo:(NSString *)state;
--(void)refreshTexture;
+-(void)parseStatsForUnitNamed:(NSString *)unitName;
 
 @end
-

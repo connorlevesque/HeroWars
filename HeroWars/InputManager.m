@@ -22,101 +22,107 @@
     return self;
 }
 
--(void)receiveInputWithNodes:(NSArray *)touchedNodes andString: (NSString *)touchType {
+-(void)receiveInputWithNodes:(NSArray *)touchedNodes andString:(NSString *)touchType {
+    if ([touchType isEqualToString: @"tap"]) {
+        [self handleTappedNodes:touchedNodes];
+    } else if ([touchType isEqualToString: @"hold"]) {
+        [self handleHeldNodes:touchedNodes];
+    }
+}
+
+-(void)handleHeldNodes:(NSArray *)heldNodes {
+    SKNode *keyNode = [self findKeyNodeFromTouchedNodes:heldNodes];
+    NSLog(@"%@ held", [keyNode class]);
+}
+
+-(void)handleTappedNodes:(NSArray *)tappedNodes {
     //select keyNode from node hierarchy
-    SKNode *keyNode = [self findKeyNodeFromTouchedNodes:touchedNodes];
-    // if battle stage
+    SKNode *keyNode = [self findKeyNodeFromTouchedNodes:tappedNodes];
+    // battle stage
     if ([self.stage isEqualToString:@"battle"]) {
-        // if hold
-        if ([touchType isEqualToString: @"hold"]) {
-            NSLog(@"Tile held");
-        // if tap
-        } else if ([touchType isEqualToString: @"tap"]) {
-            // if unit
-            if ([keyNode isKindOfClass:[Unit class]]) {
-                Unit *unit = (Unit *)keyNode;
-                if ([unit.state isEqualToString:@"awake"]) {
-                    self.selectedUnit = (Unit *)keyNode;
-                    if (unit.owner == self.board.currentPlayer) {
-                        [self setValue:@"unitMove" forKey:@"stage"];
-                    } else {
-                        NSLog(@"no no no, NOT YOUR TURN!");
-                    }
-                }
-            }
-            //if tile
-            else if ([keyNode isKindOfClass:[Tile class]]) {
-                [self setValue:@"generalMenu" forKey:@"stage"];
+        // unit tapped
+        if ([keyNode isKindOfClass:[Unit class]]) {
+            Unit *unit = (Unit *)keyNode;
+            if (([unit.state isEqualToString:@"awake"]) && (unit.owner == self.board.currentPlayer)) {
+                self.selectedUnit = (Unit *)keyNode;
+                [self setValue:@"unitMove" forKey:@"stage"];
             } else {
-                NSLog(@"Error: no task for keyNode");
+                NSLog(@"no no no, NOT YOUR TURN!");
             }
+        // other tapped
+        } else {
+            [self setValue:@"generalMenu" forKey:@"stage"];
         }
     }
-    // if generalMenu stage
+    // generalMenu stage
     else if ([self.stage isEqualToString:@"generalMenu"]) {
-        if ([keyNode isKindOfClass:[Button class]] || [keyNode isKindOfClass:[GeneralMenu class]]){
+        // button tapped
+        if ([keyNode isKindOfClass:[Button class]] || [keyNode isKindOfClass:[GeneralMenu class]]) {
             Button *button = (Button *)keyNode;
             NSLog(@"%@ button pressed", button.name);
+            // end
             if ([button.name isEqualToString:@"end"]) {
                 [self setValue:@"turnEnded" forKey:@"stage"];
                 [self setValue:@"battle" forKey:@"stage"];
+            // unknown button
             } else {
                 NSLog(@"Error: unknown button name passed to generalMenu stage");
             }
+        // other tapped
         } else {
             [self setValue:@"battle" forKey:@"stage"];
         }
     }
-    // if unitMove stage
+    // unitMove stage
     else if ([self.stage isEqualToString:@"unitMove"]) {
-        // if unit
+        // unit tapped
         if ([keyNode isKindOfClass:[Unit class]]) {
             Unit *thisUnit = (Unit *)keyNode;
-            //if clicking selected unit again (i.e. no move)
+            // clicking selected unit again (i.e. no move)
             if((thisUnit.x == self.selectedUnit.x) && (thisUnit.y == self.selectedUnit.y)) {
                 [self setValue:@"unitAction" forKey:@"stage"];
             }
         }
-        // if highlight
+        // highlight tapped
         else if ([keyNode isKindOfClass:[Highlight class]]) {
             Tile *highlightedTile = (Tile *)[keyNode parent];
             [self.board moveUnit:self.selectedUnit toTile:highlightedTile];
             [self setValue:@"unitAction" forKey:@"stage"];
-        // otherwise
+        // other tapped
         } else {
             [self setValue:@"battle" forKey:@"stage"];
         }
     }
-    // if unitAction stage
+    // unitAction stage
     else if ([self.stage isEqualToString:@"unitAction"]) {
-        // if button
+        // button tapped
         if ([keyNode isKindOfClass:[Button class]]) {
             Button *button = (Button *)keyNode;
             NSLog(@"%@ button pressed", button.name);
-            // if wait
+            // wait
             if ([button.name isEqualToString:@"wait"]) {
                 [self.selectedUnit changeStateTo:@"asleep"];
                 [self setValue:@"battle" forKey:@"stage"];
                 self.selectedUnit = (Unit *)[NSNull null];
             }
-            // if attack
+            // attack
             else if ([button.name isEqualToString:@"attack"]) {
                 [self setValue:@"chooseAttack" forKey:@"stage"];
-                self.selectedUnit = (Unit *)[NSNull null];
+                //self.selectedUnit = (Unit *)[NSNull null];
             }
-            // otherwise
+            // unknown button
             else {
                 NSLog(@"Error: unknown button name passed to input manager");
             }
-        // otherwise
+        // other tapped
         } else {
             self.selectedUnit = [self.board undoMoveUnit];
             [self setValue:@"unitMove" forKey:@"stage"];
         }
     }
-    // if chooseAttack stage
+    // chooseAttack stage
     else if ([self.stage isEqualToString:@"chooseAttack"]) {
-        //if unit (which is on a highlight)
+        // highlighted unit tapped
         if ([keyNode isKindOfClass:[Unit class]]) {
             Tile *tile = (Tile *)[keyNode parent];
             for (SKNode *child in tile.children) {
@@ -125,11 +131,12 @@
                     [self.combat fightFirstUnit:self.selectedUnit againstSecondUnit:targetUnit];
                     [self.selectedUnit changeStateTo:@"asleep"];
                     [self setValue:@"battle" forKey:@"stage"];
+                    self.selectedUnit = (Unit *)[NSNull null];
                     goto INPUT_MANAGED;
                 }
             }
         }
-        //otherwise
+        // other tapped
         else {
             [self setValue:@"unitAction" forKey:@"stage"];
         }

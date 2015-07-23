@@ -22,37 +22,39 @@
     self.a = a;
     self.b = b;
     NSLog(@"");
-    NSLog(@"%@ %@ attacks %@ %@", self.a.teamColor, self.a.type, self.b.teamColor, self.b.type);
-    [self attack:self.a with:self.b];
-    if ((self.b.health > 0) && ([self.board isUnit:a withinRangeOfUnit:b])) {
-        NSLog(@"%@ %@ counter attacks %@ %@", self.b.teamColor, self.b.type, self.a.teamColor, self.a.type);
-        [self attack:self.b with:self.a];
+    NSLog(@"%@ %@ attacks %@ %@", self.a.teamColor, self.a.name, self.b.teamColor, self.b.name);
+    [self attack:self.b with:self.a];
+    if ((self.b.health > 0) && ([self.board isUnit:a withinRangeOfUnit:b]) && (![self.b.type isEqualToString:@"artillery"])) {
+        NSLog(@"%@ %@ counter attacks %@ %@", self.b.teamColor, self.b.name, self.a.teamColor, self.a.name);
+        [self attack:self.a with:self.b];
     }
     NSLog(@"");
 }
 
--(void)attack:(Unit *)a with:(Unit *)b {
-    NSInteger hitRN = (arc4random() % 100);
-    if (hitRN < a.accuracy) {
-        float equipmentModifier = (float)(100 + a.weapon - b.armor) / 100;
-//        if (equipmentModifier > 1) {
-//            equipmentModifier = 1;
-//        } else if (equipmentModifier < 0) {
-//            equipmentModifier = 0;
-//        } 
-        float healthModifier = (float)a.health / 100;
-        NSInteger damageRN = (arc4random() % 11) - 5;
-        NSInteger damage = a.power * equipmentModifier * healthModifier + damageRN;
-        if (damage < 0) {
-            damage = 0;
-        }
-        NSLog(@"    Damage = %d * %f * %f + %d = %d", a.power, equipmentModifier, healthModifier, damageRN, damage);
-        b.health -= damage;
-        NSLog(@"    %@ %@ health is %d", b.teamColor, b.type, b.health);
-        ;
-    } else {
-        NSLog(@"    Miss!");
+-(void)attack:(Unit *)b with:(Unit *)a {
+    NSInteger rng = (arc4random() % 100) + 1;
+    NSInteger damage = 0;
+    // set bonus damage
+    NSInteger bonusDamage = 0;
+    NSInteger percentDamage = 0;
+    if ([b.type isEqualToString:a.bonusCondition]) {
+        bonusDamage = a.bonusDamage;
     }
+    // determine outcome and damage and log
+    if (rng > a.accuracy) {
+        NSLog(@"Miss!");
+    } else if (rng > a.accuracy - b.evasion) {
+        NSLog(@"Dodge!");
+    } else if (rng > a.critical) {
+        damage = a.damage + bonusDamage - b.defense;
+        percentDamage = 100 * damage / b.totalHealth;
+        NSLog(@"Hit! %d damage dealt", percentDamage);
+    } else {
+        damage = 2 * (a.damage + bonusDamage - b.defense);
+        NSLog(@"Critical Hit! %d damage dealt", percentDamage);
+    }
+    // adjust health
+    b.health -= damage;
 }
 
 @end
