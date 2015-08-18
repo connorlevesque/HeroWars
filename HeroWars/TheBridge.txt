@@ -1,0 +1,23 @@
+TheBridge
+
+:
+
+p, p, p, p, p, s, p, p, p, p, p, p, p /
+p, p, p, p, p, s, p, p, p, p, p, p, p /
+p, p-K-1, p, p, p, s, p, p-F-2, p-A-2, p, p, p, p /
+p, p-K-1, p, p, p, r, p, p-F-2, p-A-2, p, p, p, p /
+p, p-K-1, p, p, p, s, p, p-F-2, p-A-2, p, p, p, p /
+p, p, p, p, p, s, p, p, p, p, p, p, p /
+p, p, p, p, p, s, p, p, p, p, p, p, p
+
+:
+
+red, blue
+
+:
+
+standard
+
+:
+
+13 x 13 sandbox

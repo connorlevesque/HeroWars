@@ -11,6 +11,7 @@
 
 @implementation InputManager
 
+
 -(id)initWithBoard:(Gameboard *)board {
     self = [super init];
     if (self){

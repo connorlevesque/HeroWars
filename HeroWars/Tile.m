@@ -11,31 +11,45 @@
 
 @implementation Tile
 
-- (id)initWithType:(NSString *)type
-{
+-(id)initTileNamed:(NSString *)tileName {
     self = [super init];
     if (self) {
-        // set anchor point, color, type, texture according to type, and size according to texture
+        // set implicit properties
         [self setAnchorPoint:CGPointZero];
-        self.type = type;
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@", self.type];
+        // parse tile statistics
+        TileParser *parser = [[TileParser alloc]init];
+        [parser parseStatsForTileNamed:tileName];
+        // set name specific properties
+        self.name = parser.tileName;
+        NSString *imageName = [NSString stringWithFormat:@"%@", self.name];
         self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
-        NSDictionary *moveCosts = [[NSDictionary alloc]initWithObjectsAndKeys:@1,@"plain",@2,@"forest",@3,@"mountain",@1,@"road",@3,@"river",@100,@"sea", nil];
-        self.moveCost = [[moveCosts objectForKey:self.type] integerValue];
+        // set other properties
+        self.type = parser.type;
+        self.movecosts = parser.movecosts;
+        self.cover = parser.cover;
+        self.elevation = parser.elevation;
     }
     return self;
 }
 
--(id)init {
-    //used for initializing buildings
+
+-(id)initBuildingNamed:(NSString *)tileName withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
-        [self setAnchorPoint:CGPointZero];
-        self.moveCost = 1;
+        self = [self initTileNamed:tileName];
+        self.owner = owner;
+        self.control = 40;
+        self.teamColor = playerColors[self.owner - 1];
+        // adjust image
+        NSString *imageName = [NSString stringWithFormat:@"%@_%@", self.name, self.teamColor];
+        self.texture = [SKTexture textureWithImageNamed:imageName];
+        self.size = self.texture.size;
+        self.color = [UIColor whiteColor];
     }
     return self;
 }
+
 
 @end

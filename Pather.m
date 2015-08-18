@@ -40,6 +40,7 @@
 //}
 
 -(NSMutableDictionary *)findPathsForUnit:(Unit *)unit andBoard:(Gameboard *)board {
+    self.unit = unit;
     self.movePoints = unit.move;
     self.board = board;
     self.unitOwner = unit.owner;
@@ -104,7 +105,7 @@
 }
 
 -(void)moveForwardToTile:(Tile *)targetTile {
-    self.movePoints = self.movePoints - targetTile.moveCost;
+    self.movePoints = self.movePoints - [(NSNumber *)targetTile.movecosts[self.unit.type] integerValue];
     [self setMoveRecordAtX:targetTile.x andY:targetTile.y To:self.movePoints];
     self.currentTile = targetTile;
 }
@@ -113,7 +114,7 @@
     if (self.currentTile != self.originTile) {
         [self addCoordPairToDictionary];
         [self.path removeLastObject];
-        self.movePoints = self.movePoints + self.currentTile.moveCost;
+        self.movePoints = self.movePoints + [(NSNumber *)self.currentTile.movecosts[self.unit.type] integerValue];
         self.currentTile = targetTile;
     } else {
         [self addCoordPairToDictionary];
@@ -129,7 +130,7 @@
 -(BOOL)canMoveToTile:(Tile *)targetTile {
     //returns true if the unit can move to the target Tile
     // if there is enough movepoints
-    if (self.movePoints >= targetTile.moveCost) {
+    if (self.movePoints >= [(NSNumber *)targetTile.movecosts[self.unit.type] integerValue]) {
         // if there is a unit on the tile
         id targetUnitMaybe = [self.board unitAtX:targetTile.x andY:targetTile.y];
         if (targetUnitMaybe != (id)[NSNull null]) {
@@ -143,7 +144,7 @@
         if (self.moveRecords[targetTile.y - 1][targetTile.x - 1] != (id)[NSNull null]) {
             NSInteger targetMoveRecord = [self.moveRecords[targetTile.y - 1][targetTile.x - 1] integerValue];
             // if you can set a better moverecord
-            if ((self.movePoints - targetTile.moveCost) > targetMoveRecord) {
+            if ((self.movePoints - [(NSNumber *)targetTile.movecosts[self.unit.type] integerValue]) > targetMoveRecord) {
                 return YES;
             } else {
                 return NO;

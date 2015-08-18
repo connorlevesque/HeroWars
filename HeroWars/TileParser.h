@@ -10,4 +10,17 @@
 
 @interface TileParser : NSObject
 
+// Tile Name
+@property (strong, nonatomic) NSString *tileName;
+// Tile Gameplay Properties
+@property (strong, nonatomic) NSMutableDictionary *movecosts;
+@property (strong, nonatomic) NSString *type;
+@property (nonatomic) NSInteger elevation;
+@property (nonatomic) NSInteger cover;
+// Building/Production only properties
+@property (nonatomic) NSInteger owner;
+@property (nonatomic) NSInteger control;
+
+-(void)parseStatsForTileNamed:(NSString *)tileName;
+
 @end

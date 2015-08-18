@@ -1,0 +1,22 @@
+
+Tile Statistics
+
+Name            | Infantry | Cavalry | Artillery | Ships | Flyers | Type       | Elevation | Cover !
+
+Road            |        1 |       1 |         1 |       |      1 |    Terrain |           |       !
+Bridge          |        1 |       1 |         1 |       |      1 |    Terrain |           |       !
+Plains          |        1 |       1 |         2 |       |      1 |    Terrain |           |     5 !
+Forest          |        2 |       3 |         3 |       |      1 |    Terrain |           |    10 !
+Mountain        |        3 |         |           |       |      1 |    Terrain |        10 |     5 !
+River           |        3 |         |           |       |      1 |    Terrain |       -10 |       !
+Beach           |        1 |       1 |         2 |     1 |      1 |    Terrain |           |       !
+Sea             |          |         |         1 |     1 |      1 |    Terrain |           |       !
+Reef            |          |         |         1 |     2 |      1 |    Terrain |           |    10 !
+
+Town            |        1 |       1 |         1 |       |      1 |   Building |           |    10 !
+Barracks        |        1 |       1 |         1 |       |      1 | Production |           |    10 !
+Port            |        1 |       1 |         1 |     1 |      1 | Production |           |    10 !
+Aviary          |        1 |       1 |         1 |       |      1 | Production |           |    10 !
+Castle          |        1 |       1 |         1 |       |      1 |   Building |           |    10 !
+
+

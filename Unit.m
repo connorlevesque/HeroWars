@@ -10,6 +10,8 @@
 
 @implementation Unit
 
+int MAX_UNIT_LEVEL = 4;
+
 -(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
@@ -17,6 +19,7 @@
         self.anchorPoint = CGPointMake(0,0);
         self.x = tile.x;
         self.y = tile.y;
+        self.tile = tile;
         self.owner = owner;
         self.teamColor = playerColors[self.owner - 1];
         self.state = @"awake";
@@ -33,7 +36,7 @@
         self.accuracy = parser.accuracy;
         self.evasion = parser.evasion;
         self.critical = parser.critical;
-        self.damage = parser.damage;
+        self.attack = parser.attack;
         self.defense = parser.defense;
         self.totalHealth = parser.totalHealth;
         self.bonusCondition = parser.bonusCondition;
@@ -52,6 +55,14 @@
         self.level = 0;
     }
     return self;
+}
+
+-(void)levelUp {
+    if (self.level < MAX_UNIT_LEVEL) {
+        self.level++;
+        self.attack++;
+        self.defense++;
+    }
 }
 
 -(void)changeStateTo:(NSString *)state {

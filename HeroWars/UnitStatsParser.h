@@ -16,7 +16,7 @@
 @property (nonatomic) NSInteger accuracy;
 @property (nonatomic) NSInteger evasion;
 @property (nonatomic) NSInteger critical;
-@property (nonatomic) NSInteger damage;
+@property (nonatomic) NSInteger attack;
 @property (nonatomic) NSInteger defense;
 @property (nonatomic) NSInteger totalHealth;
 @property (strong, nonatomic) NSString *bonusCondition;

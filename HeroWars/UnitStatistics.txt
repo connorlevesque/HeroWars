@@ -1,17 +1,28 @@
 
 Unit Statistics
 
-Name         | Accuracy | Evasion | Critical | Damage | Defense | TotalHealth | BonusCondition | BonusDamage | Type       | Zone   | Targets     | Move | Range | Vision | Actions          | Cost !
+Name            | Accuracy | Evasion | Critical | Attack | Defense | TotalHealth | BonusCondition | BonusDamage | Type       | Zone   | Targets     | Move | Range | Vision | Actions                | Cost !
 
-Footman      |      100 |       5 |        0 |     10 |       0 |          18 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture          |    0 !
-Archer       |       90 |      10 |        3 |     12 |       0 |          16 | Artillery      |          -8 | Infantry   | Ground | All         |    4 |     2 |      2 | Capture          |    0 !
-Axeman       |       75 |      15 |        0 |     18 |       0 |          22 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture          |    0 !
-Phalanx      |       90 |       0 |       15 |     12 |       5 |          22 | Cavalry        |           x | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture          |    0 !
+Footman         |      100 |      10 |        0 |     13 |       4 |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
+Archer          |       95 |      15 |        5 |     18 |       0 |          20 | Artillery      |          -8 | Infantry   | Ground | All         |    4 |     2 |      3 | Capture                |    0 !
+Axeman          |          |         |          |        |         |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
+Phalanx         |          |         |          |        |         |          20 |                |             | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture                |    0 !
 
-Scout        |      100 |      10 |        0 |     10 |       3 |          22 |                |             | Cavalry    | Ground | Ground      |    7 |     1 |      5 | Carry-1-Infantry |    0 !
-Knight       |       90 |       5 |        5 |     15 |       4 |          25 | Cavalry        |           x | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                  |    0 !
-GreatKnight  |       85 |       0 |       10 |     18 |       8 |          25 | Cavalry        |           x | Cavalry    | Ground | Ground      |    5 |     1 |      1 |                  |    0 !
+Scout           |      100 |      10 |        0 |     15 |       4 |          20 |                |             | Cavalry    | Ground | Ground      |    7 |     1 |      5 | Carry-1-Infantry       |    0 !
+Knight          |       95 |       5 |        5 |     18 |      10 |          20 |                |             | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                        |    0 !
+GreatKnight     |       90 |       0 |       10 |     24 |      15 |          20 |                |             | Cavalry    | Ground | Ground      |    5 |     1 |      1 |                        |    0 !
 
-Catapult     |       90 |    -100 |        0 |     18 |       0 |          15 |                |             | Artillery  | Ground | Ground, Sea |    4 |   2-3 |      1 |                  |    0 !
-Megapult     |       80 |    -100 |        0 |     20 |       0 |          15 |                |             | Artillery  | Ground | Ground, Sea |    3 |   3-5 |      1 |                  |    0 !
-Ballista     |       90 |    -100 |        0 |     18 |       0 |          15 |                |             | Artillery  | Ground | Air         |    3 |   3-5 |      5 |                  |    0 !
+Catapult        |       90 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground, Sea |    6 |   2-3 |      1 |                        |    0 !
+Megapult        |       80 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground, Sea |    5 |   3-5 |      1 |                        |    0 !
+Ballista        |       90 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Air         |    5 |   3-5 |      5 |                        |    0 !
+
+
+Raider (Sea)    |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        | Reef-Hiding, Disembark |    0 !
+Raider (Ground) |          |         |          |        |         |             |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture, Embark        |    0 !
+Bowship         |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        |                        |    0 !
+Warship         |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        |                        |    0 !
+Brig            |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        | Carry-2-Ground         |    0 !
+
+Griffin Rider   |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
+Manticore Rider |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
+Drake Rider     |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !

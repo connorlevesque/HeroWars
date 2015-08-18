@@ -10,4 +10,7 @@
 
 @interface MoveActionStage : Stage
 
+-(id)initWithBoard:(Gameboard *)board andUnit:(Unit *)unit;
+-(void)processInputOfType:(NSString *)type onNodes:(NSArray *)touchedNodes;
+
 @end

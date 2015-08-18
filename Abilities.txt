@@ -1,0 +1,53 @@
+
+Abilities
+
+White
+  * Heal
+  * Inspire
+  * Call to Arms
+    Revive
+    Rallying Cry
+    Silence
+    Cleanse
+
+Green
+  * Giant Growth
+  * Awaken the Woods
+    Accuracy
+  * Focus
+    Poison Weapons
+    Ambush
+    Regeneration
+    Forestwalking
+    Gaea's Strength
+
+Yellow
+  * Mastery
+    Warrior's Code
+    Horsemanship
+  * Storm
+  * Lightning
+    Meditate
+
+Blue
+  * Freeze
+    Frost Nova
+    Wall of Ice
+  * Drain Mana
+  * Counterspell
+
+Red
+  * Blaze
+  * Fireball
+  * Flame Wave
+    Throw
+    Burning Blades
+    Scorched Earth
+    Pillaging
+
+Black
+  * Raise Dead
+  * Drain Life
+  * Lord of the Pit
+    Blood Price
+    Pestilence

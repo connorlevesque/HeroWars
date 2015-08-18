@@ -10,4 +10,9 @@
 
 @interface CommandStage : Stage
 
+
+
+-(id)initWithBoard:(Gameboard *)board;
+-(void)processInputOfType:(NSString *)type onNodes:(NSArray *)touchedNodes;
+
 @end

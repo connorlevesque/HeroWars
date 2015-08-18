@@ -126,20 +126,16 @@
 -(Tile *)processTileComponents:(NSString *)abbreviation and:(NSString *)ownerString {
     //returns tile indicated by components
     NSInteger owner = [ownerString integerValue];
-    NSString *tileType = [self findTileTypeFromAbbreviation:abbreviation];
-    if ([tileType isEqualToString:@"town"]) {
-        return [[Building alloc]initTownWithColors:self.playerColors andOwner:owner];
-    } else if ([tileType isEqualToString:@"barracks"]) {
-        return [[Barracks alloc]initWithColors:self.playerColors andOwner:owner];
-    } else if ([tileType isEqualToString:@"castle"]) {
-        return [[Castle alloc]initWithColors:self.playerColors andOwner:owner];
+    NSString *tileName = [self findTileNameFromAbbreviation:abbreviation];
+    if ([tileName isEqualToString:@"town"] || [tileName isEqualToString:@"barracks"] || [tileName isEqualToString:@"castle"]) {
+        return [[Tile alloc]initBuildingNamed:tileName withColors:self.playerColors withOwner:owner];
     } else {
-        return [[Tile alloc]initWithType:tileType];
+        return [[Tile alloc]initTileNamed:tileName];
     }
 }
 
--(NSString *)findTileTypeFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *tileAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"plain",@"p",@"forest",@"f",@"mountain",@"m",@"road",@"r",@"river",@"v",@"sea",@"s",@"town",@"t",@"barracks",@"b",@"castle",@"c", nil];
+-(NSString *)findTileNameFromAbbreviation:(NSString *)abbreviation {
+    NSDictionary *tileAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"plains",@"p",@"forest",@"f",@"mountain",@"m",@"road",@"r",@"river",@"v",@"sea",@"s",@"town",@"t",@"barracks",@"b",@"castle",@"c", nil];
     NSString *tileType = [tileAbbreviationGuide objectForKey:abbreviation];
     return tileType;
 }
@@ -163,7 +159,7 @@
 }
 
 -(NSString *)findUnitNameFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"archer",@"A",@"axeman",@"X",@"phalanx",@"P",@"scout",@"S",@"knight",@"K",@"greatknight",@"G",@"catapult",@"C",@"megapult",@"T",@"Ballista",@"B", nil];
+    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"archer",@"A",@"axeman",@"X",@"phalanx",@"P",@"scout",@"S",@"knight",@"K",@"greatknight",@"G",@"catapult",@"C",@"megapult",@"M",@"Ballista",@"B", nil];
     NSString *unitName = [unitAbbreviationGuide objectForKey:abbreviation];
     return unitName;
 }

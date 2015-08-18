@@ -10,4 +10,6 @@
 
 @interface GameMenuStage : Stage
 
+-(id)initWithBoard:(Gameboard *)board;
+
 @end

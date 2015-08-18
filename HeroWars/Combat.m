@@ -19,42 +19,48 @@
 }
 
 -(void)fightFirstUnit:(Unit *)a againstSecondUnit:(Unit *)b {
-    self.a = a;
-    self.b = b;
-    NSLog(@"");
-    NSLog(@"%@ %@ attacks %@ %@", self.a.teamColor, self.a.name, self.b.teamColor, self.b.name);
-    [self attack:self.b with:self.a];
-    if ((self.b.health > 0) && ([self.board isUnit:a withinRangeOfUnit:b]) && (![self.b.type isEqualToString:@"artillery"])) {
-        NSLog(@"%@ %@ counter attacks %@ %@", self.b.teamColor, self.b.name, self.a.teamColor, self.a.name);
-        [self attack:self.a with:self.b];
+    NSLog(@" ");
+    NSLog(@"%@ %@ attacks %@ %@", a.teamColor, a.name, b.teamColor, b.name);
+    [self attack:b with:a];
+    if ((b.health > 0) && ([self.board isUnit:a withinRangeOfUnit:b]) && (![b.type isEqualToString:@"artillery"])) {
+        NSLog(@"%@ %@ counter attacks %@ %@", b.teamColor, b.name, a.teamColor, a.name);
+        [self attack:a with:b];
     }
-    NSLog(@"");
+    NSLog(@" ");
 }
 
 -(void)attack:(Unit *)b with:(Unit *)a {
+    // calculate rng, hitChance, and damage
     NSInteger rng = (arc4random() % 100) + 1;
-    NSInteger damage = 0;
-    // set bonus damage
-    NSInteger bonusDamage = 0;
-    NSInteger percentDamage = 0;
-    if ([b.type isEqualToString:a.bonusCondition]) {
-        bonusDamage = a.bonusDamage;
+    NSInteger hitChance = a.accuracy - b.evasion + a.tile.elevation - b.tile.cover;
+    NSLog(@"%d (hitChance) = %d (accuracy) - %d (evasion) + %d (elevation) - %d (cover)", hitChance, a.accuracy, b.evasion, a.tile.elevation, b.tile.cover);
+    NSInteger damage = a.attack - b.defense;
+    if ([b.type isEqualToString:a.bonusCondition] || [b.name isEqualToString:a.bonusCondition]) {
+        damage += a.bonusDamage;
     }
-    // determine outcome and damage and log
-    if (rng > a.accuracy) {
-        NSLog(@"Miss!");
-    } else if (rng > a.accuracy - b.evasion) {
-        NSLog(@"Dodge!");
+    if (damage < 0) {
+        damage = 0;
+    }
+    NSLog(@"%d chance of %d damage", hitChance, damage);
+    // determine outcome
+    if (rng > hitChance) {
+        if (rng > a.accuracy) {
+            NSLog(@"Miss!");
+        } else {
+            NSLog(@"Dodge!");
+        }
     } else if (rng > a.critical) {
-        damage = a.damage + bonusDamage - b.defense;
-        percentDamage = 100 * damage / b.totalHealth;
-        NSLog(@"Hit! %d damage dealt", percentDamage);
+        b.health -= damage;
+        NSLog(@"Hit! %d damage dealt", damage);
     } else {
-        damage = 2 * (a.damage + bonusDamage - b.defense);
-        NSLog(@"Critical Hit! %d damage dealt", percentDamage);
+        damage = 2 * damage;
+        b.health -= damage;
+        NSLog(@"Critical Hit! %d damage dealt", damage);
     }
-    // adjust health
-    b.health -= damage;
+    // levelUp unit A if unit B is killed
+    if (b.health <= 0) {
+        [a levelUp];
+    }
 }
 
 @end

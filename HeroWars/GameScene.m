@@ -10,13 +10,16 @@
 
 @implementation GameScene
 
-NSInteger CELL_SIZE = 51;
+NSInteger CELL_SIZE = 50;
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    [self setAnchorPoint:CGPointMake(0, 0)];
-    self.board = [[Gameboard alloc]initWithLevelNamed:@"Sandbox1"];
-    self.inputManager = [[InputManager alloc]initWithBoard:self.board];
+    [self setAnchorPoint:CGPointMake(0,0)];
+    self.currentStage = [[StartStage alloc]initWithBoard:[[Gameboard alloc]initWithLevelNamed:@"TestMap1"]];
+    // make scene observer of currentStage and initiate stage system
+    [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    [(StartStage *)self.currentStage autoToCommandStage];
+    // set up UI
     self.world = [[SKNode alloc]init];
     self.world.position = CGPointMake(0,0);
     [self addChild:self.world];
@@ -25,13 +28,11 @@ NSInteger CELL_SIZE = 51;
     self.generalMenu = [[GeneralMenu alloc]init];
     self.generalMenu.position = CGPointMake(25, 50);
     self.highlightedTiles = [[NSMutableArray alloc]init];
-    // make scene observer of inputManager
-    [self.inputManager addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     // zoom gesture stuff
     self.zoomRecognizer = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(handleZoom)];
     [self.view addGestureRecognizer:self.zoomRecognizer];
-    CGFloat worldHeight = self.board.height * CELL_SIZE;
-    CGFloat worldWidth = self.board.width * CELL_SIZE;
+    CGFloat worldHeight = [self board].height * CELL_SIZE;
+    CGFloat worldWidth = [self board].width * CELL_SIZE;
     self.minScale = MAX(self.frame.size.height / worldHeight, self.frame.size.width / worldWidth);
     self.maxScale = 1;
     NSLog(@"self.frame.size.height = %f", self.frame.size.height);
@@ -49,79 +50,139 @@ NSInteger CELL_SIZE = 51;
     self.fundsLabel.verticalAlignmentMode = 2; //top aligned
     [self updateFundsLabel];
     [self addChild:self.fundsLabel];
+    [self updateBoard];
 }
 
--(UIColor *)colorWithPlayerColor:(NSString *)playerColor {
-    if ([playerColor isEqualToString:@"red"]) {
-        return [UIColor redColor];
-    } else if ([playerColor isEqualToString:@"blue"]) {
-        return [UIColor blueColor];
-    } else if ([playerColor isEqualToString:@"yellow"]) {
-        return [UIColor yellowColor];
-    } else if ([playerColor isEqualToString:@"green"]) {
-        return [UIColor greenColor];
-    } else {
-        return [UIColor whiteColor];
-    }
-}
+
+// Stage Change Methods
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     // recognizes that a key path has been called and calls methods based upon the keypath
-    NSString *oldC = [change objectForKey:NSKeyValueChangeOldKey];
-    NSString *newC = [change objectForKey:NSKeyValueChangeNewKey];
+    //NSString *oldKey = [change objectForKey:NSKeyValueChangeOldKey];
+    NSString *newKey = [change objectForKey:NSKeyValueChangeNewKey];
     // if the stage is the keyValue that changed
     if ([keyPath isEqualToString:@"stage"]){
-        [self stageHasChangedFrom:oldC to:newC];
+        //[self stageHasChangedFrom:oldKey];
+        [self stageHasChangedTo:newKey];
     }
 }
 
--(void)stageHasChangedFrom:(NSString *)oldStage to:(NSString *)newStage {
-    //edit visuals based on the old stage and the new stage
-    NSLog(@"Stage has changed from %@ to %@", oldStage, newStage);
-    // if stage is changing from battle to generalMenu
-    if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"generalMenu"]) {
-        [self addChild:self.generalMenu];
-    // if stage is changing from generalMenu to battle
-    } else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
-        [self.generalMenu removeFromParent];
-    //if stage is changing from turnEnded to battle
-    } else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
-        [self.generalMenu removeFromParent];
-        [self.board endTurn];
-        [self updateFundsLabel];
-    // if stage is changing from battle to unitMove
-    } else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
-        [self highlightMoveTiles];
-    // if stage is changing from unitMove to battle
-    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
-        [self unHighlightTiles];
-    // if stage is changing from unitMove to unitAction
-    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
-        [self unHighlightTiles];
-        [self updateUnits];
-        [self setUpActionMenu];
-    // if stage is changing from unitAction to unitMove
-    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
-        [self.actionMenu removeFromParent];
-        [self updateUnits];
-        [self highlightMoveTiles];
-    // if stage is changing from unitAction to Battle
-    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
-        [self.actionMenu removeFromParent];
-    //if stage is changing from unitAction to chooseAttack
-    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"chooseAttack"]) {
-        [self.actionMenu removeFromParent];
-        [self highlightAttackTiles];
-    //if stage is changing from chooseAttack to unitAction
-    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"unitAction"]) {
-        [self unHighlightTiles];
-        [self setUpActionMenu];
-    //if stage is changing from chooseAttack to battle
-    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
-        [self unHighlightTiles];
-        [self updateUnits];
-    }
+//-(void)stageHasChangedFrom:(NSString *)oldStage {
+//    // CommandStage
+//    if ([oldStage isEqualToString:@"InitialStage"]) {
+//
+//    } else if ([oldStage isEqualToString:@"StartStage"]) {
+//
+//    }
+//}
+
+-(void)stageHasChangedTo:(NSString *)newStage {
+    // clear stage specific UI, change currentStage, update units, update stage UI for newstage
+    [self clearStageUI];
+    [self updateBoard];
+    [self.currentStage removeObserver:self forKeyPath:@"stage"];
+    // new stage UI
+    if ([newStage isEqualToString:@"StartStage"]) {
+        self.currentStage = [[StartStage alloc]initWithBoard:self.currentStage.board];
+        [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        [self setUpStartStageUI];
+        [(StartStage *)self.currentStage autoToCommandStage];
+    } else if ([newStage isEqualToString:@"CommandStage"]) {
+        self.currentStage = [[CommandStage alloc]initWithBoard:self.currentStage.board];
+        [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        [self setUpCommandStageUI];
+    } else if ([newStage isEqualToString:@"GameMenuStage"]) {
+        self.currentStage = [[GameMenuStage alloc]initWithBoard:self.currentStage.board];
+        [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        [self setUpGameMenuStageUI];
+    } else if ([newStage isEqualToString:@"EndStage"]) {
+        self.currentStage = [[EndStage alloc]initWithBoard:self.currentStage.board];
+        [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        [self setUpEndStageUI];
+        [(EndStage *)self.currentStage autoToStartStage];
+    } else if ([newStage isEqualToString:@"MoveActionStage"]) {
+        self.currentStage = [[MoveActionStage alloc]initWithBoard:self.currentStage.board andUnit:self.currentStage.selectedUnit];
+        [self.currentStage addObserver:self forKeyPath:@"stage" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        [self setUpCommandStageUI];
+    } 
+    NSLog(@"Stage has changed to %@", newStage);
 }
+
+// Stage UI Methods
+
+-(void)setUpStartStageUI {
+    [self updateFundsLabel];
+}
+
+-(void)setUpCommandStageUI {
+    // gear button
+}
+
+-(void)setUpGameMenuStageUI {
+    // back button
+    [self addChild:self.generalMenu];
+}
+
+-(void)setUpEndStageUI {
+    
+}
+
+-(void)clearStageUI {
+    // remove all highlights
+    // remove all bubbles
+    // remove side buttons (back, GameMenu, drop, ability)
+    // remove game menu
+    [self.generalMenu removeFromParent];
+}
+
+//    //edit visuals based on the old stage and the new stage
+//    NSLog(@"Stage has changed from %@ to %@", oldStage, newStage);
+//    // if stage is changing from battle to generalMenu
+//    if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"generalMenu"]) {
+//        [self addChild:self.generalMenu];
+//    // if stage is changing from generalMenu to battle
+//    } else if ([oldStage isEqualToString:@"generalMenu"] && [newStage isEqualToString:@"battle"]) {
+//        [self.generalMenu removeFromParent];
+//    //if stage is changing from turnEnded to battle
+//    } else if ([oldStage isEqualToString:@"turnEnded"] & [newStage isEqualToString:@"battle"]){
+//        [self.generalMenu removeFromParent];
+//        [self.board endTurn];
+//        [self updateFundsLabel];
+//    // if stage is changing from battle to unitMove
+//    } else if ([oldStage isEqualToString:@"battle"] && [newStage isEqualToString:@"unitMove"]) {
+//        [self highlightMoveTiles];
+//    // if stage is changing from unitMove to battle
+//    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"battle"]) {
+//        [self unHighlightTiles];
+//    // if stage is changing from unitMove to unitAction
+//    } else if ([oldStage isEqualToString:@"unitMove"] && [newStage isEqualToString:@"unitAction"]) {
+//        [self unHighlightTiles];
+//        [self updateUnits];
+//        [self setUpActionMenu];
+//    // if stage is changing from unitAction to unitMove
+//    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"unitMove"]) {
+//        [self.actionMenu removeFromParent];
+//        [self updateUnits];
+//        [self highlightMoveTiles];
+//    // if stage is changing from unitAction to Battle
+//    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"battle"]) {
+//        [self.actionMenu removeFromParent];
+//    //if stage is changing from unitAction to chooseAttack
+//    } else if ([oldStage isEqualToString:@"unitAction"] && [newStage isEqualToString:@"chooseAttack"]) {
+//        [self.actionMenu removeFromParent];
+//        [self highlightAttackTiles];
+//    //if stage is changing from chooseAttack to unitAction
+//    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"unitAction"]) {
+//        [self unHighlightTiles];
+//        [self setUpActionMenu];
+//    //if stage is changing from chooseAttack to battle
+//    } else if ([oldStage isEqualToString:@"chooseAttack"] && [newStage isEqualToString:@"battle"]) {
+//        [self unHighlightTiles];
+//        [self updateUnits];
+//    }
+//}
+
+// UI Element Methods
 
 -(void)setUpActionMenu {
     self.actionMenu = [[ActionMenu alloc]init];
@@ -131,10 +192,10 @@ NSInteger CELL_SIZE = 51;
 
 -(void)updateFundsLabel {
     self.fundsLabel.fontColor = [self colorWithPlayerColor:self.board.playerColors[self.board.currentPlayer - 1]];
-    self.fundsLabel.text = [NSString stringWithFormat:@"%@",self.board.funds[self.board.currentPlayer - 1]];
+    self.fundsLabel.text = [NSString stringWithFormat:@"%@", self.board.funds[self.board.currentPlayer - 1]];
 }
 
--(void)updateUnits {
+-(void)updateBoard {
     // updates unit positions
     for (int r = 0; r < self.board.height; r++) {
         NSInteger thisY = r + 1;
@@ -148,13 +209,48 @@ NSInteger CELL_SIZE = 51;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
-                    NSInteger healthInteger = ceil((float)unit.health / unit.totalHealth * 10);
-                    if ((healthInteger <= 9) && (healthInteger > 0)) {
-                        NSString *imageName = [NSString stringWithFormat:@"HeroWars_health_%d.png", healthInteger];
-                        SKSpriteNode *healthIndicator = [[SKSpriteNode alloc]initWithImageNamed:imageName];
-                        healthIndicator.anchorPoint = CGPointZero;
-                        [tile addChild:healthIndicator];
+                    SKLabelNode *healthIndicator = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
+                    healthIndicator.fontSize = 20;
+                    healthIndicator.position = CGPointMake(51,0);
+                    healthIndicator.horizontalAlignmentMode = 2; //right aligned
+                    healthIndicator.verticalAlignmentMode = 3; //bottom aligned
+                    healthIndicator.fontColor = [UIColor whiteColor];
+                    healthIndicator.text = [NSString stringWithFormat:@"%d", unit.health];
+                    [tile addChild:healthIndicator];
+                    if (unit.level > 0) {
+                        SKLabelNode *levelIndicator = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
+                        levelIndicator.fontSize = 20;
+                        levelIndicator.position = CGPointMake(0,0);
+                        levelIndicator.horizontalAlignmentMode = 1; //left aligned
+                        levelIndicator.verticalAlignmentMode = 3; //bottom aligned
+                        levelIndicator.fontColor = [UIColor colorWithRed:255.0 green:215.0 blue:0.0 alpha:1]; //goldColor
+                        NSString *levelText = @" ";
+                        switch (unit.level) {
+                            case 1:
+                                levelText = @"I";
+                                break;
+                            case 2:
+                                levelText = @"II";
+                                break;
+                            case 3:
+                                levelText = @"III";
+                                break;
+                            case 4:
+                                levelText = @"V";
+                                break;
+                            default:
+                                break;
+                        }
+                        levelIndicator.text = [NSString stringWithFormat:@"%@", levelText];
+                        [tile addChild:levelIndicator];
                     }
+//                    NSInteger healthInteger = ceil((float)unit.health / unit.totalHealth * 10);
+//                    if ((healthInteger <= 9) && (healthInteger > 0)) {
+//                        NSString *imageName = [NSString stringWithFormat:@"HeroWars_health_%d.png", healthInteger];
+//                        SKSpriteNode *healthIndicator = [[SKSpriteNode alloc]initWithImageNamed:imageName];
+//                        healthIndicator.anchorPoint = CGPointZero;
+//                        [tile addChild:healthIndicator];
+//                    }
                 } else {
                     [self.board removeUnitFromTile:tile];
                 }
@@ -163,30 +259,30 @@ NSInteger CELL_SIZE = 51;
     }
 }
 
--(void)highlightMoveTiles {
-    NSDictionary *paths = [self.inputManager findTileCoordsToMoveHighlight];
-    for (NSString *coordString in paths.allKeys) {
-        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
-        NSArray *coordArray = [coordString componentsSeparatedByString:@","];
-        NSInteger x = [coordArray[0] integerValue];
-        NSInteger y = [coordArray[1] integerValue];
-        Tile *tile = [self.board tileAtX:x andY:y];
-        [self.highlightedTiles addObject:tile];
-        [tile addChild:highlight];
-    }
-}
-
--(void)highlightAttackTiles {
-    NSArray *tileCoords = [self.inputManager findTileCoordsToAttackHighlight];
-    for (NSArray *coordPair in tileCoords) {
-        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
-        NSInteger x = [coordPair[0] integerValue];
-        NSInteger y = [coordPair[1] integerValue];
-        Tile *tile = [self.board tileAtX:x andY:y];
-        [self.highlightedTiles addObject:tile];
-        [tile addChild:highlight];
-    }
-}
+//-(void)highlightMoveTiles {
+//    NSDictionary *paths = [self.inputManager findTileCoordsToMoveHighlight];
+//    for (NSString *coordString in paths.allKeys) {
+//        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
+//        NSArray *coordArray = [coordString componentsSeparatedByString:@","];
+//        NSInteger x = [coordArray[0] integerValue];
+//        NSInteger y = [coordArray[1] integerValue];
+//        Tile *tile = [self.board tileAtX:x andY:y];
+//        [self.highlightedTiles addObject:tile];
+//        [tile addChild:highlight];
+//    }
+//}
+//
+//-(void)highlightAttackTiles {
+//    NSArray *tileCoords = [self.inputManager findTileCoordsToAttackHighlight];
+//    for (NSArray *coordPair in tileCoords) {
+//        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
+//        NSInteger x = [coordPair[0] integerValue];
+//        NSInteger y = [coordPair[1] integerValue];
+//        Tile *tile = [self.board tileAtX:x andY:y];
+//        [self.highlightedTiles addObject:tile];
+//        [tile addChild:highlight];
+//    }
+//}
 
 -(void)unHighlightTiles {
     for (Tile *tile in self.highlightedTiles) {
@@ -209,6 +305,7 @@ NSInteger CELL_SIZE = 51;
             id unitMaybe = self.board.unitGrid[r][c];
             if (!(unitMaybe == (id)[NSNull null])) {
                 Unit *unit = self.board.unitGrid[r][c];
+                [unit removeFromParent];
                 [tile addChild:unit];
             }
         }
@@ -226,7 +323,7 @@ NSInteger CELL_SIZE = 51;
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     // if there is no touch or dragging is already occuring, and if we canDrag
-    if ((self.touchState < 2) && [self.inputManager canDrag]){
+    if (self.touchState < 2) {
         //reord that a drag is occuring
         self.touchState = 1;
         // make the transformation vector and adjust the scene accordingly
@@ -245,7 +342,7 @@ NSInteger CELL_SIZE = 51;
         //record that a hold is occuring
         self.touchState = 2;
         //notify input manager
-        [self.inputManager receiveInputWithNodes:self.touchedNodes andString:@"hold"];
+        [self.currentStage processInputOfType:@"hold" onNodes:self.touchedNodes];
     }
 }
 
@@ -255,8 +352,8 @@ NSInteger CELL_SIZE = 51;
     if (self.touchState == 0) {
         //invalidate any hold timer
         [self.touchTimer invalidate];
-        //notify inputManager
-        [self.inputManager receiveInputWithNodes:self.touchedNodes andString:@"tap"];
+        //notify stage
+        [self.currentStage processInputOfType:@"tap" onNodes:self.touchedNodes];
     }
     //record that the touch is over
     self.touchState = 0;
@@ -351,6 +448,27 @@ NSInteger CELL_SIZE = 51;
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+// Helper Methods
+
+-(Gameboard *)board {
+    // allows the self.currentStage.board to be referred to as self.board
+    return self.currentStage.board;
+}
+
+-(UIColor *)colorWithPlayerColor:(NSString *)playerColor {
+    if ([playerColor isEqualToString:@"red"]) {
+        return [UIColor redColor];
+    } else if ([playerColor isEqualToString:@"blue"]) {
+        return [UIColor blueColor];
+    } else if ([playerColor isEqualToString:@"yellow"]) {
+        return [UIColor yellowColor];
+    } else if ([playerColor isEqualToString:@"green"]) {
+        return [UIColor greenColor];
+    } else {
+        return [UIColor whiteColor];
+    }
 }
 
 @end

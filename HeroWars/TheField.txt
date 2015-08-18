@@ -1,14 +1,14 @@
 
-Sandbox1
+TheField
 
 :
 
 p, p, p, p, p, p, p, p, p, p, p, p, p /
-p, p, p, p-F-1, p-A-1, p-X-1, p-P-1, p-S-1, p-K-1, p-G-1, p, p, p /
 p, p, p, p, p, p, p, p, p, p, p, p, p /
+p, p-G-1, p, p, p, p, p, p-F-2, p-A-2, p, p, p, p /
+p, p-G-1, p, p, p, p, p, p-F-2, p-A-2, p, p, p, p /
+p, p-G-1, p, p, p, p, p, p-F-2, p-A-2, p, p, p, p /
 p, p, p, p, p, p, p, p, p, p, p, p, p /
-p, p, p, p, p, p, p, p, p, p, p, p, p /
-p, p, p, p-F-2, p-A-2, p-X-2, p-P-2, p-S-2, p-K-2, p-G-2, p, p, p /
 p, p, p, p, p, p, p, p, p, p, p, p, p
 
 :

@@ -7,7 +7,6 @@
 //
 
 #import "Unit.h"
-#import "Building.h"
 #import "LevelParser.h"
 
 @interface Gameboard : NSObject
@@ -26,7 +25,7 @@
 
 // changes every turn
 @property (nonatomic) NSInteger currentPlayer;
-@property (nonatomic) NSInteger day;
+@property (nonatomic) NSInteger turn;
 @property (strong, nonatomic) NSMutableArray *funds;
 
 
@@ -38,6 +37,9 @@
 -(Unit *)undoMoveUnit;
 -(void)removeUnitFromTile:(Tile *)tile;
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b;
--(void)endTurn;
+//-(void)endTurn;
+
+-(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount;
+-(NSInteger)getIncomeForPlayer:(NSInteger)player;
 
 @end

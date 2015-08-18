@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Building.h"
+#import "Tile.h"
 #import "Unit.h"
-#import "AllBuildings.h"
 
 @interface LevelParser : NSObject
 

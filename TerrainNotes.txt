@@ -1,0 +1,37 @@
+
+Notes on Terrain
+
+Natural Terrain:
+    Plains - the default terrain, easy to move across for most units, sparse cover
+    Forest - harder to move across, dense cover, hiding in fog of war
+    Mountain - infantry only, dense elevated cover, extends vision in fog of war
+    Road - easy to move across for all ground units, especially important for artillery, no cover
+    Bridge - roads that go over water and can be moved under (but not stopped on) by ships
+    River - infantry only, low elevation with no cover, try not to fight when you're standing in a river
+    Beach
+    Sea
+    Reef
+
+Buildings:
+    Town
+    Barracks
+    Port
+    Aviary
+    Castle
+
+Other Ideas:
+    Caves - lead to underworld layer
+    Monsters - kill for gold, buffs, or an alliance
+    Shrines - buff units , summon monsters, etc...
+    Portals - teleport units between portals of the same color
+    Beacons - turn on/off other map elements (levers)
+    Walls and Gates - block non-air unit movement
+    Workers who build walls, gates, roads, bridges, chop forests etc...
+    Tides that go in and out
+    Volcanoes which produce lava
+    Wasteland - hurts units standing on it
+    Underwater buildings or even an underwater layer
+    Desert - slows everyones movement a lot
+
+
+

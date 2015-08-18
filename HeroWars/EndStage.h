@@ -10,4 +10,7 @@
 
 @interface EndStage : Stage
 
+-(id)initWithBoard:(Gameboard *)board;
+-(void)autoToStartStage;
+
 @end

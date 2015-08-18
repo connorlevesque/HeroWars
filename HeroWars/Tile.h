@@ -7,32 +7,27 @@
 //
 
 #import "SpriteKit/SpriteKit.h"
+#import "TileParser.h"
 
 
 @interface Tile : SKSpriteNode
 
-@property (strong, nonatomic) NSString *type;
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
 
--(id)initWithType:(NSString*)type;
+// Tile Name
+@property (strong, nonatomic) NSString *name;
+// Tile Gameplay Properties
+@property (strong, nonatomic) NSDictionary *movecosts;
+@property (strong, nonatomic) NSString *type;
+@property (nonatomic) NSInteger elevation;
+@property (nonatomic) NSInteger cover;
+// Building/Production only properties
+@property (nonatomic) NSInteger owner;
+@property (nonatomic) NSInteger control;
+@property (strong, nonatomic) NSString *teamColor;
 
-
-/*
- Tile Types:
- p = Plains
- r = Road
- f = Forest
- m = Mountain
- v = River
- s = Sea
- b = Building
- Production Buildings (pending)
- */
-
-@property (nonatomic) NSInteger moveCost;
-
-
-
+-(id)initTileNamed:(NSString *)tileName;
+-(id)initBuildingNamed:(NSString *)tileName withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
 
 @end

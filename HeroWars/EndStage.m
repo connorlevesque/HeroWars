@@ -10,4 +10,28 @@
 
 @implementation EndStage
 
+-(id)initWithBoard:(Gameboard *)board {
+    self = [super init];
+    if (self) {
+        self.board = board;
+        [self awakenUnits];
+    }
+    return self;
+}
+
+-(void)autoToStartStage {
+    [self setValue:@"StartStage" forKey:@"stage"];
+}
+
+-(void)awakenUnits {
+    for (NSMutableArray *row in self.board.unitGrid) {
+        for (id unitMaybe in row){
+            if ([unitMaybe isKindOfClass:[Unit class]]){
+                Unit *unit = (Unit *)unitMaybe;
+                [unit changeStateTo:@"awake"];
+            }
+        }
+    }
+}
+
 @end

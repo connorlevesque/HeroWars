@@ -9,5 +9,8 @@
 #ifndef HeroWars_AllUIElements_h
 #define HeroWars_AllUIElements_h
 
+#import "GeneralMenu.h"
+#import "ActionMenu.h"
+#import "Highlight.h"
 
 #endif

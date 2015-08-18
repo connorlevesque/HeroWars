@@ -7,15 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "Gameboard.h"
-#import "InputManager.h"
+#import "AllStages.h"
 #import "GeneralMenu.h"
 #import "ActionMenu.h"
 
 @interface GameScene : SKScene
 
-@property (strong, nonatomic) Gameboard *board;
-@property (strong, nonatomic) InputManager *inputManager;
+@property (strong, nonatomic) Stage *currentStage;
 @property (strong, nonatomic) SKNode *world;
 @property (strong, nonatomic) SKLabelNode *fundsLabel;
 

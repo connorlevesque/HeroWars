@@ -16,6 +16,7 @@
 @property (strong, nonatomic) Tile *originTile;
 @property (strong, nonatomic) Tile *currentTile;
 
+@property (strong, nonatomic) Unit *unit;
 @property (nonatomic) NSInteger movePoints;
 @property (nonatomic) NSInteger unitOwner;
 

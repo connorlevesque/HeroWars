@@ -10,4 +10,14 @@
 #define HeroWars_AllStages_h
 
 
+#import "StartStage.h"
+#import "CommandStage.h"
+#import "GameMenuStage.h"
+#import "EndStage.h"
+
+#import "MoveActionStage.h"
+
+
+
+
 #endif

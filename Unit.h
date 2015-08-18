@@ -15,6 +15,7 @@
 // General Properties
 @property (nonatomic) NSInteger x;
 @property (nonatomic) NSInteger y;
+@property (weak, nonatomic) Tile *tile;
 @property (nonatomic) NSInteger owner;
 @property (strong, nonatomic) NSString *teamColor;
 @property (strong, nonatomic) NSString *state;
@@ -24,7 +25,7 @@
 @property (nonatomic) NSInteger accuracy;
 @property (nonatomic) NSInteger evasion;
 @property (nonatomic) NSInteger critical;
-@property (nonatomic) NSInteger damage;
+@property (nonatomic) NSInteger attack;
 @property (nonatomic) NSInteger defense;
 @property (nonatomic) NSInteger totalHealth;
 @property (strong, nonatomic) NSString *bonusCondition;
@@ -46,6 +47,7 @@
 
 // Methods
 -(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
+-(void)levelUp;
 -(void)changeStateTo:(NSString *)state;
 -(void)refreshTexture;
 

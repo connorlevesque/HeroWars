@@ -17,7 +17,7 @@
     self.accuracy = [(NSString *)unitStatistics[1] integerValue];
     self.evasion = [(NSString *)unitStatistics[2] integerValue];
     self.critical = [(NSString *)unitStatistics[3] integerValue];
-    self.damage = [(NSString *)unitStatistics[4] integerValue];
+    self.attack = [(NSString *)unitStatistics[4] integerValue];
     self.defense = [(NSString *)unitStatistics[5] integerValue];
     self.totalHealth = [(NSString *)unitStatistics[6] integerValue];
     self.bonusCondition = unitStatistics[7];

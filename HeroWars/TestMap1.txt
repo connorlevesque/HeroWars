@@ -1,0 +1,26 @@
+
+Testmap 1
+
+:
+
+p, p, p, p, f, p, f, p, p, f, p, p, p, p /
+p, m, p, p, p, p, p, f, p, p, p, p, p, p /
+p, p, f, p, p, p, p, p, p, p, p, f, p, p /
+p, p, p, f, p, p, m, m, p, p, f, p, p-S-2, p-A-2 /
+p-A-1, p-F-1, p, p, p, p, s, s, p, p, p, p, p-F-2, p-A-2 /
+r-C-1, r-K-1, r-F-1, r, p, p, s, s, p, p, r, r-F-2, r-G-2, r /
+p-M-1, p-K-1, p-F-1, r, r, r, r, r, r, r, r, p-F-2, p-G-2, p /
+t-1, p, p-F-1, p, p, p, s, s, p, p, p, p, p, t-2 /
+p, p, p, p, p, s, s, s, s, p, p, p, p, m
+
+:
+
+red, blue
+
+:
+
+standard
+
+:
+
+13 x 13 sandbox
