@@ -10,4 +10,8 @@
 
 @interface Highlight : SKSpriteNode
 
+@property(strong, nonatomic) NSString *type;
+
+-(id)initWithType:(NSString *)type;
+
 @end

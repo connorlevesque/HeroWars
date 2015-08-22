@@ -10,13 +10,16 @@
 
 @implementation Highlight
 
--(id)initWithImageNamed:(NSString *)name {
+-(id)initWithType:(NSString *)type {
     self = [super init];
     if (self) {
-        self.texture = [SKTexture textureWithImageNamed:name];
+        self.type = type;
+        NSString *imageName = [NSString stringWithFormat:@"highlight_%@",type];
+        self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
         self.anchorPoint = CGPointMake(0,0);
+        self.type = @"blue";
     }
     return self;
 }

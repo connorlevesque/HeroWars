@@ -7,38 +7,39 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "AllStages.h"
-#import "GeneralMenu.h"
-#import "ActionMenu.h"
+#import "Gameboard.h"
+#import "AllUIElements.h"
+@class GameView;
 
 @interface GameScene : SKScene
 
-@property (strong, nonatomic) Stage *currentStage;
-@property (strong, nonatomic) SKNode *world;
-@property (strong, nonatomic) SKLabelNode *fundsLabel;
+// Model References
+@property(strong, nonatomic) Gameboard *board;
+@property(strong, nonatomic) Unit *selectedUnit;
+@property(strong, nonatomic) Tile *selectedProduction;
 
+// UI Elements
+@property (strong, nonatomic) SKNode *world;
+@property(strong, nonatomic) GeneralMenu *gameMenu;
+
+// Touch
 @property (strong, nonatomic) NSArray *touchedNodes;
 @property (nonatomic) CGPoint lastTouch;
 @property (strong, nonatomic) NSTimer *touchTimer;
-
-
 @property (nonatomic) int touchState;
-/*
- 0 = no touch detected
- 1 = touch dragged
- 2 = touch held
- */
+    // 0 = no touch detected, 1 = touch dragged, 2 = touch held
 
-@property (strong, nonatomic) GeneralMenu *generalMenu;
-@property (strong, nonatomic) ActionMenu *actionMenu;
-@property (strong, nonatomic) NSMutableArray *highlightedTiles;
-
-
-// for zoom
+// Zoom
 @property (nonatomic) CGPoint origPoint;
 @property (strong, nonatomic) UIPinchGestureRecognizer *zoomRecognizer;
 @property (nonatomic) CGFloat maxScale;
 @property (nonatomic) CGFloat minScale;
 
+-(id)initWithSize:(CGSize)size;
+-(void)didMoveToView:(SKView *)view;
+-(void)processTappedNode:(SKNode *)node;
+-(void)processHeldNode:(SKNode *)node;
+-(void)drawFundsLabel;
+-(UIColor *)colorWithPlayerColor:(NSString *)playerColor;
 
 @end

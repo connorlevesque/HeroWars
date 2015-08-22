@@ -28,8 +28,11 @@
 @property (nonatomic) NSInteger move;
 @property (strong, nonatomic) NSArray *range;
 @property (nonatomic) NSInteger vision;
-@property (strong, nonatomic) NSArray *actions;
 @property (nonatomic) NSInteger cost;
+// Unit Action Properties
+@property (nonatomic) BOOL carrier;
+@property (strong, nonatomic) NSString *cargo;
+@property (nonatomic) NSInteger capacity;
 
 -(void)parseStatsForUnitNamed:(NSString *)unitName;
 

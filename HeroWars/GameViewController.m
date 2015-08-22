@@ -7,7 +7,6 @@
 //
 
 #import "GameViewController.h"
-#import "GameScene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -35,18 +34,24 @@
     [super viewWillLayoutSubviews];
     
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    if (!skView.scene) {
-        skView.showsFPS = YES;
-        skView.showsNodeCount = YES;
+    GameView *gameView = (GameView *)self.view;
+    if (!gameView.scene) {
+        gameView.showsFPS = YES;
+        gameView.showsNodeCount = YES;
             
         // Create and configure the scene.
-        SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
+        CommandScene *scene = [[CommandScene alloc]initWithSize:gameView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        
+        scene.board = [[Gameboard alloc]initWithLevelNamed:@"TestMap1"];
+        gameView.previousScene = scene;
         // Present the scene.
-        [skView presentScene:scene];
+        [gameView presentScene:scene];
     }
+}
+
+-(void)loadView
+{
+    self.view = [[GameView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
 }
 
 - (BOOL)shouldAutorotate

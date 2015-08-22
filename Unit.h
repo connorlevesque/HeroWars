@@ -19,7 +19,7 @@
 @property (nonatomic) NSInteger owner;
 @property (strong, nonatomic) NSString *teamColor;
 @property (strong, nonatomic) NSString *state;
-@property (strong, nonatomic) NSString *unitName;
+//@property (strong, nonatomic) NSString *name;
 
 // Combat Properties
 @property (nonatomic) NSInteger accuracy;
@@ -38,12 +38,16 @@
 @property (nonatomic) NSInteger move;
 @property (strong, nonatomic) NSArray *range;
 @property (nonatomic) NSInteger vision;
-@property (strong, nonatomic) NSArray *actions;
 @property (nonatomic) NSInteger cost;
 
 // Dynamic Properties
 @property (nonatomic) NSInteger health;
 @property (nonatomic) NSInteger level;
+
+// Action Properties
+@property (getter=isCarrier, nonatomic) BOOL carrier;
+    @property (strong, nonatomic) NSString *cargo;
+    @property (nonatomic) NSInteger capacity;
 
 // Methods
 -(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;

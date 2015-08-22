@@ -32,35 +32,31 @@ NSInteger INCOME_PER_BUILDING = 100;
         self.tileGrid = self.levelParser.tileGrid;
         self.unitGrid = self.levelParser.unitGrid;
         // set other properties
-        self.currentPlayer = 0;
-        self.turn = 0;
+        self.currentPlayer = 1;
+        self.turn = 1;
         self.lastMoveInfo = [[NSMutableArray alloc]init];
+        // set up funds
         self.funds = [[NSMutableArray alloc]init];
         for (int i = 0; i < [self.playerColors count]; i++) {
             [self.funds addObject:@0];
         }
+        [self adjustFundsForPlayer:self.currentPlayer byAmount:[self getIncomeForPlayer:self.currentPlayer]];
     }
     return self;
 }
 
-//-(void)endTurn {
-//    // when turn is over, 1) set all the units to awake. 2) adjust turn variables
-//    for (NSMutableArray *row in self.unitGrid) {
-//        for (id unitMaybe in row){
-//            if ([unitMaybe isKindOfClass:[Unit class]]){
-//                Unit *unit = (Unit *)unitMaybe;
-//                [unit changeStateTo:@"awake"];
-//            }
-//        }
-//    }
-//    self.turn++;
-//    self.currentPlayer = (self.currentPlayer) % self.players + 1;
-//    [self adjustFundsForPlayer:self.currentPlayer byAmount:[self getIncomeForPlayer:self.currentPlayer]];
-//    NSLog(@"Player %d's turn", self.currentPlayer);
-//    NSLog(@"Turn %d; Funds = %d", self.turn, [self getFundsForPlayer:self.currentPlayer]);
-//}
+-(NSInteger)getFundsForPlayer:(NSInteger)player {
+    // returns the players funds
+    if (0 < player && player <= self.players) {
+        return [self.funds[player - 1] integerValue];
+    } else {
+        NSLog(@"Error: invalid player number for getFunds");
+        return -1;
+    }
+}
 
 -(NSInteger)getIncomeForPlayer:(NSInteger)player {
+    // returns the player's income
     NSInteger buildings = 0;
     for (NSArray *tileRow in self.tileGrid) {
         for (Tile *tile in tileRow) {
@@ -73,16 +69,6 @@ NSInteger INCOME_PER_BUILDING = 100;
         }
     }
     return buildings * INCOME_PER_BUILDING;
-}
-
--(NSInteger)getFundsForPlayer:(NSInteger)player {
-    // returns the players funds
-    if (0 < player && player <= self.players) {
-        return [self.funds[player - 1] integerValue];
-    } else {
-        NSLog(@"Error: invalid player number for getFunds");
-        return -1;
-    }
 }
 
 -(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount {

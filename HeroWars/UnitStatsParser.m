@@ -29,7 +29,7 @@
     self.move = [(NSString *)unitStatistics[12] integerValue];
     self.range = [self rangeArrayFromString:unitStatistics[13]];
     self.vision = [(NSString *)unitStatistics[14] integerValue];
-    self.actions = [(NSString *)unitStatistics[15] componentsSeparatedByString:@","];
+    [self parseActions:[(NSString *)unitStatistics[15] componentsSeparatedByString:@","]];
     self.cost = [(NSString *)unitStatistics[16] integerValue];
 }
 
@@ -75,6 +75,18 @@
         [rangeArray addObject:rangeArray[0]];
     }
     return rangeArray;
+}
+
+-(void)parseActions:(NSArray *)actions {
+    for (NSString *actionString in actions) {
+        NSArray *actionComponents = [actionString componentsSeparatedByString:@"-"];
+        NSString *action = actionComponents[0];
+        if ([action isEqualToString:@"Carry"]) {
+            self.carrier = YES;
+            self.capacity = [actionComponents[1] integerValue];
+            self.cargo = actionComponents[2];
+        }
+    }
 }
 
 @end

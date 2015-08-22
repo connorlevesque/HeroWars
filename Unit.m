@@ -48,11 +48,14 @@ int MAX_UNIT_LEVEL = 4;
         self.move = parser.move;
         self.range = parser.range;
         self.vision = parser.vision;
-        self.actions = parser.actions;
         self.cost = parser.cost;
         // set dynamic properties
         self.health = self.totalHealth;
         self.level = 0;
+        // set action properties
+        self.carrier = parser.carrier;
+        self.capacity = parser.capacity;
+        self.cargo = parser.cargo;
     }
     return self;
 }

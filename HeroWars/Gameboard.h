@@ -28,8 +28,6 @@
 @property (nonatomic) NSInteger turn;
 @property (strong, nonatomic) NSMutableArray *funds;
 
-
-
 -(id)initWithLevelNamed:(NSString *)mapName;
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y;
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
@@ -39,7 +37,8 @@
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b;
 //-(void)endTurn;
 
--(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount;
+-(NSInteger)getFundsForPlayer:(NSInteger)player;
 -(NSInteger)getIncomeForPlayer:(NSInteger)player;
+-(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount;
 
 @end
