@@ -30,9 +30,7 @@
 @property (nonatomic) NSInteger vision;
 @property (nonatomic) NSInteger cost;
 // Unit Action Properties
-@property (nonatomic) BOOL carrier;
-@property (strong, nonatomic) NSString *cargo;
-@property (nonatomic) NSInteger capacity;
+@property (nonatomic) BOOL isCarrier;
 
 -(void)parseStatsForUnitNamed:(NSString *)unitName;
 

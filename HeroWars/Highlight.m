@@ -19,7 +19,6 @@
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
         self.anchorPoint = CGPointMake(0,0);
-        self.type = @"blue";
     }
     return self;
 }

@@ -10,4 +10,6 @@
 
 @interface ActionMenu : Menu
 
+-(id)initWithActions:(NSArray *)actions;
+
 @end

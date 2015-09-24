@@ -10,7 +10,7 @@
 
 @implementation ActionMenu
 
--(id)init {
+-(id)initWithActions:(NSArray *)actions {
     self = [super init];
     if (self) {
         //set image
@@ -19,7 +19,7 @@
         self.color = [UIColor whiteColor];
         self.anchorPoint = CGPointZero;
         //create buttons
-        self.buttons = @[@"attack",@"wait"];
+        self.buttons = actions;
         for (int i = 0; i < [self.buttons count]; i++) {
             NSString *buttonName = self.buttons[i];
             Button *button = [[Button alloc]initWithName:buttonName];

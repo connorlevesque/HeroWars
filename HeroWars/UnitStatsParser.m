@@ -81,10 +81,8 @@
     for (NSString *actionString in actions) {
         NSArray *actionComponents = [actionString componentsSeparatedByString:@"-"];
         NSString *action = actionComponents[0];
-        if ([action isEqualToString:@"Carry"]) {
-            self.carrier = YES;
-            self.capacity = [actionComponents[1] integerValue];
-            self.cargo = actionComponents[2];
+        if ([action isEqualToString:@"carry"]) {
+            self.isCarrier = YES;
         }
     }
 }

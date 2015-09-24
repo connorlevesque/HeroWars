@@ -67,13 +67,29 @@ NSInteger CELL_SIZE = 50;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
-                    [self drawHealthForUnit:unit onTile:tile];
+                    if (unit.health < unit.totalHealth) {
+                        [self drawHealthForUnit:unit onTile:tile];
+                    }
                     if (unit.level > 0) {
                         [self drawLevelForUnit:unit onTile:tile];
                     }
+                    if ([unit isCarrying]) {
+                        [self drawCarryingIndicatorOnUnit:unit];
+                    }
+                    if ([tile isBeingCaptured]) {
+                        [self drawCaptureIndicatorOnUnit:unit];
+                    }
                 } else {
-                    [self.board removeUnitFromTile:tile];
+                    // drop cargo and remove from board
+                    if ([unit isCarrying] && [unit.zone isEqualToString:@"ground"]) {
+                        [tile addChild:unit.cargo];
+                        [self.board dropUnit:unit.cargo onTile:tile];
+                    } else {
+                        [self.board removeUnitFromTile:tile];
+                    }
                 }
+            } else {
+                [tile cancelCapture];
             }
         }
     }
@@ -120,6 +136,39 @@ NSInteger CELL_SIZE = 50;
     [tile addChild:levelIndicator];
 }
 
+-(void)drawCarryingIndicatorOnUnit:(Unit *)unit {
+    SKLabelNode *carryLabel = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
+    carryLabel.fontSize = 20;
+    carryLabel.position = CGPointMake(0,51);
+    carryLabel.horizontalAlignmentMode = 1; //left aligned
+    carryLabel.verticalAlignmentMode = 2; //top aligned
+    carryLabel.fontColor = [UIColor whiteColor];
+    Unit *carriedUnit = unit.cargo;
+    if ([carriedUnit.name isEqualToString:@"footman"]) {
+        carryLabel.text = @"F";
+    } else if ([carriedUnit.name isEqualToString:@"archer"]) {
+        carryLabel.text = @"A";
+    } else if ([carriedUnit.name isEqualToString:@"axeman"]) {
+        carryLabel.text = @"X";
+    } else if ([carriedUnit.name isEqualToString:@"phalanx"]) {
+        carryLabel.text = @"P";
+    } else {
+        carryLabel.text = @"?";
+    }
+    [unit.tile addChild:carryLabel];
+}
+
+-(void)drawCaptureIndicatorOnUnit:(Unit *)unit {
+    SKLabelNode *captureLabel = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
+    captureLabel.fontSize = 20;
+    captureLabel.position = CGPointMake(0,51);
+    captureLabel.horizontalAlignmentMode = 1; //left aligned
+    captureLabel.verticalAlignmentMode = 2; //top aligned
+    captureLabel.fontColor = [self colorWithPlayerColor:unit.teamColor];
+    captureLabel.text = [NSString stringWithFormat:@"%d",unit.tile.control];
+    [unit.tile addChild:captureLabel];
+}
+
 -(void)drawFundsLabel {
     SKLabelNode *fundsLabel = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
     fundsLabel.fontSize = 40;
@@ -130,42 +179,6 @@ NSInteger CELL_SIZE = 50;
     fundsLabel.text = [NSString stringWithFormat:@"%@", self.board.funds[self.board.currentPlayer - 1]];
     [self addChild:fundsLabel];
 }
-
-//-(void)highlightMoveTiles {
-//    NSDictionary *paths = [self.inputManager findTileCoordsToMoveHighlight];
-//    for (NSString *coordString in paths.allKeys) {
-//        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"highlight_blue.png"];
-//        NSArray *coordArray = [coordString componentsSeparatedByString:@","];
-//        NSInteger x = [coordArray[0] integerValue];
-//        NSInteger y = [coordArray[1] integerValue];
-//        Tile *tile = [self.board tileAtX:x andY:y];
-//        [self.highlightedTiles addObject:tile];
-//        [tile addChild:highlight];
-//    }
-//}
-//
-//-(void)highlightAttackTiles {
-//    NSArray *tileCoords = [self.inputManager findTileCoordsToAttackHighlight];
-//    for (NSArray *coordPair in tileCoords) {
-//        Highlight *highlight = [[Highlight alloc]initWithImageNamed:@"HeroWars_transparentBlue.png"];
-//        NSInteger x = [coordPair[0] integerValue];
-//        NSInteger y = [coordPair[1] integerValue];
-//        Tile *tile = [self.board tileAtX:x andY:y];
-//        [self.highlightedTiles addObject:tile];
-//        [tile addChild:highlight];
-//    }
-//}
-
-//-(void)unHighlightTiles {
-//    for (Tile *tile in self.highlightedTiles) {
-//        for (SKSpriteNode *child in tile.children) {
-//            if ([child isKindOfClass:[Highlight class]]) {
-//                [child removeFromParent];
-//            }
-//        }
-//    }
-//    [self.highlightedTiles removeAllObjects];
-//}
 
 // Input Methods
 

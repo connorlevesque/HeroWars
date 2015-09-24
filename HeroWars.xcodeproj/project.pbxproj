@@ -20,7 +20,6 @@
 		1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1977038A1A7D075B00E89CDE /* LaunchScreen.xib */; };
 		197703981A7D075C00E89CDE /* HeroWarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703971A7D075C00E89CDE /* HeroWarsTests.m */; };
 		197703A41A7D09A700E89CDE /* Gameboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 197703A31A7D09A700E89CDE /* Gameboard.m */; };
-		19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D35E6B1A84426600A99BC8 /* InputManager.m */; };
 		CD26AC321A87DB2F00A96EEB /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC311A87DB2F00A96EEB /* Button.m */; };
 		CD26AC351A87EA6600A96EEB /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26AC341A87EA6600A96EEB /* Unit.m */; };
 		CD55AB431A86A49C003AD677 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55AB421A86A49C003AD677 /* Menu.m */; };
@@ -136,17 +135,23 @@
 		CDBE259A1A993DD0001312C0 /* TheField.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBE25991A993DD0001312C0 /* TheField.txt */; };
 		CDBF8FEB1B6DD1F600FF3B87 /* Abilities.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBF8FEA1B6DD1F600FF3B87 /* Abilities.txt */; };
 		CDBF90181B84F82600FF3B87 /* CommandScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90171B84F82600FF3B87 /* CommandScene.m */; };
-		CDBF901B1B850F1700FF3B87 /* MoveActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF901A1B850F1700FF3B87 /* MoveActionScene.m */; };
 		CDBF901E1B850F2500FF3B87 /* ShowRangeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF901D1B850F2500FF3B87 /* ShowRangeScene.m */; };
 		CDBF90211B850F3600FF3B87 /* ProductionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90201B850F3600FF3B87 /* ProductionScene.m */; };
 		CDBF90241B850F4600FF3B87 /* GameMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90231B850F4600FF3B87 /* GameMenuScene.m */; };
 		CDBF90291B87F6A600FF3B87 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90281B87F6A600FF3B87 /* GameView.m */; };
-		CDBF902C1B8909B600FF3B87 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF902B1B8909B600FF3B87 /* DropButton.m */; };
-		CDBF902E1B89112500FF3B87 /* highilght_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF902D1B89112500FF3B87 /* highilght_red.png */; };
+		CDBF902E1B89112500FF3B87 /* highlight_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF902D1B89112500FF3B87 /* highlight_red.png */; };
 		CDBF90301B89164B00FF3B87 /* button_back_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF902F1B89164B00FF3B87 /* button_back_2.png */; };
 		CDBF90321B89165500FF3B87 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90311B89165500FF3B87 /* button_back.png */; };
 		CDBF90341B89165D00FF3B87 /* button_gamemenu_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90331B89165D00FF3B87 /* button_gamemenu_2.png */; };
 		CDBF90361B89166300FF3B87 /* button_gamemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90351B89166300FF3B87 /* button_gamemenu.png */; };
+		CDBF903F1B89BDEE00FF3B87 /* ActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF903E1B89BDEE00FF3B87 /* ActionScene.m */; };
+		CDBF90451B93252300FF3B87 /* MoveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90441B93252300FF3B87 /* MoveScene.m */; };
+		CDBF90491B9465FC00FF3B87 /* AttackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF90481B9465FC00FF3B87 /* AttackScene.m */; };
+		CDBF904C1B96D09600FF3B87 /* RideScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF904B1B96D09600FF3B87 /* RideScene.m */; };
+		CDBF904F1BA1ABF600FF3B87 /* DropScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBF904E1BA1ABF600FF3B87 /* DropScene.m */; };
+		CDBF90511BA1B6AC00FF3B87 /* DropCaptureMap.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90501BA1B6AC00FF3B87 /* DropCaptureMap.txt */; };
+		CDBF90541BA1C24E00FF3B87 /* barracks_neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90521BA1C24E00FF3B87 /* barracks_neutral.png */; };
+		CDBF90551BA1C24E00FF3B87 /* town_neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = CDBF90531BA1C24E00FF3B87 /* town_neutral.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,8 +187,6 @@
 		197703A11A7D087000E89CDE /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
 		197703A21A7D08E900E89CDE /* Gameboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gameboard.h; sourceTree = "<group>"; };
 		197703A31A7D09A700E89CDE /* Gameboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameboard.m; sourceTree = "<group>"; };
-		19D35E6A1A84426600A99BC8 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
-		19D35E6B1A84426600A99BC8 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 		CD26AC301A87DB2F00A96EEB /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		CD26AC311A87DB2F00A96EEB /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		CD26AC331A87EA6600A96EEB /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = ../Unit.h; sourceTree = "<group>"; };
@@ -312,8 +315,6 @@
 		CDBF90001B827E3100FF3B87 /* AllUIElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllUIElements.h; sourceTree = "<group>"; };
 		CDBF90161B84F82600FF3B87 /* CommandScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandScene.h; sourceTree = "<group>"; };
 		CDBF90171B84F82600FF3B87 /* CommandScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandScene.m; sourceTree = "<group>"; };
-		CDBF90191B850F1700FF3B87 /* MoveActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveActionScene.h; sourceTree = "<group>"; };
-		CDBF901A1B850F1700FF3B87 /* MoveActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveActionScene.m; sourceTree = "<group>"; };
 		CDBF901C1B850F2500FF3B87 /* ShowRangeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowRangeScene.h; sourceTree = "<group>"; };
 		CDBF901D1B850F2500FF3B87 /* ShowRangeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowRangeScene.m; sourceTree = "<group>"; };
 		CDBF901F1B850F3600FF3B87 /* ProductionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionScene.h; sourceTree = "<group>"; };
@@ -322,13 +323,24 @@
 		CDBF90231B850F4600FF3B87 /* GameMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMenuScene.m; sourceTree = "<group>"; };
 		CDBF90271B87F6A600FF3B87 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		CDBF90281B87F6A600FF3B87 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
-		CDBF902A1B8909B600FF3B87 /* DropButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropButton.h; sourceTree = "<group>"; };
-		CDBF902B1B8909B600FF3B87 /* DropButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropButton.m; sourceTree = "<group>"; };
-		CDBF902D1B89112500FF3B87 /* highilght_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highilght_red.png; sourceTree = "<group>"; };
+		CDBF902D1B89112500FF3B87 /* highlight_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight_red.png; sourceTree = "<group>"; };
 		CDBF902F1B89164B00FF3B87 /* button_back_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back_2.png; sourceTree = "<group>"; };
 		CDBF90311B89165500FF3B87 /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
 		CDBF90331B89165D00FF3B87 /* button_gamemenu_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_gamemenu_2.png; sourceTree = "<group>"; };
 		CDBF90351B89166300FF3B87 /* button_gamemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_gamemenu.png; sourceTree = "<group>"; };
+		CDBF903D1B89BDEE00FF3B87 /* ActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionScene.h; sourceTree = "<group>"; };
+		CDBF903E1B89BDEE00FF3B87 /* ActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionScene.m; sourceTree = "<group>"; };
+		CDBF90431B93252300FF3B87 /* MoveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveScene.h; sourceTree = "<group>"; };
+		CDBF90441B93252300FF3B87 /* MoveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveScene.m; sourceTree = "<group>"; };
+		CDBF90471B9465FC00FF3B87 /* AttackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackScene.h; sourceTree = "<group>"; };
+		CDBF90481B9465FC00FF3B87 /* AttackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttackScene.m; sourceTree = "<group>"; };
+		CDBF904A1B96D09600FF3B87 /* RideScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideScene.h; sourceTree = "<group>"; };
+		CDBF904B1B96D09600FF3B87 /* RideScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideScene.m; sourceTree = "<group>"; };
+		CDBF904D1BA1ABF600FF3B87 /* DropScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropScene.h; sourceTree = "<group>"; };
+		CDBF904E1BA1ABF600FF3B87 /* DropScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropScene.m; sourceTree = "<group>"; };
+		CDBF90501BA1B6AC00FF3B87 /* DropCaptureMap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropCaptureMap.txt; sourceTree = "<group>"; };
+		CDBF90521BA1C24E00FF3B87 /* barracks_neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barracks_neutral.png; sourceTree = "<group>"; };
+		CDBF90531BA1C24E00FF3B87 /* town_neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = town_neutral.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,8 +395,6 @@
 				CDBF90261B8516BD00FF3B87 /* Scene Subclasses */,
 				197703A21A7D08E900E89CDE /* Gameboard.h */,
 				197703A31A7D09A700E89CDE /* Gameboard.m */,
-				19D35E6A1A84426600A99BC8 /* InputManager.h */,
-				19D35E6B1A84426600A99BC8 /* InputManager.m */,
 				CDC30BA81ADC40F80092AC82 /* Tiles */,
 				CDC30BA71ADC40B90092AC82 /* Units */,
 				CD69667A1B14D9E3009F4EC5 /* UI Elements */,
@@ -439,8 +449,6 @@
 				CDBE252E1A92B1BA001312C0 /* ActionMenu.m */,
 				CD55AB441A86A5BD003AD677 /* GeneralMenu.h */,
 				CD55AB451A86A5BD003AD677 /* GeneralMenu.m */,
-				CDBF902A1B8909B600FF3B87 /* DropButton.h */,
-				CDBF902B1B8909B600FF3B87 /* DropButton.m */,
 				CD26AC301A87DB2F00A96EEB /* Button.h */,
 				CD26AC311A87DB2F00A96EEB /* Button.m */,
 				CDB97D711A8E60B200B5ECFA /* Highlight.h */,
@@ -462,6 +470,7 @@
 		CD69667D1B1785F3009F4EC5 /* Town */ = {
 			isa = PBXGroup;
 			children = (
+				CDBF90531BA1C24E00FF3B87 /* town_neutral.png */,
 				CD8125EE1B69961B00794119 /* town_blue.png */,
 				CD8125EF1B69961B00794119 /* town_red.png */,
 			);
@@ -471,6 +480,7 @@
 		CD69667E1B1785FB009F4EC5 /* Barracks */ = {
 			isa = PBXGroup;
 			children = (
+				CDBF90521BA1C24E00FF3B87 /* barracks_neutral.png */,
 				CD8125F31B69962F00794119 /* barracks_blue.png */,
 				CD8125F41B69962F00794119 /* barracks_red.png */,
 			);
@@ -721,6 +731,7 @@
 				CDBE25991A993DD0001312C0 /* TheField.txt */,
 				CD8125D21B64180700794119 /* TheBridge.txt */,
 				CD8125D41B641B1C00794119 /* TestMap1.txt */,
+				CDBF90501BA1B6AC00FF3B87 /* DropCaptureMap.txt */,
 				194871441A9C2C14002B60A0 /* MaxLevel1.txt */,
 			);
 			name = Levels;
@@ -807,7 +818,7 @@
 			isa = PBXGroup;
 			children = (
 				CDB97D6B1A8D7FBA00B5ECFA /* highlight_blue.png */,
-				CDBF902D1B89112500FF3B87 /* highilght_red.png */,
+				CDBF902D1B89112500FF3B87 /* highlight_red.png */,
 			);
 			name = Highlights;
 			sourceTree = "<group>";
@@ -847,8 +858,16 @@
 				CDBF90171B84F82600FF3B87 /* CommandScene.m */,
 				CDBF90221B850F4600FF3B87 /* GameMenuScene.h */,
 				CDBF90231B850F4600FF3B87 /* GameMenuScene.m */,
-				CDBF90191B850F1700FF3B87 /* MoveActionScene.h */,
-				CDBF901A1B850F1700FF3B87 /* MoveActionScene.m */,
+				CDBF90431B93252300FF3B87 /* MoveScene.h */,
+				CDBF90441B93252300FF3B87 /* MoveScene.m */,
+				CDBF903D1B89BDEE00FF3B87 /* ActionScene.h */,
+				CDBF903E1B89BDEE00FF3B87 /* ActionScene.m */,
+				CDBF904A1B96D09600FF3B87 /* RideScene.h */,
+				CDBF904B1B96D09600FF3B87 /* RideScene.m */,
+				CDBF904D1BA1ABF600FF3B87 /* DropScene.h */,
+				CDBF904E1BA1ABF600FF3B87 /* DropScene.m */,
+				CDBF90471B9465FC00FF3B87 /* AttackScene.h */,
+				CDBF90481B9465FC00FF3B87 /* AttackScene.m */,
 				CDBF901C1B850F2500FF3B87 /* ShowRangeScene.h */,
 				CDBF901D1B850F2500FF3B87 /* ShowRangeScene.m */,
 				CDBF901F1B850F3600FF3B87 /* ProductionScene.h */,
@@ -983,6 +1002,7 @@
 				CD8125C31B619C5200794119 /* knight_red.png in Resources */,
 				CD6966CC1B1787F8009F4EC5 /* t_blue.png in Resources */,
 				CD6966EA1B17882D009F4EC5 /* c_blue.png in Resources */,
+				CDBF90511BA1B6AC00FF3B87 /* DropCaptureMap.txt in Resources */,
 				1977038C1A7D075B00E89CDE /* LaunchScreen.xib in Resources */,
 				CDBE259A1A993DD0001312C0 /* TheField.txt in Resources */,
 				CD8125BF1B619C5200794119 /* Footman_Red.png in Resources */,
@@ -993,13 +1013,14 @@
 				CD6966C91B1787F8009F4EC5 /* t_red.png in Resources */,
 				CDBE25261A92AE01001312C0 /* HeroWars_button_attack.png in Resources */,
 				CDBF8FEB1B6DD1F600FF3B87 /* Abilities.txt in Resources */,
-				CDBF902E1B89112500FF3B87 /* highilght_red.png in Resources */,
+				CDBF902E1B89112500FF3B87 /* highlight_red.png in Resources */,
 				CD6966DD1B178810009F4EC5 /* k_red.png in Resources */,
 				CD6966CA1B1787F8009F4EC5 /* t_green.png in Resources */,
 				CDBE25951A9938B1001312C0 /* HeroWars_health_6.png in Resources */,
 				CDBE25881A9938B1001312C0 /* a_yellow.png in Resources */,
 				CD8125B91B619C5200794119 /* scout_red.png in Resources */,
 				CD6966DC1B178810009F4EC5 /* k_yellow.png in Resources */,
+				CDBF90551BA1C24E00FF3B87 /* town_neutral.png in Resources */,
 				CD8125C21B619C5200794119 /* knight_blue.png in Resources */,
 				CD6966F21B178837009F4EC5 /* b_green.png in Resources */,
 				CD8125F81B69962F00794119 /* barracks_red.png in Resources */,
@@ -1069,6 +1090,7 @@
 				CD6966BA1B17875D009F4EC5 /* river.png in Resources */,
 				CD8125C11B619C5200794119 /* greatknight_red.png in Resources */,
 				CD6966AF1B17871B009F4EC5 /* old_castle_green.png in Resources */,
+				CDBF90541BA1C24E00FF3B87 /* barracks_neutral.png in Resources */,
 				CD8125E61B6805FC00794119 /* catapult_blue.png in Resources */,
 				CD8125E81B6805FC00794119 /* plains.png in Resources */,
 				CD6966F01B178837009F4EC5 /* b_yellow.png in Resources */,
@@ -1099,23 +1121,25 @@
 				197703841A7D075B00E89CDE /* GameViewController.m in Sources */,
 				1977037C1A7D075B00E89CDE /* AppDelegate.m in Sources */,
 				1977037F1A7D075B00E89CDE /* GameScene.m in Sources */,
-				19D35E6C1A84426600A99BC8 /* InputManager.m in Sources */,
 				CD55AB461A86A5BD003AD677 /* GeneralMenu.m in Sources */,
-				CDBF901B1B850F1700FF3B87 /* MoveActionScene.m in Sources */,
 				CDBF90211B850F3600FF3B87 /* ProductionScene.m in Sources */,
-				CDBF902C1B8909B600FF3B87 /* DropButton.m in Sources */,
 				197703A41A7D09A700E89CDE /* Gameboard.m in Sources */,
 				CD26AC321A87DB2F00A96EEB /* Button.m in Sources */,
+				CDBF904F1BA1ABF600FF3B87 /* DropScene.m in Sources */,
 				192D61A01A7D32A50057213D /* Tile.m in Sources */,
+				CDBF904C1B96D09600FF3B87 /* RideScene.m in Sources */,
 				CDBE25321A97ED7D001312C0 /* Combat.m in Sources */,
+				CDBF90491B9465FC00FF3B87 /* AttackScene.m in Sources */,
 				CD8125A01B614C5200794119 /* UnitStatsParser.m in Sources */,
 				CD8125FD1B699F0E00794119 /* TileParser.m in Sources */,
 				CD26AC351A87EA6600A96EEB /* Unit.m in Sources */,
+				CDBF903F1B89BDEE00FF3B87 /* ActionScene.m in Sources */,
 				CDBF90181B84F82600FF3B87 /* CommandScene.m in Sources */,
 				197703791A7D075B00E89CDE /* main.m in Sources */,
 				CDBE252F1A92B1BA001312C0 /* ActionMenu.m in Sources */,
 				CDBF90291B87F6A600FF3B87 /* GameView.m in Sources */,
 				CDB97D731A8E60B200B5ECFA /* Highlight.m in Sources */,
+				CDBF90451B93252300FF3B87 /* MoveScene.m in Sources */,
 				CDBF90241B850F4600FF3B87 /* GameMenuScene.m in Sources */,
 				CDBF901E1B850F2500FF3B87 /* ShowRangeScene.m in Sources */,
 				CD69665A1B13B48D009F4EC5 /* LevelParser.m in Sources */,

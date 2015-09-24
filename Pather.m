@@ -44,7 +44,7 @@
     self.movePoints = unit.move;
     self.board = board;
     self.unitOwner = unit.owner;
-    self.originTile = [self.board tileAtX:unit.x andY:unit.y];
+    self.originTile = [self.board tileAtX:unit.tile.x andY:unit.tile.y];
     self.currentTile = self.originTile;
     self.pathsFound = NO;
     [self.path removeAllObjects];

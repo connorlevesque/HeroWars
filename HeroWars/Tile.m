@@ -11,6 +11,8 @@
 
 @implementation Tile
 
+NSInteger MAX_CONTROL = 40;
+
 -(id)initTileNamed:(NSString *)tileName {
     self = [super init];
     if (self) {
@@ -34,22 +36,56 @@
     return self;
 }
 
-
 -(id)initBuildingNamed:(NSString *)tileName withColors:(NSArray *)playerColors withOwner:(NSInteger)owner {
     self = [super init];
     if (self) {
         self = [self initTileNamed:tileName];
         self.owner = owner;
-        self.control = 40;
-        self.teamColor = playerColors[self.owner - 1];
+        self.control = MAX_CONTROL;
+        self.playerColors = playerColors;
         // adjust image
-        NSString *imageName = [NSString stringWithFormat:@"%@_%@", self.name, self.teamColor];
-        self.texture = [SKTexture textureWithImageNamed:imageName];
+        if (owner == 0) {
+            NSString *imageName = [NSString stringWithFormat:@"%@_neutral", self.name];
+            self.texture = [SKTexture textureWithImageNamed:imageName];
+        } else {
+            self.teamColor = playerColors[self.owner - 1];
+            NSString *imageName = [NSString stringWithFormat:@"%@_%@", self.name, self.teamColor];
+            self.texture = [SKTexture textureWithImageNamed:imageName];
+        }
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
     }
     return self;
 }
 
+-(BOOL)isBeingCaptured {
+    if ([self.type isEqualToString:@"building"] || [self.type isEqualToString:@"production"]) {
+        if (self.control < MAX_CONTROL) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+-(void)cancelCapture {
+    if ([self.type isEqualToString:@"building"] || [self.type isEqualToString:@"production"]) {
+        self.control = MAX_CONTROL;
+    }
+}
+
+-(void)captureWithOwner:(NSInteger)owner {
+    if ([self.type isEqualToString:@"building"] || [self.type isEqualToString:@"production"]) {
+        self.owner = owner;
+        self.control = MAX_CONTROL;
+        // adjust image
+        self.teamColor = self.playerColors[self.owner - 1];
+        NSString *imageName = [NSString stringWithFormat:@"%@_%@", self.name, self.teamColor];
+        self.texture = [SKTexture textureWithImageNamed:imageName];
+        self.size = self.texture.size;
+        self.color = [UIColor whiteColor];
+    } else {
+        NSLog(@"Error: tried to capture non-building");
+    }
+}
 
 @end

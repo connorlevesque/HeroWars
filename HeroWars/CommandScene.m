@@ -9,7 +9,7 @@
 #import "CommandScene.h"
 #import "GameView.h"
 #import "GameMenuScene.h"
-#import "MoveActionScene.h"
+#import "MoveScene.h"
 
 @implementation CommandScene
 
@@ -31,7 +31,7 @@
     if ([node isKindOfClass:[Unit class]]) {
         Unit *unit = (Unit *)node;
         if (([unit.state isEqualToString:@"awake"]) && (unit.owner == self.board.currentPlayer)) {
-            [self toMoveActionSceneWithUnit:unit];
+            [self toMoveSceneWithUnit:unit];
         } else {
             [self toShowRangeSceneWithUnit:unit];
         }
@@ -54,10 +54,10 @@
     [self.view presentScene:scene];
 }
 
--(void)toMoveActionSceneWithUnit:(Unit *)unit {
+-(void)toMoveSceneWithUnit:(Unit *)unit {
     self.selectedUnit = unit;
-    MoveActionScene *moveActionScene = [[MoveActionScene alloc]initWithSize:self.size];
-    [self.view presentScene:moveActionScene];
+    MoveScene *scene = [[MoveScene alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
 }
 
 -(void)toShowRangeSceneWithUnit:(Unit *)unit {

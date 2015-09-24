@@ -25,9 +25,14 @@
 // Building/Production only properties
 @property (nonatomic) NSInteger owner;
 @property (nonatomic) NSInteger control;
+@property (nonatomic) NSInteger maxControl;
 @property (strong, nonatomic) NSString *teamColor;
+@property (strong, nonatomic) NSArray *playerColors;
 
 -(id)initTileNamed:(NSString *)tileName;
 -(id)initBuildingNamed:(NSString *)tileName withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
+-(void)captureWithOwner:(NSInteger)owner;
+-(BOOL)isBeingCaptured;
+-(void)cancelCapture;
 
 @end

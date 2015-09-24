@@ -10,7 +10,7 @@
 
 @implementation Combat
 
-- (instancetype)initWithBoard:(Gameboard *)board {
+- (id)initWithBoard:(Gameboard *)board {
     self = [super init];
     if (self) {
         self.board = board;
@@ -31,16 +31,10 @@
 
 -(void)attack:(Unit *)b with:(Unit *)a {
     // calculate rng, hitChance, and damage
-    NSInteger rng = (arc4random() % 100) + 1;
-    NSInteger hitChance = a.accuracy - b.evasion + a.tile.elevation - b.tile.cover;
+    NSInteger rng = arc4random_uniform(100) + 1;
+    NSInteger hitChance = [self hitChanceFrom:a toUnit:b];
     NSLog(@"%d (hitChance) = %d (accuracy) - %d (evasion) + %d (elevation) - %d (cover)", hitChance, a.accuracy, b.evasion, a.tile.elevation, b.tile.cover);
-    NSInteger damage = a.attack - b.defense;
-    if ([b.type isEqualToString:a.bonusCondition] || [b.name isEqualToString:a.bonusCondition]) {
-        damage += a.bonusDamage;
-    }
-    if (damage < 0) {
-        damage = 0;
-    }
+    NSInteger damage = [self attackDamageFrom:a toUnit:b];
     NSLog(@"%d chance of %d damage", hitChance, damage);
     // determine outcome
     if (rng > hitChance) {
@@ -61,6 +55,22 @@
     if (b.health <= 0) {
         [a levelUp];
     }
+}
+
+-(NSInteger)hitChanceFrom:(Unit *)a toUnit:(Unit *)b {
+    NSInteger hitChance = a.accuracy - b.evasion + a.tile.elevation - b.tile.cover;
+    return hitChance;
+}
+
+-(NSInteger)attackDamageFrom:(Unit *)a toUnit:(Unit *)b {
+    NSInteger damage = a.attack - b.defense;
+    if ([b.type isEqualToString:a.bonusCondition] || [b.name isEqualToString:a.bonusCondition]) {
+        damage += a.bonusDamage;
+    }
+    if (damage < 0) {
+        damage = 0;
+    }
+    return damage;
 }
 
 @end

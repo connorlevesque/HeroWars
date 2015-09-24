@@ -34,7 +34,7 @@ NSInteger INCOME_PER_BUILDING = 100;
         // set other properties
         self.currentPlayer = 1;
         self.turn = 1;
-        self.lastMoveInfo = [[NSMutableArray alloc]init];
+        self.startingTileCoords = [[NSMutableArray alloc]init];
         // set up funds
         self.funds = [[NSMutableArray alloc]init];
         for (int i = 0; i < [self.playerColors count]; i++) {
@@ -77,8 +77,8 @@ NSInteger INCOME_PER_BUILDING = 100;
 }
 
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b {
-    NSInteger dx = a.x - b.x;
-    NSInteger dy = a.y - b.y;
+    NSInteger dx = a.tile.x - b.tile.x;
+    NSInteger dy = a.tile.y - b.tile.y;
     NSInteger distance = abs(dx) + abs(dy);
     if ((distance >= [(NSNumber *)[b.range objectAtIndex:0] integerValue]) &&
         (distance <= [(NSNumber *)[b.range objectAtIndex:1] integerValue])) {
@@ -89,29 +89,44 @@ NSInteger INCOME_PER_BUILDING = 100;
 }
 
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile {
-    [self.lastMoveInfo removeAllObjects];
-    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:unit.x]];
-    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:unit.y]];
-    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:tile.x]];
-    [self.lastMoveInfo addObject:[NSNumber numberWithInteger:tile.y]];
-    self.unitGrid[unit.y - 1][unit.x - 1] = [NSNull null];
+    [self.startingTileCoords removeAllObjects];
+    [self.startingTileCoords addObject:[NSNumber numberWithInteger:unit.tile.x]];
+    [self.startingTileCoords addObject:[NSNumber numberWithInteger:unit.tile.y]];
+    [self removeUnitFromTile:unit.tile];
     unit.tile = tile;
-    unit.x = tile.x;
-    unit.y = tile.y;
     self.unitGrid[tile.y - 1][tile.x - 1] = unit;
 }
 
--(Unit *)undoMoveUnit {
-    NSInteger x1 = [self.lastMoveInfo[0] integerValue];
-    NSInteger y1 = [self.lastMoveInfo[1] integerValue];
-    NSInteger x2 = [self.lastMoveInfo[2] integerValue];
-    NSInteger y2 = [self.lastMoveInfo[3] integerValue];
-    Unit *unit = [self unitAtX:x2 andY:y2];
-    self.unitGrid[y1 - 1][x1 - 1] = unit;
-    unit.x = x1;
-    unit.y = y1;
-    self.unitGrid[y2 - 1][x2 - 1] = [NSNull null];
-    return unit;
+-(void)undoMoveUnit:(Unit *)unit {
+    [self removeUnitFromTile:unit.tile];
+    NSInteger x = [(NSNumber *)self.startingTileCoords[0] integerValue];
+    NSInteger y = [(NSNumber *)self.startingTileCoords[1] integerValue];
+    unit.tile = [self tileAtX:x andY:y];
+    self.unitGrid[y - 1][x - 1] = unit;
+}
+
+-(void)carryUnit:(Unit *)unit withUnit:(Unit *)carrier {
+    [self.startingTileCoords removeAllObjects];
+    [self.startingTileCoords addObject:[NSNumber numberWithInteger:unit.tile.x]];
+    [self.startingTileCoords addObject:[NSNumber numberWithInteger:unit.tile.y]];
+    [self removeUnitFromTile:unit.tile];
+    carrier.cargo = unit;
+    unit.carrier = carrier;
+}
+
+-(void)undoCarryUnit:(Unit *)unit {
+    unit.carrier.cargo = (Unit *)[NSNull null];
+    NSInteger x = [(NSNumber *)self.startingTileCoords[0] integerValue];
+    NSInteger y = [(NSNumber *)self.startingTileCoords[1] integerValue];
+    unit.tile = [self tileAtX:x andY:y];
+    self.unitGrid[y - 1][x - 1] = unit;
+}
+
+-(void)dropUnit:(Unit *)unit onTile:(Tile *)tile {
+    unit.carrier.cargo = (Unit *)[NSNull null];
+    unit.carrier = (Unit *)[NSNull null];
+    unit.tile = tile;
+    self.unitGrid[tile.y - 1][tile.x - 1] = unit;
 }
 
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y {
@@ -126,10 +141,21 @@ NSInteger INCOME_PER_BUILDING = 100;
     return unit;
 }
 
+-(BOOL)isUnitAtX:(NSInteger)x andY:(NSInteger)y {
+    id unitMaybe = [self unitAtX:x andY:y];
+    if (unitMaybe == (id)[NSNull null]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+-(void)setUnit:(Unit *)unit OnTile:(Tile *)tile {
+    self.unitGrid[tile.y - 1][tile.x - 1] = unit;
+}
+
 -(void)removeUnitFromTile:(Tile *)tile {
-    Unit *unit = [self unitAtX:tile.x andY:tile.y];
     self.unitGrid[tile.y - 1][tile.x - 1] = [NSNull null];
-    NSLog(@"%@ %@ died", unit.teamColor, unit.type);
 }
 
 @end

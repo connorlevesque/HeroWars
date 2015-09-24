@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) NSMutableArray *tileGrid;
 @property (strong, nonatomic) NSMutableArray *unitGrid;
-@property (strong, nonatomic) NSMutableArray *lastMoveInfo; // @[x1,y1,x2,y2]
+@property (strong, nonatomic) NSMutableArray *startingTileCoords; // @[x,y]
 
 // changes every turn
 @property (nonatomic) NSInteger currentPlayer;
@@ -31,8 +31,13 @@
 -(id)initWithLevelNamed:(NSString *)mapName;
 -(Tile *)tileAtX:(NSInteger)x andY:(NSInteger)y;
 -(Unit *)unitAtX:(NSInteger)x andY:(NSInteger)y;
+-(BOOL)isUnitAtX:(NSInteger)x andY:(NSInteger)y;
 -(void)moveUnit:(Unit *)unit toTile:(Tile *)tile;
--(Unit *)undoMoveUnit;
+-(void)undoMoveUnit:(Unit *)unit;
+-(void)carryUnit:(Unit *)cargo withUnit:(Unit *)carrier;
+-(void)undoCarryUnit:(Unit *)unit;
+-(void)dropUnit:(Unit *)unit onTile:(Tile *)tile;
+-(void)setUnit:(Unit *)unit OnTile:(Tile *)tile;
 -(void)removeUnitFromTile:(Tile *)tile;
 -(BOOL)isUnit:(Unit *)a withinRangeOfUnit:(Unit *)b;
 //-(void)endTurn;

@@ -13,13 +13,12 @@
 @interface Unit : SKSpriteNode
 
 // General Properties
-@property (nonatomic) NSInteger x;
-@property (nonatomic) NSInteger y;
+//@property (nonatomic) NSInteger x;
+//@property (nonatomic) NSInteger y;
 @property (weak, nonatomic) Tile *tile;
 @property (nonatomic) NSInteger owner;
 @property (strong, nonatomic) NSString *teamColor;
 @property (strong, nonatomic) NSString *state;
-//@property (strong, nonatomic) NSString *name;
 
 // Combat Properties
 @property (nonatomic) NSInteger accuracy;
@@ -45,12 +44,16 @@
 @property (nonatomic) NSInteger level;
 
 // Action Properties
-@property (getter=isCarrier, nonatomic) BOOL carrier;
-    @property (strong, nonatomic) NSString *cargo;
-    @property (nonatomic) NSInteger capacity;
+@property (nonatomic) BOOL isCarrier;
+@property (strong, nonatomic) Unit *cargo;
+@property (weak, nonatomic) Unit *carrier;
 
 // Methods
 -(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
+-(BOOL)canCarry;
+-(BOOL)canBeCarried;
+-(BOOL)isCarrying;
+-(BOOL)isCarried;
 -(void)levelUp;
 -(void)changeStateTo:(NSString *)state;
 -(void)refreshTexture;

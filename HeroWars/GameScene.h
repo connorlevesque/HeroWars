@@ -15,8 +15,11 @@
 
 // Model References
 @property(strong, nonatomic) Gameboard *board;
+
+// Specific scene properties
 @property(strong, nonatomic) Unit *selectedUnit;
 @property(strong, nonatomic) Tile *selectedProduction;
+@property(nonatomic, getter=unitMoved) BOOL didUnitMove;
 
 // UI Elements
 @property (strong, nonatomic) SKNode *world;

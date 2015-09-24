@@ -14,13 +14,19 @@
     self = [super init];
     if (self) {
         self.name = name;
-        NSString *imageName = [NSString stringWithFormat:@"HeroWars_button_%@",name];
+        NSString *imageName;
+        if ([name isEqualToString:@"drop"]) {
+            imageName = [NSString stringWithFormat:@"HeroWars_button_wait"];
+        } else if ([name isEqualToString:@"capture"]) {
+            imageName = [NSString stringWithFormat:@"HeroWars_button_wait"];
+        } else {
+            imageName = [NSString stringWithFormat:@"HeroWars_button_%@",name];
+        }
         self.texture = [SKTexture textureWithImageNamed:imageName];
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
     }
     return self;
 }
-
 
 @end

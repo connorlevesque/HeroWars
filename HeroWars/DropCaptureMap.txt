@@ -1,0 +1,24 @@
+
+Drop Capture Map
+
+:
+
+p, p, p, p, p, p, p, p, p, p, p, p, f /
+f, p, p, p, f, p, p, p, p, p, p, f, f /
+p, p, p-S-1, p, p, p, p, p, f, p, p-S-2, p, p /
+f, p-X-1, p, t, p, p, p, p, p, p, t, p, p /
+p, p-P-1, p, t, p, p, p, m, p, p, p-F-2, p-A-2, p /
+p, p, p-C-1, p, p, p, p, m, p, t, p, p-K-2, p /
+p, p, p, p, p, f, p, p, p, p, p, p, p
+
+:
+
+red, blue
+
+:
+
+standard
+
+:
+
+13 x 7 sandbox

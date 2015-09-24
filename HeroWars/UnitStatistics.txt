@@ -3,26 +3,20 @@ Unit Statistics
 
 Name            | Accuracy | Evasion | Critical | Attack | Defense | TotalHealth | BonusCondition | BonusDamage | Type       | Zone   | Targets     | Move | Range | Vision | Actions                | Cost !
 
-Footman         |      100 |      10 |        0 |     13 |       4 |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
-Archer          |       95 |      15 |        5 |     18 |       0 |          20 | Artillery      |          -8 | Infantry   | Ground | All         |    4 |     2 |      3 | Capture                |    0 !
-Axeman          |          |         |          |        |         |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
-Phalanx         |          |         |          |        |         |          20 |                |             | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture                |    0 !
+Footman         |       95 |       8 |        0 |     13 |       4 |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
+Archer          |       95 |      16 |        0 |     18 |       0 |          20 | Artillery      |          -8 | Infantry   | Ground | All         |    4 |     2 |      3 | Capture                |    0 !
+Axeman          |       70 |      16 |        0 |     20 |         |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
+Phalanx         |       83 |       0 |        0 |     15 |      12 |          20 |                |             | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture                |    0 !
 
-Scout           |      100 |      10 |        0 |     15 |       4 |          20 |                |             | Cavalry    | Ground | Ground      |    7 |     1 |      5 | Carry-1-Infantry       |    0 !
-Knight          |       95 |       5 |        5 |     18 |      10 |          20 |                |             | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                        |    0 !
-GreatKnight     |       90 |       0 |       10 |     24 |      15 |          20 |                |             | Cavalry    | Ground | Ground      |    5 |     1 |      1 |                        |    0 !
+Scout           |       95 |      16 |        0 |     15 |       4 |          20 |                |             | Cavalry    | Ground | Ground      |    7 |     1 |      5 | Carry                  |    0 !
+Knight          |       83 |       8 |        0 |     18 |      10 |          20 |                |             | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                        |    0 !
+GreatKnight     |       83 |       0 |        0 |     24 |      14 |          20 |                |             | Cavalry    | Ground | Ground      |    5 |     1 |      1 |                        |    0 !
 
-Catapult        |       90 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground, Sea |    6 |   2-3 |      1 |                        |    0 !
-Megapult        |       80 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground, Sea |    5 |   3-5 |      1 |                        |    0 !
-Ballista        |       90 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Air         |    5 |   3-5 |      5 |                        |    0 !
+Catapult        |       83 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground      |    6 |   2-3 |      1 |                        |    0 !
+Megapult        |       70 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground      |    5 |   3-5 |      1 |                        |    0 !
+Ballista        |       83 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Air         |    5 |   3-5 |      5 |                        |    0 !
 
 
-Raider (Sea)    |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        | Reef-Hiding, Disembark |    0 !
-Raider (Ground) |          |         |          |        |         |             |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture, Embark        |    0 !
-Bowship         |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        |                        |    0 !
-Warship         |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        |                        |    0 !
-Brig            |          |         |          |        |         |             |                |             | Ship       | Sea    | Sea         |      |       |        | Carry-2-Ground         |    0 !
-
-Griffin Rider   |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
-Manticore Rider |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
-Drake Rider     |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
+Pegasus         |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        | Carry                  |    0 !
+Griffin         |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
+Dragon          |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !

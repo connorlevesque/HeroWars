@@ -17,12 +17,11 @@ int MAX_UNIT_LEVEL = 4;
     if (self) {
         // set implicit properties
         self.anchorPoint = CGPointMake(0,0);
-        self.x = tile.x;
-        self.y = tile.y;
         self.tile = tile;
         self.owner = owner;
         self.teamColor = playerColors[self.owner - 1];
         self.state = @"awake";
+        self.cargo = (Unit *)[NSNull null];
         // parse unit statistics
         UnitStatsParser *parser = [[UnitStatsParser alloc]init];
         [parser parseStatsForUnitNamed:unitName];
@@ -53,11 +52,41 @@ int MAX_UNIT_LEVEL = 4;
         self.health = self.totalHealth;
         self.level = 0;
         // set action properties
-        self.carrier = parser.carrier;
-        self.capacity = parser.capacity;
-        self.cargo = parser.cargo;
+        self.isCarrier = parser.isCarrier;
     }
     return self;
+}
+
+-(BOOL)canCarry {
+    if ((self.isCarrier == YES) && (![self isCarrying])) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(BOOL)canBeCarried {
+    if ([self.type isEqualToString:@"infantry"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(BOOL)isCarrying {
+    if (self.cargo == (Unit *)[NSNull null]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+-(BOOL)isCarried {
+    if (self.carrier == (Unit *)[NSNull null]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 -(void)levelUp {
@@ -75,7 +104,7 @@ int MAX_UNIT_LEVEL = 4;
         //NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_%@", self.type, self.teamColor];
         //self.texture = [SKTexture textureWithImageNamed:imageName];
     } else if ([self.state isEqualToString:@"asleep"]) {
-        self.alpha = .5;
+        self.alpha = .6;
         //NSString *imageName = [NSString stringWithFormat:@"HeroWars_%@_gray", self.type];
         //self.texture = [SKTexture textureWithImageNamed:imageName];
     } else {
