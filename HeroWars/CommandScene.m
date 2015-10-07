@@ -10,6 +10,7 @@
 #import "GameView.h"
 #import "GameMenuScene.h"
 #import "MoveScene.h"
+#import "ShowRangeScene.h"
 
 @implementation CommandScene
 
@@ -61,8 +62,9 @@
 }
 
 -(void)toShowRangeSceneWithUnit:(Unit *)unit {
-//    self.selectedUnit = unit;
-//    
+    self.selectedUnit = unit;
+    ShowRangeScene *scene = [[ShowRangeScene alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
 }
 
 -(void)toProductionSceneWithProduction:(Tile *)production {

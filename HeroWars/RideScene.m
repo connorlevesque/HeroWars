@@ -33,7 +33,7 @@
 -(void)processTappedNode:(SKNode *)node {
     if ([node isKindOfClass:[Button class]]) {
         Button *button = (Button *)node;
-        if ([button.name isEqualToString:@"wait"]) {
+        if ([button.name isEqualToString:@"ride"]) {
             [self toCommandScene];
         }
     } else {
@@ -71,7 +71,7 @@
 
 -(void)drawActionMenu {
     NSMutableArray *actions = [[NSMutableArray alloc]init];
-    [actions addObject:@"wait"];
+    [actions addObject:@"ride"];
     ActionMenu *actionMenu = [[ActionMenu alloc]initWithActions:actions];
     actionMenu.position = CGPointMake(25,50);
     [self addChild:actionMenu];

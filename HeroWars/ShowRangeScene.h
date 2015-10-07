@@ -7,7 +7,10 @@
 //
 
 #import "GameScene.h"
+@class Pather;
 
 @interface ShowRangeScene : GameScene
+
+@property (strong, nonatomic) Pather *pather;
 
 @end
