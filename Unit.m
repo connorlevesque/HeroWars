@@ -32,14 +32,10 @@ int MAX_UNIT_LEVEL = 4;
         self.size = self.texture.size;
         self.color = [UIColor whiteColor];
         // set combat properties
-        self.accuracy = parser.accuracy;
-        self.evasion = parser.evasion;
-        self.critical = parser.critical;
-        self.attack = parser.attack;
-        self.defense = parser.defense;
+        self.damageL = parser.damageL;
+        self.damageH = parser.damageH;
+        self.armor = parser.armor;
         self.totalHealth = parser.totalHealth;
-        self.bonusCondition = parser.bonusCondition;
-        self.bonusDamage = parser.bonusDamage;
         // set function properties
         self.type = parser.type;
         self.zone = parser.zone;
@@ -53,6 +49,7 @@ int MAX_UNIT_LEVEL = 4;
         self.level = 0;
         // set action properties
         self.isCarrier = parser.isCarrier;
+        self.isBold = parser.isBold;
     }
     return self;
 }
@@ -92,8 +89,7 @@ int MAX_UNIT_LEVEL = 4;
 -(void)levelUp {
     if (self.level < MAX_UNIT_LEVEL) {
         self.level++;
-        self.attack++;
-        self.defense++;
+        // STAT BONUSES GO HERE
     }
 }
 

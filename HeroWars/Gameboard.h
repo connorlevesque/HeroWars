@@ -45,5 +45,6 @@
 -(NSInteger)getFundsForPlayer:(NSInteger)player;
 -(NSInteger)getIncomeForPlayer:(NSInteger)player;
 -(void)adjustFundsForPlayer:(NSInteger)player byAmount:(NSInteger)amount;
+-(NSString *)currentPlayerColor;
 
 @end

@@ -42,7 +42,7 @@
         // Create and configure the scene.
         CommandScene *scene = [[CommandScene alloc]initWithSize:gameView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        scene.board = [[Gameboard alloc]initWithLevelNamed:@"TestMap1"];
+        scene.board = [[Gameboard alloc]initWithLevelNamed:@"Campaign1"];
         gameView.previousScene = scene;
         // Present the scene.
         [gameView presentScene:scene];

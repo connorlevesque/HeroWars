@@ -11,6 +11,7 @@
 #import "GameMenuScene.h"
 #import "MoveScene.h"
 #import "ShowRangeScene.h"
+#import "ProductionScene.h"
 
 @implementation CommandScene
 
@@ -39,7 +40,9 @@
     } else if ([node isKindOfClass:[Tile class]]) {
         Tile *tile = (Tile *)node;
         if ([tile.type isEqualToString:@"production"]) {
-            [self toProductionSceneWithProduction:tile];
+            if (tile.owner == self.board.currentPlayer) {
+                [self toProductionSceneWithProduction:tile];
+            }
         } else {
             [self toGameMenuScene];
         }
@@ -68,8 +71,9 @@
 }
 
 -(void)toProductionSceneWithProduction:(Tile *)production {
-//    self.selectedProduction = production;
-//    
+    self.selectedProduction = production;
+    ProductionScene *scene = [[ProductionScene alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
 }
 
 // Edit Model Methods

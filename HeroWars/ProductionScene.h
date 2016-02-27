@@ -10,4 +10,6 @@
 
 @interface ProductionScene : GameScene
 
+@property (strong, nonatomic) UnitMenu *unitMenu;
+
 @end

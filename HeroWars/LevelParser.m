@@ -159,7 +159,7 @@
 }
 
 -(NSString *)findUnitNameFromAbbreviation:(NSString *)abbreviation {
-    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"archer",@"A",@"axeman",@"X",@"phalanx",@"P",@"scout",@"S",@"knight",@"K",@"greatknight",@"G",@"catapult",@"C",@"megapult",@"M",@"Ballista",@"B", nil];
+    NSDictionary *unitAbbreviationGuide = [[NSDictionary alloc]initWithObjectsAndKeys:@"footman",@"F",@"archer",@"A",@"barbarian",@"B",@"paladin",@"P",@"skirmisher",@"S",@"knight",@"K",@"catapult",@"C",@"bombard",@"M", nil];
     NSString *unitName = [unitAbbreviationGuide objectForKey:abbreviation];
     return unitName;
 }

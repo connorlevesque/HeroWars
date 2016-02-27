@@ -11,6 +11,7 @@
 
 #import "GeneralMenu.h"
 #import "ActionMenu.h"
+#import "UnitMenu.h"
 #import "Highlight.h"
 
 #endif

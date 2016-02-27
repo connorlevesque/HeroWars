@@ -14,23 +14,19 @@
     NSArray *unitStatistics = [self getStatsForUnitNamed:unitName];
     self.unitName = unitStatistics[0];
     // set unit combat properties
-    self.accuracy = [(NSString *)unitStatistics[1] integerValue];
-    self.evasion = [(NSString *)unitStatistics[2] integerValue];
-    self.critical = [(NSString *)unitStatistics[3] integerValue];
-    self.attack = [(NSString *)unitStatistics[4] integerValue];
-    self.defense = [(NSString *)unitStatistics[5] integerValue];
-    self.totalHealth = [(NSString *)unitStatistics[6] integerValue];
-    self.bonusCondition = unitStatistics[7];
-    self.bonusDamage = [(NSString *)unitStatistics[8] integerValue];
+    self.damageL = [(NSString *)unitStatistics[1] integerValue];
+    self.damageH = [(NSString *)unitStatistics[2] integerValue];
+    self.armor = [(NSString *)unitStatistics[3] integerValue];
+    self.totalHealth = [(NSString *)unitStatistics[4] integerValue];
     // set unit function properties
-    self.type = unitStatistics[9];
-    self.zone = unitStatistics[10];
-    self.targets = [self targetsArrayFromString:unitStatistics[11]];
-    self.move = [(NSString *)unitStatistics[12] integerValue];
-    self.range = [self rangeArrayFromString:unitStatistics[13]];
-    self.vision = [(NSString *)unitStatistics[14] integerValue];
-    [self parseActions:[(NSString *)unitStatistics[15] componentsSeparatedByString:@","]];
-    self.cost = [(NSString *)unitStatistics[16] integerValue];
+    self.type = unitStatistics[5];
+    self.zone = unitStatistics[6];
+    self.targets = [self targetsArrayFromString:unitStatistics[7]];
+    self.move = [(NSString *)unitStatistics[8] integerValue];
+    self.range = [self rangeArrayFromString:unitStatistics[9]];
+    self.vision = [(NSString *)unitStatistics[10] integerValue];
+    [self parseActions:[(NSString *)unitStatistics[11] componentsSeparatedByString:@","]];
+    self.cost = [(NSString *)unitStatistics[12] integerValue];
 }
 
 -(NSArray *)getStatsForUnitNamed:(NSString *)unitName {
@@ -83,6 +79,9 @@
         NSString *action = actionComponents[0];
         if ([action isEqualToString:@"carry"]) {
             self.isCarrier = YES;
+        }
+        if ([action isEqualToString:@"bold"]) {
+            self.isBold = YES;
         }
     }
 }

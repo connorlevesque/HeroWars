@@ -98,18 +98,6 @@
     toolTip.verticalAlignmentMode = 2; //top aligned
     NSInteger attackDamage = [self.combat attackDamageFrom:self.selectedUnit toUnit:target];
     toolTip.text = [NSString stringWithFormat:@"%d", attackDamage];
-    NSInteger hitChance = [self.combat hitChanceFrom:self.selectedUnit toUnit:target];
-    if (hitChance > 88) {
-        toolTip.fontColor = [UIColor whiteColor];
-    } else if (hitChance > 75) {
-        toolTip.fontColor = [UIColor greenColor];
-    } else if (hitChance > 62) {
-        toolTip.fontColor = [UIColor yellowColor];
-    } else if (hitChance > 49) {
-        toolTip.fontColor = [UIColor orangeColor];
-    } else {
-        toolTip.fontColor = [UIColor redColor];
-    }
     return toolTip;
 }
 

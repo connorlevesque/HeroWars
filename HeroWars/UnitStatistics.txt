@@ -1,22 +1,15 @@
 
 Unit Statistics
 
-Name            | Accuracy | Evasion | Critical | Attack | Defense | TotalHealth | BonusCondition | BonusDamage | Type       | Zone   | Targets     | Move | Range | Vision | Actions                | Cost !
+Name            | Damage L | Damage H | Armor  | Health | Type       | Zone   | Targets     | Move | Range | Vision | Abilities              | Cost !
 
-Footman         |       95 |       8 |        0 |     13 |       4 |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
-Archer          |       95 |      16 |        0 |     18 |       0 |          20 | Artillery      |          -8 | Infantry   | Ground | All         |    4 |     2 |      3 | Capture                |    0 !
-Axeman          |       70 |      16 |        0 |     20 |         |          20 |                |             | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |    0 !
-Phalanx         |       83 |       0 |        0 |     15 |      12 |          20 |                |             | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture                |    0 !
+Footman         |       55 |        0 |      0 |    100 | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture                |  100 !
+Archer          |       57 |        8 |      0 |    100 | Infantry   | Ground | All         |    4 |     2 |      3 | Capture                |  300 !
+Barbarian       |       52 |       23 |    1.8 |    100 | Infantry   | Ground | Ground      |    4 |     1 |      2 | Capture, Bold          |  600 !
+Paladin         |       35 |       40 |      3 |    100 | Infantry   | Ground | Ground      |    3 |     1 |      2 | Capture                |  800 !
 
-Scout           |       95 |      16 |        0 |     15 |       4 |          20 |                |             | Cavalry    | Ground | Ground      |    7 |     1 |      5 | Carry                  |    0 !
-Knight          |       83 |       8 |        0 |     18 |      10 |          20 |                |             | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                        |    0 !
-GreatKnight     |       83 |       0 |        0 |     24 |      14 |          20 |                |             | Cavalry    | Ground | Ground      |    5 |     1 |      1 |                        |    0 !
+Skirmisher      |       65 |        0 |    0.4 |    100 | Cavalry    | Ground | Ground      |    6 |     1 |      5 | Carry                  |  400 !
+Knight          |       58 |       52 |      4 |    100 | Cavalry    | Ground | Ground      |    6 |     1 |      2 |                        | 1600 !
 
-Catapult        |       83 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground      |    6 |   2-3 |      1 |                        |    0 !
-Megapult        |       70 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Ground      |    5 |   3-5 |      1 |                        |    0 !
-Ballista        |       83 |    -100 |        0 |     24 |       0 |          20 |                |             | Artillery  | Ground | Air         |    5 |   3-5 |      5 |                        |    0 !
-
-
-Pegasus         |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        | Carry                  |    0 !
-Griffin         |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
-Dragon          |          |         |          |        |         |             |                |             | Flyer      | Air    | All         |      |       |        |                        |    0 !
+Catapult        |       48 |       42 |      1 |    100 | Artillery  | Ground | Ground      |    4 |   2-3 |      1 |                        |  700 !
+Bombard         |       43 |       52 |      2 |    100 | Artillery  | Ground | Ground      |    4 |   3-5 |      1 |                        | 1500 !

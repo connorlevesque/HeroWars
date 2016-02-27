@@ -13,14 +13,10 @@
 // Unit Name
 @property (strong, nonatomic) NSString *unitName;
 // Unit Combat Properties
-@property (nonatomic) NSInteger accuracy;
-@property (nonatomic) NSInteger evasion;
-@property (nonatomic) NSInteger critical;
-@property (nonatomic) NSInteger attack;
-@property (nonatomic) NSInteger defense;
+@property (nonatomic) NSInteger damageL;
+@property (nonatomic) NSInteger damageH;
+@property (nonatomic) NSInteger armor;
 @property (nonatomic) NSInteger totalHealth;
-@property (strong, nonatomic) NSString *bonusCondition;
-@property (nonatomic) NSInteger bonusDamage;
 // Unit Function Properties
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *zone;
@@ -29,8 +25,9 @@
 @property (strong, nonatomic) NSArray *range;
 @property (nonatomic) NSInteger vision;
 @property (nonatomic) NSInteger cost;
-// Unit Action Properties
+// Unit Ability Properties
 @property (nonatomic) BOOL isCarrier;
+@property (nonatomic) BOOL isBold;
 
 -(void)parseStatsForUnitNamed:(NSString *)unitName;
 

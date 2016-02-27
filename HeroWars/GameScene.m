@@ -67,7 +67,7 @@ NSInteger CELL_SIZE = 50;
                 [unit removeFromParent];
                 if (unit.health > 0) {
                     [tile addChild:unit];
-                    if (unit.health < unit.totalHealth) {
+                    if (unit.health <= 90) {
                         [self drawHealthForUnit:unit onTile:tile];
                     }
                     if (unit.level > 0) {
@@ -99,12 +99,13 @@ NSInteger CELL_SIZE = 50;
 
 -(void)drawHealthForUnit:(Unit *)unit onTile:(Tile *)tile {
     SKLabelNode *healthIndicator = [SKLabelNode labelNodeWithFontNamed:@"Copperplate"];
-    healthIndicator.fontSize = 20;
+    healthIndicator.fontSize = 30;
     healthIndicator.position = CGPointMake(51,0);
     healthIndicator.horizontalAlignmentMode = 2; //right aligned
     healthIndicator.verticalAlignmentMode = 3; //bottom aligned
     healthIndicator.fontColor = [UIColor whiteColor];
-    healthIndicator.text = [NSString stringWithFormat:@"%d", unit.health];
+    NSInteger displayHealth = (unit.health + 1) / 10 + 1;
+    healthIndicator.text = [NSString stringWithFormat:@"%d", displayHealth];
     [tile addChild:healthIndicator];
 }
 
@@ -148,9 +149,9 @@ NSInteger CELL_SIZE = 50;
         carryLabel.text = @"F";
     } else if ([carriedUnit.name isEqualToString:@"archer"]) {
         carryLabel.text = @"A";
-    } else if ([carriedUnit.name isEqualToString:@"axeman"]) {
-        carryLabel.text = @"X";
-    } else if ([carriedUnit.name isEqualToString:@"phalanx"]) {
+    } else if ([carriedUnit.name isEqualToString:@"barbarian"]) {
+        carryLabel.text = @"B";
+    } else if ([carriedUnit.name isEqualToString:@"paladin"]) {
         carryLabel.text = @"P";
     } else {
         carryLabel.text = @"?";

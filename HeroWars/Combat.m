@@ -30,46 +30,25 @@
 }
 
 -(void)attack:(Unit *)b with:(Unit *)a {
-    // calculate rng, hitChance, and damage
-    NSInteger rng = arc4random_uniform(100) + 1;
-    NSInteger hitChance = [self hitChanceFrom:a toUnit:b];
-    NSLog(@"%d (hitChance) = %d (accuracy) - %d (evasion) + %d (elevation) - %d (cover)", hitChance, a.accuracy, b.evasion, a.tile.elevation, b.tile.cover);
-    NSInteger damage = [self attackDamageFrom:a toUnit:b];
-    NSLog(@"%d chance of %d damage", hitChance, damage);
-    // determine outcome
-    if (rng > hitChance) {
-        if (rng > a.accuracy) {
-            NSLog(@"Miss!");
-        } else {
-            NSLog(@"Dodge!");
-        }
-    } else if (rng > a.critical) {
-        b.health -= damage;
-        NSLog(@"Hit! %d damage dealt", damage);
-    } else {
-        damage = 2 * damage;
-        b.health -= damage;
-        NSLog(@"Critical Hit! %d damage dealt", damage);
-    }
+    int damage = [self attackDamageFrom:a toUnit:b];
+    int r = arc4random_uniform(5) - 2;
+    damage = damage + r;
+    b.health -= damage;
     // levelUp unit A if unit B is killed
     if (b.health <= 0) {
         [a levelUp];
     }
 }
 
--(NSInteger)hitChanceFrom:(Unit *)a toUnit:(Unit *)b {
-    NSInteger hitChance = a.accuracy - b.evasion + a.tile.elevation - b.tile.cover;
-    return hitChance;
-}
-
 -(NSInteger)attackDamageFrom:(Unit *)a toUnit:(Unit *)b {
-    NSInteger damage = a.attack - b.defense;
-    if ([b.type isEqualToString:a.bonusCondition] || [b.name isEqualToString:a.bonusCondition]) {
-        damage += a.bonusDamage;
+    float h = (float)a.health / (float)a.totalHealth;
+    if (a.isBold) {
+        h = (h + 1) / 2;
     }
-    if (damage < 0) {
-        damage = 0;
-    }
+    int hD = a.damageH;
+    int lD = a.damageL;
+    int arm = b.armor;
+    int damage = h * (hD + lD / pow(2,arm));
     return damage;
 }
 

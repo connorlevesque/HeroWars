@@ -10,6 +10,9 @@
 
 @interface Button : SKSpriteNode
 
+@property (strong, nonatomic) NSString *type;
+
 - (id)initWithName:(NSString *)name;
+- (id)initUnitButtonWithName:(NSString *)name andColor:(NSString *)color;
 
 @end

@@ -11,27 +11,31 @@
 
 @implementation Tile
 
-NSInteger MAX_CONTROL = 40;
+NSInteger MAX_CONTROL = 20;
 
 -(id)initTileNamed:(NSString *)tileName {
     self = [super init];
     if (self) {
         // set implicit properties
         [self setAnchorPoint:CGPointZero];
-        // parse tile statistics
-        TileParser *parser = [[TileParser alloc]init];
-        [parser parseStatsForTileNamed:tileName];
-        // set name specific properties
-        self.name = parser.tileName;
-        NSString *imageName = [NSString stringWithFormat:@"%@", self.name];
-        self.texture = [SKTexture textureWithImageNamed:imageName];
-        self.size = self.texture.size;
-        self.color = [UIColor whiteColor];
-        // set other properties
-        self.type = parser.type;
-        self.movecosts = parser.movecosts;
-        self.cover = parser.cover;
-        self.elevation = parser.elevation;
+        if ([tileName isEqualToString:@"empty"]) {
+            self.name = @"empty";
+        } else {
+            // parse tile statistics
+            TileParser *parser = [[TileParser alloc]init];
+            [parser parseStatsForTileNamed:tileName];
+            // set name specific properties
+            self.name = parser.tileName;
+            NSString *imageName = [NSString stringWithFormat:@"%@", self.name];
+            self.texture = [SKTexture textureWithImageNamed:imageName];
+            self.size = self.texture.size;
+            self.color = [UIColor whiteColor];
+            // set other properties
+            self.type = parser.type;
+            self.movecosts = parser.movecosts;
+            self.cover = parser.cover;
+            self.elevation = parser.elevation;
+        }
     }
     return self;
 }

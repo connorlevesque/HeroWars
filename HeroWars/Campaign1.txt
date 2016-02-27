@@ -3,18 +3,19 @@ Campaign1
 
 :
 
-p, p, p, f, f, m, p, p, v, p, p, p, p, p, p /
-p, p, p, p, p, p, p, v, v, p, p, p, p, t, p /
-p, p, b-1, p, p-P-1, p, p, v, p, p, m, m, m, p, p /
-p, c-1, r, r-B-1, t-1, p, p, v, t, p, p, p-C-2, p, p, p /
-p, p, b-1, r, r-K-1, r, r, r, r, r, r, r, r, p, p /
-m, p, p, p, p, p, p, v, p, p, t, p, r-C-2, p, p /
-m, p, p, f, p, f, t, v, p, p, p, p, r, p, p /
-p, p, p, p, p, v, v, v, p, f, p, p, r, t-T-2, p /
-p, p, p, p, p, v, m, p, p, f, f, p, r, p, p /
-p, p, p, p, v, v, p, p, p, p, p, b-2, r, b-2, p /
-s, t, p, t, v, p, p, t, p, p, p, p, c-2, p, p /
-s, s, p, p, v, p, p, p, p, p, p, p, p, p, p
+s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s /
+s, s, s, s, m, p, p, p, f, p, p, m, s, s, s, s, s /
+s, s, s, m, m, t, p, p, f, f, p, t, f, m, s, s, s /
+s, s, s, f, f, p, p, f, t, f, p, p, p, m, s, s, s /
+s, s, m, m, p, p, p, p, p, p, p, p, p, m, m, s, s /
+s, s, m, m, t, p, p, t, s, t, p, p, t, p, p, s, s /
+s, p, p, p, p, p, f, s, s, s, p, f, p, p, p, p, s /
+s, p, p, b-1, p, p, p, s, s, s, p, p, p, b-2, p, p, s /
+s, p, t-1, r, p, t, p, s, s, s, p, t, p, r, t-2, p, s /
+s, p, p, r, r, r, r, r, r, r, r, r, r, r, p, p, s /
+s, p, p, b-1, p, p, p, s, s, s, p, p, p, b-2, p, p, s /
+s, s, p, p, p, p, s, s, s, s, s, p, p, p, p, s, s /
+s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s
 
 :
 

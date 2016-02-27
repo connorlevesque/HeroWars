@@ -72,7 +72,7 @@
 -(void)toCommandSceneWithContext:(NSString *)context {
     if ([context isEqualToString:@"capture"]) {
         Tile *building = self.selectedUnit.tile;
-        building.control -= self.selectedUnit.health;
+        building.control -= (self.selectedUnit.health - 1) / 10 + 1;
         if (building.control <= 0) {
             [building captureWithOwner:self.selectedUnit.owner];
         }

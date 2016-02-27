@@ -45,6 +45,10 @@ NSInteger INCOME_PER_BUILDING = 100;
     return self;
 }
 
+-(NSString *)currentPlayerColor {
+    return self.playerColors[self.currentPlayer - 1];
+}
+
 -(NSInteger)getFundsForPlayer:(NSInteger)player {
     // returns the players funds
     if (0 < player && player <= self.players) {
@@ -60,7 +64,7 @@ NSInteger INCOME_PER_BUILDING = 100;
     NSInteger buildings = 0;
     for (NSArray *tileRow in self.tileGrid) {
         for (Tile *tile in tileRow) {
-            if ([tile.type isEqualToString:@"building"]) {
+            if ([tile.type isEqualToString:@"building"] || [tile.type isEqualToString:@"production"]) {
                 Tile *building = tile;
                 if (building.owner == player) {
                     buildings++;

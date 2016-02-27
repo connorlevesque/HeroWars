@@ -15,7 +15,7 @@
 
 - (id)initWithBoard:(Gameboard *)board;
 -(void)fightFirstUnit:(Unit *)a againstSecondUnit:(Unit *)b;
--(NSInteger)hitChanceFrom:(Unit *)a toUnit:(Unit *)b;
+//-(NSInteger)hitChanceFrom:(Unit *)a toUnit:(Unit *)b;
 -(NSInteger)attackDamageFrom:(Unit *)a toUnit:(Unit *)b;
 
 @end

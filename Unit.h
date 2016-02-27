@@ -21,14 +21,10 @@
 @property (strong, nonatomic) NSString *state;
 
 // Combat Properties
-@property (nonatomic) NSInteger accuracy;
-@property (nonatomic) NSInteger evasion;
-@property (nonatomic) NSInteger critical;
-@property (nonatomic) NSInteger attack;
-@property (nonatomic) NSInteger defense;
+@property (nonatomic) NSInteger damageL;
+@property (nonatomic) NSInteger damageH;
+@property (nonatomic) NSInteger armor;
 @property (nonatomic) NSInteger totalHealth;
-@property (strong, nonatomic) NSString *bonusCondition;
-@property (nonatomic) NSInteger bonusDamage;
 
 // Function Properties
 @property (strong, nonatomic) NSString *type;
@@ -47,6 +43,7 @@
 @property (nonatomic) BOOL isCarrier;
 @property (strong, nonatomic) Unit *cargo;
 @property (weak, nonatomic) Unit *carrier;
+@property (nonatomic) BOOL isBold;
 
 // Methods
 -(id)initUnitNamed:(NSString *)unitName onTile:(Tile *)tile withColors:(NSArray *)playerColors withOwner:(NSInteger)owner;
